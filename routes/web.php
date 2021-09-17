@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/tumbuhanview', function () {
     return view('tumbuhanview');
 });
+Route::get('/testview', function () {
+    return view('testview');
+});
 
 // Controller
 Route::get('tumbuhancontroller', 'App\Http\Controllers\TumbuhanController@index');
