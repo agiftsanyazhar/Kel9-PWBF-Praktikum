@@ -17,8 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/tumbuhanview', function () {
-    return view('tumbuhanview');
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/about', function () {
+    return view('about');
 });
 
 // Controller
