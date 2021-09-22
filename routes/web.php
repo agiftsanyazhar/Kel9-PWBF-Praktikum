@@ -32,6 +32,3 @@ Route::get('/news', function () {
 Route::get('/about', function () {
     return view('about');
 });
-
-// Controller
-Route::get('tumbuhancontroller', 'App\Http\Controllers\TumbuhanController@index');
