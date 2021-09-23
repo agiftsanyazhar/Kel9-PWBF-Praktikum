@@ -8,7 +8,7 @@
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 
-        <title>TPQ Al-Hikmah</title>
+        <title>TPQ Al-Hikmah | {{ $title }}</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -20,16 +20,16 @@
                     <form class="d-flex">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="home">Home</a>
+                                <a class="nav-link {{ ($title === "HOME") ? 'active' : '' }}" aria-current="page" href="home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="login">Login</a>
+                                <a class="nav-link {{ ($title === "LOGIN") ? 'active' : '' }}" href="login">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="news">News</a>
+                                <a class="nav-link {{ ($title === "NEWS") ? 'active' : '' }}" href="news">News</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="about">About</a>
+                                <a class="nav-link {{ ($title === "ABOUT") ? 'active' : '' }}" href="about">About</a>
                             </li>
                         </ul>
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
