@@ -41,9 +41,6 @@ Route::get('/about', function () {
     return view('about', [
         "title" => "ABOUT"
     ]);
-<<<<<<< HEAD
-});
-=======
 });
 
 Route::get('/dashboard', function () {
@@ -51,4 +48,3 @@ Route::get('/dashboard', function () {
         "title" => "DASHBOARD"
     ]);
 });
->>>>>>> b1801a6e08cabbae46141b6a6cbba78f173724a9
