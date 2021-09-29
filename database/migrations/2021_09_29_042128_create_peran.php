@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateKemajuan extends Migration
+class CreatePeran extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateKemajuan extends Migration
      */
     public function up()
     {
-        Schema::create('kemajuan', function (Blueprint $table) {
-            $table->id();
+        Schema::create('peran', function (Blueprint $table) {
+            $table->id('idperan');
+            $table->string('peran',20);
+            $table->boolean('aktif');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateKemajuan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kemajuan');
+        Schema::dropIfExists('peran');
     }
 }
