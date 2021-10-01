@@ -27,6 +27,7 @@ class CreateSantri extends Migration
             $table->boolean('aktif');
             $table->timestamps();
         });
+        
     }
 
     /**
