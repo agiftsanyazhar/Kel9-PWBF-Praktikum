@@ -20,10 +20,10 @@ class CreateSantri extends Migration
             $table->date('tgl_lhr');
             $table->string('kota_lhr',40);
             $table->string('nama_ortu',50);
-            $table->string('alamatortu',100);
+            $table->string('alamat_ortu',100);
             $table->string('hp',15);
             $table->string('email',30);
-            $table->date('tgl_msk');
+            $table->date('tgl_masuk');
             $table->boolean('aktif');
             $table->timestamps();
         });

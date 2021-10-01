@@ -15,13 +15,13 @@ class CreatePengurus extends Migration
     {
         Schema::create('pengurus', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nama',20);
             $table->string('email',30);
             $table->string('hp',15);
             $table->boolean('gender');
             $table->string('password',32);
             $table->boolean('aktif');
+            $table->timestamps();
         });
     }
 

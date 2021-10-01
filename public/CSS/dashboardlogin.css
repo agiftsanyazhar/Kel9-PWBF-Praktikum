@@ -14,11 +14,19 @@
     padding: 2%;
     width: 60%;
     background: #f8f9fa;
-    font-weight: bold;
     color: #383d41;
     margin-top: 30%;
     margin-bottom: 3%;
+    transition: .3s;
     cursor: pointer;
+}
+.register-left input:hover{
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f8f9fa,
+                0 0 25px #f8f9fa,
+                0 0 5px #f8f9fa,
+                0 0 25px #f8f9fa;
 }
 .register-right{
     background: #f8f9fa;
@@ -59,14 +67,23 @@
     color: #fff;
     font-weight: 600;
     width: 50%;
+    transition: .3s;
     cursor: pointer;
+}
+.btnRegister:hover{
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #0062cc,
+                0 0 25px #0062cc,
+                0 0 5px #0062cc,
+                0 0 25px #0062cc;
 }
 .register .nav-tabs{
     margin-top: 3%;
     border: none;
     background: #0062cc;
     border-radius: 1.5rem;
-    width: 28%;
+    width: 25%;
     float: right;
 }
 .register .nav-tabs .nav-link{
