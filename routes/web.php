@@ -25,21 +25,9 @@ Route::get('/home', function () {
     ]);
 });
 
-Route::get('/dashboardlogin', function () {
-    return view('dashboardlogin', [
+Route::get('/register', function () {
+    return view('register', [
         "title" => "LOGIN"
-    ]);
-});
-
-Route::get('/news', function () {
-    return view('news', [
-        "title" => "NEWS"
-    ]);
-});
-
-Route::get('/about', function () {
-    return view('about', [
-        "title" => "ABOUT"
     ]);
 });
 
