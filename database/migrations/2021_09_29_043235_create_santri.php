@@ -15,8 +15,8 @@ class CreateSantri extends Migration
     {
         Schema::create('santri', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_santri');
-            $table->boolean('gender');
+            $table->string('nama_santri',50);
+            $table->char('gender',1);
             $table->date('tgl_lhr');
             $table->string('kota_lhr',40);
             $table->string('nama_ortu',50);

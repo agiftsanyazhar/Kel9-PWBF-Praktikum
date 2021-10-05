@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SantriController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,26 +14,88 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// View
+// Home
 Route::get('/', function () {
-    return view('home', [
-        "title" => "HOME"
-    ]);
-});
-
-Route::get('/home', function () {
-    return view('home', [
-        "title" => "HOME"
-    ]);
+    return view('index');
 });
 
 Route::get('/register', function () {
-    return view('register', [
-        "title" => "LOGIN"
+    return view('register');
+});
+
+// Dashboard
+Route::get('/', function () {
+    return view('index');
+});
+Route::get('/401', function () {
+    return view('dashboard.dashboard-layouts.401', [
+        "title" => "401"
+    ]);
+});
+Route::get('/404', function () {
+    return view('dashboard.dashboard-layouts.404', [
+        "title" => "404"
+    ]);
+});
+Route::get('/500', function () {
+    return view('dashboard.dashboard-layouts.500', [
+        "title" => "500"
+    ]);
+});
+Route::get('/charts', function () {
+    return view('dashboard.dashboard-layouts.charts', [
+        "title" => "Charts"
+    ]);
+});
+Route::get('/tables', function () {
+    return view('dashboard.dashboard-layouts.tables', [
+        "title" => "Tables"
     ]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard', [
-        "title" => "DASHBOARD"
+// Dashboard Pengurus
+Route::get('/dashboardpengurus', function () {
+    return view('dashboard.dashboard-pengurus', [
+        "title" => "Pengurus"
     ]);
 });
+
+// Dashboard Guru
+Route::get('/dashboardguru', function () {
+    return view('dashboard.dashboard-guru', [
+        "title" => "Guru"
+    ]);
+});
+
+// Dashboard Santri
+Route::get('/dashboardsantri', function () {
+    return view('dashboard.dashboard-santri', [
+        "title" => "Santri"
+    ]);
+});
+
+// Login
+// Login Pengurus
+Route::get('/loginpengurus', function () {
+    return view('login.login-pengurus', [
+        "title" => "Pengurus"
+    ]);
+});
+
+// Login Guru
+Route::get('/loginguru', function () {
+    return view('login.login-guru', [
+        "title" => "Guru"
+    ]);
+});
+
+// Login Santri
+Route::get('/loginsantri', function () {
+    return view('login.login-santri', [
+        "title" => "Santri"
+    ]);
+});
+
+// Controller
+Route::get('/testviewsantri', [SantriController::class, 'index']);

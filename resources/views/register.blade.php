@@ -19,7 +19,7 @@
                 <h3>Welcome</h3>
                 <p>Bersemangatlah atas hal-hal yang bermanfaat bagimu. Minta tolonglah pada Allah, jangan engkau lemah</p>
                 <p>- HR Muslim -</p>
-                <input type="submit" name="" value="Login"/><br/>
+                <a href="/"><input type="submit" name="" value="Login"/></a><br/>
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
@@ -36,7 +36,7 @@
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                    <input type="text" class="form-control" placeholder="Name *" value="" />
                                 </div>
                                 <div class="form-group">
                                     <input type="email" class="form-control" placeholder="Email *" value="" />
@@ -44,25 +44,17 @@
                                 <div class="form-group">
                                     <input type="password" class="form-control" placeholder="Password *" value="" />
                                 </div>
-                                <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="male" checked>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="female">
-                                            <span>Female</span> 
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                    <select name="" id="" class="form-control">
+                                        <option>Gender</option>
+                                        <option value="m">Male</option>
+                                        <option value="f">Female</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Phone *" value="" />
+                                    <input type="number" minlength="10" maxlength="13" name="txtEmpPhone" class="form-control" placeholder="Phone *" value="" />
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
@@ -76,36 +68,40 @@
                         <div class="row register-form">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="First Name *" value="" />
+                                    <input type="text" class="form-control" placeholder="Name of Santri *" value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                                    <input type="text" class="form-control" placeholder="Place of Birth *" value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                                    <input type="text" class="form-control" placeholder="Name of Ortu *" value="" />
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="maxl">
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="male" checked>
-                                            <span> Male </span> 
-                                        </label>
-                                        <label class="radio inline"> 
-                                            <input type="radio" name="gender" value="female">
-                                            <span>Female </span> 
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="form-group">
                                     <input type="email" class="form-control" placeholder="Email *" value="" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Phone *" value="" />
+                                    <input type="password" class="form-control" placeholder="Password *" value="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select name="" id="" class="form-control">
+                                        <option>Gender of Santri</option>
+                                        <option value="m">Male</option>
+                                        <option value="f">Female</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Date of Birth *" value="" onfocus="(this.type='date')" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Address of Ortu *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" minlength="10" maxlength="13" name="txtEmpPhone" class="form-control" placeholder="Phone *" value="" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
                                 </div>
                                 <input type="submit" class="btnRegister"  value="Register"/>
                             </div>
