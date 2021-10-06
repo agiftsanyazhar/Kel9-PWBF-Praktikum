@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Buku extends Model
 {
-    use HasFactory;
+    protected $table = 'buku';
+
+    public function bab()
+    {
+        return $this->hasMany(Bab::class, 'id_buku', 'id');
+    }
 }

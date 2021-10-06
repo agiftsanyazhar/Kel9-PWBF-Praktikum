@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bab extends Model
 {
-    use HasFactory;
+    protected $table = 'bab';
+
+    public function buku()
+    {
+        return $this->belongsTo(Buku::class, 'id_buku', 'id');
+    }
+
+    public function detailKemajuan()
+    {
+        return $this->belongsTo(Detail_Kemajuan::class, 'id_bab', 'id');
+    }
 }

@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Santri extends Model
 {
     protected $table = 'santri';
+
+    public function kemajuan()
+    {
+        return $this->hasMany(Kemajuan::class,'id_santri','id');
+    }
+
 }
