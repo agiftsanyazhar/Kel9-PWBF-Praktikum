@@ -25,8 +25,14 @@ Route::get('/register', function () {
 });
 
 // Dashboard
-Route::get('/', function () {
-    return view('index');
+Route::get('/dashboard-index', function () {
+    return view('layouts.dashboard');
+});
+Route::get('/layout-static', function () {
+    return view('dashboard.dashboard-layouts.layout-static');
+});
+Route::get('/layout-sidenav-light', function () {
+    return view('dashboard.dashboard-layouts.layout-sidenav-light');
 });
 Route::get('/401', function () {
     return view('dashboard.dashboard-layouts.401', [

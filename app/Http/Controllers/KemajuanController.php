@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Santri;
+use App\Models\Kemajuan;
 use Illuminate\Http\Request;
 
-class SantriController extends Controller
+class KemajuanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,7 @@ class SantriController extends Controller
      */
     public function index()
     {
-        $santri = Santri::all();
-        return view('testviewsantri', [
-            'santrii' => $santri
-        ]);
+        //
     }
 
     /**
@@ -44,10 +41,10 @@ class SantriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kemajuan  $kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Kemajuan $kemajuan)
     {
         //
     }
@@ -55,10 +52,10 @@ class SantriController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kemajuan  $kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Kemajuan $kemajuan)
     {
         //
     }
@@ -67,10 +64,10 @@ class SantriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Kemajuan  $kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Kemajuan $kemajuan)
     {
         //
     }
@@ -78,10 +75,10 @@ class SantriController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Kemajuan  $kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Kemajuan $kemajuan)
     {
         //
     }
