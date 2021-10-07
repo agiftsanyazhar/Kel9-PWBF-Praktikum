@@ -19,14 +19,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/login', function () {
+    return view('login');
+});
 
 // Dashboard
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard-index');
+});
 Route::get('/dashboard-index', function () {
-    return view('layouts.dashboard');
+    return view('dashboard.dashboard-index');
 });
 Route::get('/layout-static', function () {
     return view('dashboard.dashboard-layouts.layout-static');
@@ -57,49 +62,6 @@ Route::get('/charts', function () {
 Route::get('/tables', function () {
     return view('dashboard.dashboard-layouts.tables', [
         "title" => "Tables"
-    ]);
-});
-
-// Dashboard Pengurus
-Route::get('/dashboard-pengurus', function () {
-    return view('dashboard.dashboard-pengurus', [
-        "title" => "Pengurus"
-    ]);
-});
-
-// Dashboard Guru
-Route::get('/dashboard-guru', function () {
-    return view('dashboard.dashboard-guru', [
-        "title" => "Guru"
-    ]);
-});
-
-// Dashboard Santri
-Route::get('/dashboard-santri', function () {
-    return view('dashboard.dashboard-santri', [
-        "title" => "Santri"
-    ]);
-});
-
-// Login
-// Login Pengurus
-Route::get('/login-pengurus', function () {
-    return view('login.login-pengurus', [
-        "title" => "Pengurus"
-    ]);
-});
-
-// Login Guru
-Route::get('/login-guru', function () {
-    return view('login.login-guru', [
-        "title" => "Guru"
-    ]);
-});
-
-// Login Santri
-Route::get('/login-santri', function () {
-    return view('login.login-santri', [
-        "title" => "Santri"
     ]);
 });
 

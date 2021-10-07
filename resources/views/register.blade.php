@@ -19,7 +19,7 @@
                 <h3>Welcome</h3>
                 <p>Bersemangatlah atas hal-hal yang bermanfaat bagimu. Minta tolonglah pada Allah, jangan engkau lemah</p>
                 <p>- HR Muslim -</p>
-                <a href="/"><input type="submit" name="" value="Login"/></a><br/>
+                <a href="login"><input type="submit" name="" value="Login"/></a><br/>
             </div>
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
