@@ -16,6 +16,6 @@ class Bab extends Model
 
     public function detailKemajuan()
     {
-        return $this->belongsTo(Detail_Kemajuan::class, 'id_bab', 'id');
+        return $this->hasMany(Detail_Kemajuan::class, 'id_bab', 'id');
     }
 }

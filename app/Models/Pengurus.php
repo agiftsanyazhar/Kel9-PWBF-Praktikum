@@ -14,4 +14,8 @@ class pengurus extends Model
         return $this->hasMany(Kemajuan::class, 'id_pengurus', 'id');
     }
 
+    public function detailPeran()
+    {
+        return $this->hasMany(Detail_Peran::class, 'id_pengurus', 'id');
+    }
 }
