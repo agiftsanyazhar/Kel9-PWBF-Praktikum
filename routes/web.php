@@ -61,21 +61,21 @@ Route::get('/tables', function () {
 });
 
 // Dashboard Pengurus
-Route::get('/dashboardpengurus', function () {
+Route::get('/dashboard-pengurus', function () {
     return view('dashboard.dashboard-pengurus', [
         "title" => "Pengurus"
     ]);
 });
 
 // Dashboard Guru
-Route::get('/dashboardguru', function () {
+Route::get('/dashboard-guru', function () {
     return view('dashboard.dashboard-guru', [
         "title" => "Guru"
     ]);
 });
 
 // Dashboard Santri
-Route::get('/dashboardsantri', function () {
+Route::get('/dashboard-santri', function () {
     return view('dashboard.dashboard-santri', [
         "title" => "Santri"
     ]);
@@ -83,21 +83,21 @@ Route::get('/dashboardsantri', function () {
 
 // Login
 // Login Pengurus
-Route::get('/loginpengurus', function () {
+Route::get('/login-pengurus', function () {
     return view('login.login-pengurus', [
         "title" => "Pengurus"
     ]);
 });
 
 // Login Guru
-Route::get('/loginguru', function () {
+Route::get('/login-guru', function () {
     return view('login.login-guru', [
         "title" => "Guru"
     ]);
 });
 
 // Login Santri
-Route::get('/loginsantri', function () {
+Route::get('/login-santri', function () {
     return view('login.login-santri', [
         "title" => "Santri"
     ]);

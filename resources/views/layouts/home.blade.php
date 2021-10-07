@@ -57,9 +57,9 @@
           <li class="dropdown"><a href="#"><span>Login</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="register">Register</a></li>
-              <li><a href="loginpengurus">Login Pengurus</a></li>
-              <li><a href="loginguru">Login Guru</a></li>
-              <li><a href="loginsantri">Login Santri</a></li>
+              <li><a href="login-pengurus">Login Pengurus</a></li>
+              <li><a href="login-guru">Login Guru</a></li>
+              <li><a href="login-santri">Login Santri</a></li>
             </ul>
           </li>
           <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
