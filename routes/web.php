@@ -28,10 +28,7 @@ Route::get('/login', function () {
 
 // Dashboard
 Route::get('/dashboard', function () {
-    return view('dashboard.dashboard-index');
-});
-Route::get('/dashboard-index', function () {
-    return view('dashboard.dashboard-index');
+    return view('dashboard.index');
 });
 Route::get('/layout-static', function () {
     return view('dashboard.dashboard-layouts.layout-static');
