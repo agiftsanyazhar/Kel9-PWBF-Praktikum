@@ -48,7 +48,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <select name="" id="" class="form-control">
-                                        <option value="" disabled selected hidden>Gender</option>
+                                        <option value="" disabled selected hidden>Gender *</option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
@@ -86,7 +86,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <select name="" id="" class="form-control">
-                                        <option value="" disabled selected hidden>Gender of Santri</option>
+                                        <option value="" disabled selected hidden>Gender of Santri *</option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>

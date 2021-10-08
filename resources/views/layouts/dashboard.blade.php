@@ -119,5 +119,6 @@
         <script src="js/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
+        <script src="js/chart-pie-demo.js"></script>
     </body>
 </html>
