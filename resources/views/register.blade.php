@@ -17,7 +17,7 @@
             <div class="col-md-3 register-left">
                 <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="Roket"/>
                 <h3>Welcome</h3>
-                <p>Bersemangatlah atas hal-hal yang bermanfaat bagimu. Minta tolonglah pada Allah, jangan engkau lemah</p>
+                <p>"Bersemangatlah atas hal-hal yang bermanfaat bagimu. Minta tolonglah pada Allah. Jangan engkau lemah."</p>
                 <p>- HR Muslim -</p>
                 <a href="login"><input type="submit" name="" value="Login"/></a><br/>
             </div>
@@ -48,7 +48,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <select name="" id="" class="form-control">
-                                        <option>Gender</option>
+                                        <option value="" disabled selected hidden>Gender</option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
@@ -86,7 +86,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <select name="" id="" class="form-control">
-                                        <option>Gender of Santri</option>
+                                        <option value="" disabled selected hidden>Gender of Santri</option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
