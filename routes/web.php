@@ -31,35 +31,25 @@ Route::get('/dashboard', function () {
     return view('dashboard.index');
 });
 Route::get('/layout-static', function () {
-    return view('dashboard.dashboard-layouts.layout-static');
+    return view('dashboard.layout-static');
 });
 Route::get('/layout-sidenav-light', function () {
-    return view('dashboard.dashboard-layouts.layout-sidenav-light');
+    return view('dashboard.layout-sidenav-light');
 });
 Route::get('/401', function () {
-    return view('dashboard.dashboard-layouts.401', [
-        "title" => "401"
-    ]);
+    return view('dashboard.401');
 });
 Route::get('/404', function () {
-    return view('dashboard.dashboard-layouts.404', [
-        "title" => "404"
-    ]);
+    return view('dashboard.404');
 });
 Route::get('/500', function () {
-    return view('dashboard.dashboard-layouts.500', [
-        "title" => "500"
-    ]);
+    return view('dashboard.500');
 });
 Route::get('/charts', function () {
-    return view('dashboard.dashboard-layouts.charts', [
-        "title" => "Charts"
-    ]);
+    return view('dashboard.charts');
 });
 Route::get('/tables', function () {
-    return view('dashboard.dashboard-layouts.tables', [
-        "title" => "Tables"
-    ]);
+    return view('dashboard.tables');
 });
 
 // Controller

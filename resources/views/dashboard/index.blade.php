@@ -1,4 +1,5 @@
 @extends('layouts.dashboard')
+
 @section('container')
     <main>
         <div class="container-fluid px-4">
