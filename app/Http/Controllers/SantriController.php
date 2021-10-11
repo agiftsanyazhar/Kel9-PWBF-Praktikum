@@ -16,7 +16,7 @@ class SantriController extends Controller
     {
         $santri = DB::table('santri')->get();
 
-        return view('testviewsantri', ['santri' => $santri]);
+        return view('dashboard.tables', ['santri' => $santri]);
     }
 
     /**

@@ -48,9 +48,4 @@ Route::get('/500', function () {
 Route::get('/charts', function () {
     return view('dashboard.charts');
 });
-Route::get('/tables', function () {
-    return view('dashboard.tables');
-});
-
-// Controller
-Route::get('/testviewsantri', [SantriController::class, 'index']);
+Route::get('/tables', [SantriController::class, 'index']);
