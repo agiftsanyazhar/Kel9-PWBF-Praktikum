@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Santri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SantriController extends Controller
 {
@@ -14,10 +14,9 @@ class SantriController extends Controller
      */
     public function index()
     {
-        $santri = Santri::all();
-        return view('testviewsantri', [
-            'santrii' => $santri
-        ]);
+        $santri = DB::table('santri')->get();
+
+        return view('testviewsantri', ['santri' => $santri]);
     }
 
     /**
