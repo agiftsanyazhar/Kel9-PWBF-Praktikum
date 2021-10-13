@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBukus extends Migration
+class CreatePeran extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateBukus extends Migration
      */
     public function up()
     {
-        Schema::create('bukus', function (Blueprint $table) {
+        Schema::create('peran', function (Blueprint $table) {
             $table->id();
-            $table->string('buku',50);
-            $table->text('keterangan');
+            $table->string('peran',50);
+            $table->boolean('aktif');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateBukus extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bukus');
+        Schema::dropIfExists('perans');
     }
 }

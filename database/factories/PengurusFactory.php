@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\santri;
+use App\Models\Pengurus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class SantriFactory extends Factory
+class PengurusFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Santri::class;
+    protected $model = Pengurus::class;
 
     /**
      * Define the model's default state.
@@ -22,16 +22,11 @@ class SantriFactory extends Factory
     public function definition()
     {
         return [
-            'nama_santri' => $this->faker->name(),
-            'gender' => $this->faker->randomElement(['M','F']),
-            'tgl_lhr' => $this->faker->date(),
-            'kota_lhr' => $this->faker->city(),
-            'nama_ortu'=> $this->faker->name(),
-            'alamat_ortu' => $this->faker->city(),
-            'hp' => '+628'.mt_rand(1111111111,9999999999),
+            'nama_pengurus' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
+            'hp' => '+628'.mt_rand(1111111111,9999999999),
+            'gender' => $this->faker->randomElement(['M','F']),
             'password' => $this->faker->password(8, 10),
-            'tgl_masuk' => $this->faker->date(),
             'aktif' => $this->faker->boolean()
         ];
     }

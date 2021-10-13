@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePerans extends Migration
+class CreatePengurus extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreatePerans extends Migration
      */
     public function up()
     {
-        Schema::create('perans', function (Blueprint $table) {
+        Schema::create('pengurus', function (Blueprint $table) {
             $table->id();
-            $table->string('peran',20);
+            $table->string('nama_pengurus',50);
+            $table->string('email',50);
+            $table->string('hp',15);
+            $table->char('gender',1);
+            $table->string('password',32);
             $table->boolean('aktif');
             $table->timestamps();
         });
@@ -28,6 +32,6 @@ class CreatePerans extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perans');
+        Schema::dropIfExists('penguruss');
     }
 }
