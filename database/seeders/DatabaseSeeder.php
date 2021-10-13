@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\santri;
+use App\Models\Santri;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,6 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //\App\Models\User::factory(10)->create();
-        santri::factory(30)->create();
+        Santri::factory(100)->create();
     }
 }
