@@ -33,8 +33,5 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::get('/dashboard', [Dashboard_HomeController::class, 'index']);
 Route::get('/layout-static-navigation', [Layout_Static_NavigationController::class, 'index']);
 Route::get('/layout-sidenav-light', [Layout_Sidenav_LightController::class, 'index']);
-Route::get('/401', [UnauthorizedController::class, 'index']);
-Route::get('/404', [Not_FoundController::class, 'index']);
-Route::get('/500', [Internal_Server_ErrorController::class, 'index']);
 Route::get('/charts', [ChartsController::class, 'index']);
 Route::get('/tables', [SantriController::class, 'index']);
