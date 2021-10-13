@@ -9,13 +9,7 @@ class santri extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nama_santri',
-        'gender',
-        'tgl_lhr',
-        'kota_lhr',
-        'nama_ortu'
-    ];
+    protected $guarded=['id'];
 
     public function kemajuan()
     {

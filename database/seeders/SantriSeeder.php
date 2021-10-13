@@ -13,8 +13,8 @@ class SantriSeeder extends Seeder
      */
     public function run()
     {
-        $santri = DB::table('santri')->get();
+        $santri = DB::table('santris')->get();
 
-        return view('dashboard.tables', ['santri' => $santri]);
+        return view('dashboard.tables', ['santris' => $santri]);
     }
 }
