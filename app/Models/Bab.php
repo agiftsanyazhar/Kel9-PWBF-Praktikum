@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bab extends Model
 {
+    use HasFactory;
+
     protected $table = 'bab';
 
     public function buku()

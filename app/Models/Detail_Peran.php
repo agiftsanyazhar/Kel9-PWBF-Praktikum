@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail_Peran extends Model
 {
+    use HasFactory;
+    
     protected $table = 'detail_peran';
 
     public function peran()

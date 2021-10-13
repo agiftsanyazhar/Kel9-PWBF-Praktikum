@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailKemajuan extends Migration
+class CreatePenguruss extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,15 @@ class CreateDetailKemajuan extends Migration
      */
     public function up()
     {
-        Schema::create('detail_kemajuan', function (Blueprint $table) {
+        Schema::create('penguruss', function (Blueprint $table) {
             $table->id();
-            $table->text('keterangan');
+            $table->string('nama',20);
+            $table->string('email',30);
+            $table->string('hp',15);
+            $table->char('gender',1);
+            $table->string('password',32);
+            $table->boolean('aktif');
             $table->timestamps();
-        });
-
-        Schema::table('detail_kemajuan', function (Blueprint $table) {
-            $table->foreignId('id_kemajuan')->constrained('kemajuan');
-            $table->foreignId('id_bab')->constrained('bab');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateDetailKemajuan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_kemajuan');
+        Schema::dropIfExists('penguruss');
     }
 }

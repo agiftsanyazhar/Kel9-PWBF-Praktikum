@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class pengurus extends Model
 {
+    use HasFactory;
+    
     protected $table = 'pengurus';
 
     public function Kemajuan()

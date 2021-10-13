@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kemajuan extends Model
 {
+    use HasFactory;
+    
     protected $table = 'kemajuan';
 
     public function santri()

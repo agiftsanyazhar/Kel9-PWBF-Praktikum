@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detail_Kemajuan extends Model
 {
+    use HasFactory;
+    
     protected $table = 'detail_kemajuan';
 
     public function bab()

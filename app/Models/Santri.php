@@ -5,9 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Santri extends Model
+class santri extends Model
 {
-    protected $table = 'santri';
+    use HasFactory;
+
+    protected $fillable = [
+        'nama_santri',
+        'gender',
+        'tgl_lhr',
+        'kota_lhr',
+        'nama_ortu'
+    ];
 
     public function kemajuan()
     {
@@ -15,3 +23,4 @@ class Santri extends Model
     }
 
 }
+
