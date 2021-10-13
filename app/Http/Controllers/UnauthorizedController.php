@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class SantriController extends Controller
+class UnauthorizedController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +13,7 @@ class SantriController extends Controller
      */
     public function index()
     {
-        $santri = DB::table('santri')->get();
-
-        return view('dashboard.tables', ['santri' => $santri]);
+        return view('dashboard.401');
     }
 
     /**

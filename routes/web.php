@@ -1,6 +1,16 @@
 <?php
 
+use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\Dashboard_HomeController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Internal_Server_ErrorController;
+use App\Http\Controllers\Layout_Sidenav_LightController;
+use App\Http\Controllers\Layout_Static_NavigationController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Not_FoundController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SantriController;
+use App\Http\Controllers\UnauthorizedController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,43 +24,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// View
 // Home
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 
 // Dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
-Route::get('/layout-static', function () {
-    return view('dashboard.layout-static');
-});
-Route::get('/layout-sidenav-light', function () {
-    return view('dashboard.layout-sidenav-light');
-});
-Route::get('/401', function () {
-    return view('dashboard.401');
-});
-Route::get('/404', function () {
-    return view('dashboard.404');
-});
-Route::get('/500', function () {
-    return view('dashboard.500');
-});
-Route::get('/charts', function () {
-    return view('dashboard.charts');
-});
-Route::get('/tables', function () {
-    return view('dashboard.tables');
-});
-
-// Controller
-Route::get('/testviewsantri', [SantriController::class, 'index']);
+Route::get('/dashboard', [Dashboard_HomeController::class, 'index']);
+Route::get('/layout-static-navigation', [Layout_Static_NavigationController::class, 'index']);
+Route::get('/layout-sidenav-light', [Layout_Sidenav_LightController::class, 'index']);
+Route::get('/401', [UnauthorizedController::class, 'index']);
+Route::get('/404', [Not_FoundController::class, 'index']);
+Route::get('/500', [Internal_Server_ErrorController::class, 'index']);
+Route::get('/charts', [ChartsController::class, 'index']);
+Route::get('/tables', [SantriController::class, 'index']);
