@@ -8,13 +8,9 @@ use App\Models\Detail_Kemajuan;
 use App\Models\Detail_Peran;
 use App\Models\Kemajuan;
 use Illuminate\Database\Seeder;
-<<<<<<< HEAD
 use App\Models\santri;
 use App\Models\pengurus;
 use App\Models\Peran;
-=======
-use App\Models\Santri;
->>>>>>> 28b31bff2493b30af59b8bffbcb18338282aba2c
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,7 +22,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //\App\Models\User::factory(10)->create();
-<<<<<<< HEAD
         santri::factory(50)->create();
         pengurus::factory(20)->create();
         Buku::factory(10)->create();
@@ -35,8 +30,5 @@ class DatabaseSeeder extends Seeder
         Kemajuan::factory(50)->create();
         Detail_Peran::factory(30)->create();
         Detail_Kemajuan::factory(50)->create();
-=======
-        Santri::factory(100)->create();
->>>>>>> 28b31bff2493b30af59b8bffbcb18338282aba2c
     }
 }
