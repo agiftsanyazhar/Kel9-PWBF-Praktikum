@@ -9,6 +9,8 @@ class Santri extends Model
 {
     use HasFactory;
 
+    protected $table = 'santri';
+
     public function kemajuan()
     {
         return $this->hasMany(Kemajuan::class,'id_santri','id');

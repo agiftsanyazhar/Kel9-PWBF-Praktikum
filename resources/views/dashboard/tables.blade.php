@@ -52,7 +52,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($santris as $data_santri)
+                                        @foreach ($santri as $data_santri)
                                             <tr>
                                                 <td>{{ $data_santri -> id }}</td>
                                                 <td>{{ $data_santri -> nama_santri }}</td>

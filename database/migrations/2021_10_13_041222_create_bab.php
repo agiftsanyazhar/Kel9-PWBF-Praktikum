@@ -33,6 +33,6 @@ class CreateBab extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('babs');
+        Schema::dropIfExists('bab');
     }
 }

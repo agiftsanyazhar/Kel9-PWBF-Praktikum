@@ -32,6 +32,6 @@ class CreatePengurus extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('penguruss');
+        Schema::dropIfExists('pengurus');
     }
 }

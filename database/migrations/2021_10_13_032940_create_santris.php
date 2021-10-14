@@ -13,7 +13,7 @@ class CreateSantris extends Migration
      */
     public function up()
     {
-        Schema::create('santris', function (Blueprint $table) {
+        Schema::create('santri', function (Blueprint $table) {
             $table->id();
             $table->string('nama_santri',50);
             $table->char('gender',1);
@@ -37,6 +37,6 @@ class CreateSantris extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('santris');
+        Schema::dropIfExists('santri');
     }
 }
