@@ -11,12 +11,12 @@
                         <div class="card-body">
                             <form>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                    <label for="inputEmail">Email address</label>
+                                    <input class="form-control" id="inputEmail" type="email" placeholder="Email *" required/>
+                                    <label for="inputEmail">Email *</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
-                                    <label for="inputPassword">Password</label>
+                                    <input class="form-control" id="inputPassword" type="password" placeholder="Password *" required/>
+                                    <label for="inputPassword">Password *</label>
                                 </div>
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <a class="small" href="password.html">Forgot Password?</a>
-                                    <a class="btn btn-primary" href="dashboard">Login</a>
+                                    <a class="btn btn-primary" href="dashboard"><button class="submit" type="submit">Login</button></a>
                                 </div>
                             </form>
                         </div>

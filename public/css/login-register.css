@@ -2962,15 +2962,21 @@ textarea.form-control-lg {
   opacity: 0.65;
 }
 
+.submit{
+  background:none;
+  border:none;
+}
+
 .btn-primary {
+  background: #47b2e4;
+  border: 0;
+  padding: 12px 34px;
   color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  transition: 0.4s;
+  border-radius: 50px;
 }
 .btn-primary:hover {
-  color: #fff;
-  background-color: #0b5ed7;
-  border-color: #0a58ca;
+  background: #209dd8;
 }
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
