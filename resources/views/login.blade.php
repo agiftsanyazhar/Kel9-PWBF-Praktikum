@@ -11,7 +11,6 @@
                         <div class="card-body">
                             
                             {{-- jangan d hapus komen ini boiii --}}
-                            {{-- <form action="forms/login.php" method="post" role="form"> --}}
                             <form action="forms/login.php" method="post" role="form">
                                 <div class="row mb-2">
                                     <div class="col-md-12">
