@@ -48,19 +48,18 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
+          <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+          <li><a class="nav-link scrollto" href="#services">Layanan</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li class="dropdown"><a href="#"><span>Join Us</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="nav-link scrollto" href="#team">Tim</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          <li class="dropdown"><a href="#"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="login">Login</a></li>
-              <li><a href="register">Register</a></li>
+              <li><a href="register">Daftar</a></li>
             </ul>
           </li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -77,7 +76,7 @@
           <h1>Better Solutions For Your Future</h1>
           <h2>Menyiapkan generasi Muslim yang Beriman, Berakhlakul Karimah, dan Mecintai Al-Quran</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <a href="#about" class="btn-get-started scrollto">Mulai</a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
@@ -95,30 +94,22 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>About Us</h2>
+          <h2>Tentang Kami</h2>
         </div>
 
         <div class="row content">
-          <div class="col-lg-6">
+          <div class="col-lg-12">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              Taman Pendidikan Al-Quran Al-Hikmah didirikan pada 8 September 2021 di Universitas Airlangga Kampus C, Mulyorejo, Surabaya dalam rangka membantu menunaikan tugas utama orang tua yaitu menjaga kefitrahan anak dengan pendidikan Al-Quran dan As-Sunnah. TPQ Al-Hikmah menyelenggarakan pendidikan dan pengajaran Al-Quran secara menyeluruh dan intensif untuk menciptakan genarasi yang Qurani dengan jalan:
             </p>
             <ul>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+              <li><i class="ri-check-double-line"></i> Menguatkan keimanan dan ketakwaan kepada Allah SWT dengan pemahaman akidah yang benar</li>
+              <li><i class="ri-check-double-line"></i> Memberikan pengetahuan teori dan praktik yang benar tentang tata cara beribadah kepada Allah SWT dengan landasan ilmu yang bermuara pada Al-Quran dan As-Sunnah</li>
+              <li><i class="ri-check-double-line"></i> Menanamkan dan membiasakan perilaku/akhlak yang sesuai dengan tuntunan ajaran Islam</li>
+              <li><i class="ri-check-double-line"></i> Mendidik dan melatih untuk dapat membaca Al-Quran dengan baik sesuai dengan kaidah ilmu tajwid</li>
+              <li><i class="ri-check-double-line"></i> Mengajarkan hafalan, terjemah dan tafsir, surat-surat pendek dan ayat-ayat tertentu, serta doa-doa</li>
             </ul>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0">
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a href="#" class="btn-learn-more">Learn More</a>
-          </div>
-        </div>
 
       </div>
     </section><!-- End About Us Section -->
