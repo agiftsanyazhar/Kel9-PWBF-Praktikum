@@ -10,25 +10,24 @@
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
                         <div class="card-body">
                             <form>
-                                <div class="row mb-3">
+                                <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <div class="form-floating mb-3 mb-md-0">
-                                            <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" />
-                                            <label for="inputFirstName">First name</label>
-                                        </div>
+                                        <input class="form-control" id="inputName" type="text" placeholder="Name of Santri" />
                                     </div>
                                     <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" />
-                                            <label for="inputLastName">Last name</label>
-                                        </div>
+                                        <select class="form-control">
+                                            <option value="" disabled selected hidden>Gender</option>
+                                            <option value="m">Male</option>
+                                            <option value="f">Female</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                    <label for="inputEmail">Email address</label>
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
+                                        <input class="form-control" id="inputEmail" type="text" placeholder="Place of Birth" />
+                                    </div>
                                 </div>
-                                <div class="row mb-3">
+                                <div class="row mb-2">
                                     <div class="col-md-6">
                                         <div class="form-floating mb-3 mb-md-0">
                                             <input class="form-control" id="inputPassword" type="password" placeholder="Create a password" />

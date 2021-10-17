@@ -9,14 +9,19 @@
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                         <div class="card-body">
-                            <form>
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputEmail" type="email" placeholder="Email *" required/>
-                                    <label for="inputEmail">Email *</label>
+                            
+                            {{-- jangan d hapus komen ini boiii --}}
+                            {{-- <form action="forms/login.php" method="post" role="form"> --}}
+                            <form action="forms/login.php" method="post" role="form">
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="inputEmail" type="email" placeholder="Email" required/>
+                                    </div>
                                 </div>
-                                <div class="form-floating mb-3">
-                                    <input class="form-control" id="inputPassword" type="password" placeholder="Password *" required/>
-                                    <label for="inputPassword">Password *</label>
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="inputPassword" type="password" minlength="8" placeholder="Password" required/>
+                                    </div>
                                 </div>
                                 <div class="form-check mb-3">
                                     <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
