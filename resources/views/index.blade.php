@@ -347,7 +347,7 @@
             <div class="box">
               <h3>Gratis</h3>
               <h4><sup>Rp</sup>0<span>per bulan</span></h4>
-              <a href="register" class="buy-btn">Donasi</a>
+              <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
 
@@ -355,7 +355,7 @@
             <div class="box featured">
               <h3>Reguler</h3>
               <h4><sup>Rp</sup>500.000<span>per bulan</span></h4>
-              <a href="register" class="buy-btn">Donasi</a>
+              <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
 
@@ -363,7 +363,7 @@
             <div class="box">
               <h3>Seikhlasnya</h3>
               <h4><sup>Rp</sup>Bebas<span>per bulan</span></h4>
-              <a href="register" class="buy-btn">Donasi</a>
+              <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
 
@@ -544,7 +544,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang Kami</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="useful-links/terms-of-service">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="useful-links/privacy-policy">Privacy Policy</a></li>
             </ul>
