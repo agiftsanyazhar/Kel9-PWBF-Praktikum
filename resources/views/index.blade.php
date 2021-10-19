@@ -53,7 +53,7 @@
           <li><a class="nav-link scrollto" href="#services">Fasilitas</a></li>
           <li><a class="nav-link scrollto" href="#team">Tim</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
-          <li class="dropdown"><a href="#"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#" style="pointer-events: none"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="login">Login</a></li>
               <li><a href="register">Daftar</a></li>
@@ -72,6 +72,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <br>
           <h1>Solusi yang Tepat untuk Masa Depan Anda</h1>
           <h2>Menyiapkan Generasi Muslim yang Beriman, Berakhlakul Karimah, dan Mecintai Al-Quran</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
@@ -183,6 +184,7 @@
             <img src="img/skill-ngaji.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <br><br><br><br><br><br><br>
             <h3>Mengapa Harus di TPQ AL-HIKMAH?</h3>
 
             <div class="skills-content">
@@ -235,7 +237,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4><a href="">Tempat Bermain</a></h4>
+              <h4><a href="" style="pointer-events: none">Tempat Bermain</a></h4>
               <p>Tempat bermain yang aman dan nyaman disertai dengan taman untuk melepaskan penat</p>
             </div>
           </div>
@@ -243,7 +245,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4><a href="">Perpustakaan</a></h4>
+              <h4><a href="" style="pointer-events: none">Perpustakaan</a></h4>
               <p>Tersedia lebih dari 5.000 buku untuk menambah wawasan tentang Islam</p>
             </div>
           </div>
@@ -251,7 +253,7 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Internet</a></h4>
+              <h4><a href="" style="pointer-events: none">Internet</a></h4>
               <p>Akses internet cepat untuk menunjang pembelajaran</p>
             </div>
           </div>
@@ -259,8 +261,8 @@
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-layer"></i></div>
-              <h4><a href="">Layanan Lainnya</a></h4>
-              <p>Dapatkan layanan lainnya yang terdapat pada </p>
+              <h4><a href="" style="pointer-events: none">Fasilitas Lainnya</a></h4>
+              <p>Dapatkan fasilitas menarik lainnya yang tersedia di <strong>TPQ AL-HIKMAH</strong></p>
             </div>
           </div>
 
@@ -274,14 +276,12 @@
       <div class="container" data-aos="zoom-in">
 
         <div class="row">
-          <div class="col-lg-9 text-center text-lg-start">
+          <div class="col-lg-12 text-center text-lg-start">
             <h3 align="center">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</h3>
-            <h3 align="center">"Sebaik-baik kalian adalah orang yang belajar Al-Quran dan mengajarkannya."</h3>
             <br>
+            <h3 align="center">"Sebaik-baik kalian adalah orang yang belajar Al-Quran dan mengajarkannya."</h3>
+            <br><br>
             <h3  align="center"><strong>- HR. Bukhori -</strong></h3>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="#contact">Hubungi Kami</a>
           </div>
         </div>
 
@@ -307,10 +307,10 @@
                 <p>D3-Sistem Informasi | 152011513009</p>
                 <p>Cah Bojonegoro :v</p>
                 <div class="social">
-                  <a href="" target="_blank"><i class="ri-twitter-fill"></i></a>
-                  <a href="" target="_blank"><i class="ri-facebook-fill"></i></a>
+                  <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
+                  <a href="https://www.facebook.com" target="_blank"><i class="ri-facebook-fill"></i></a>
                   <a href="https://www.instagram.com/_faisalmputra_" target="_blank"><i class="ri-instagram-fill"></i></a>
-                  <a href="" target="_blank"><i class="ri-linkedin-box-fill"></i> </a>
+                  <a href="https://www.linkedin.com" target="_blank"><i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -325,7 +325,7 @@
                 <p>D3-Sistem Informasi | 152011513020</p>
                 <p>Cah Krian :v</p>
                 <div class="social">
-                  <a href="" target="_blank"><i class="ri-twitter-fill"></i></a>
+                  <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
                   <a href="https://www.facebook.com/agiftsany" target="_blank"><i class="ri-facebook-fill"></i></a>
                   <a href="https://www.instagram.com/agiftsanyazhar" target="_blank"><i class="ri-instagram-fill"></i></a>
                   <a href="https://www.linkedin.com/in/agiftsany-azhar-25418821a" target="_blank"><i class="ri-linkedin-box-fill"></i> </a>
@@ -344,8 +344,8 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Harga</h2>
-          <p>Dengan mendaftar untuk berlangganan <strong>TPQ AL-HIKMAH</strong>, Anda tidak hanya mendapatkan manfaat besar, tetapi Anda juga membantu mendukung pengembangan <strong>TPQ AL-HIKMAH</strong>  di masa depan. Langganan membantu kami membayar server kami dan biaya operasi lainnya. Anda bebas membatalkan kapan saja jika perlu.</p>
+          <h2>Donasi</h2>
+          <p>Dengan berdonasi di <strong>TPQ AL-HIKMAH</strong> Anda membantu mendukung pengembangan <strong>TPQ AL-HIKMAH</strong>  di masa depan. Langganan membantu kami membayar server kami dan biaya operasional lainnya. Anda bebas membatalkan kapan saja jika perlu.</p>
         </div>
 
         <div class="row">
@@ -354,44 +354,23 @@
             <div class="box">
               <h3>Gratis</h3>
               <h4><sup>Rp</sup>0<span>per bulan</span></h4>
-              <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Get Started</a>
+              <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box featured">
               <h3>Reguler</h3>
-              <h4><sup>Rp</sup>29<span>per bulan</span></h4>
-              <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <a href="#" class="buy-btn">Get Started</a>
+              <h4><sup>Rp</sup>200.000<span>per bulan</span></h4>
+              <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
 
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="box">
-              <h3>Bisnis</h3>
-              <h4><sup>Rp</sup>49<span>per bulan</span></h4>
-              <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <a href="#" class="buy-btn">Get Started</a>
+              <h3>Seikhlasnya</h3>
+              <h4><sup>Rp</sup>Bebas<span>per bulan</span></h4>
+              <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
 
@@ -467,7 +446,6 @@
 
         <div class="section-title">
           <h2>Hubungi Kami</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
         <div class="row">
@@ -581,7 +559,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Program</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
@@ -592,8 +570,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <h4>Media Sosial</h4>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
