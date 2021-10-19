@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Santri;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class SantriController extends Controller
+class Forgot_PasswordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,9 @@ class SantriController extends Controller
      */
     public function index()
     {
-        $santri = DB::table('santri')->get();
-
-        return view('dashboard.santri-table', ['santri' => $santri]);
+        return view('forgot-password', [
+            "title" => "Forgot Password"
+        ]);
     }
 
     /**
@@ -44,10 +42,10 @@ class SantriController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Santri  $santri
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Santri $santri)
+    public function show($id)
     {
         //
     }
@@ -55,10 +53,10 @@ class SantriController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Santri  $santri
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Santri $santri)
+    public function edit($id)
     {
         //
     }
@@ -67,10 +65,10 @@ class SantriController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Santri  $santri
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Santri $santri)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -78,10 +76,10 @@ class SantriController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Santri  $santri
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Santri $santri)
+    public function destroy($id)
     {
         //
     }

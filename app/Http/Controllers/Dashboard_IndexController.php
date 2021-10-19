@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class Dashboard_IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('dashboard.dashboard-index');
     }
 
     /**

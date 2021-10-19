@@ -14,7 +14,9 @@ class BabController extends Controller
      */
     public function index()
     {
-        //
+        $bab = DB::table('bab')->get();
+
+        return view('dashboard.santri-table', ['santri' => $santri]);
     }
 
     /**

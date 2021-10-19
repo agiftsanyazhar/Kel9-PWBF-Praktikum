@@ -134,7 +134,7 @@
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Metode Ummi <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      Direct method (langsung), Repetition (diulang-ulang), dan affection (kasih sayang yang tulus).
+                      Direct method (langsung), repetition (diulang-ulang), dan affection (kasih sayang yang tulus).
                     </p>
                   </div>
                 </li>

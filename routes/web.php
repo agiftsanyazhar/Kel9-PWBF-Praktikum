@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\Dashboard_HomeController;
+use App\Http\Controllers\Dashboard_IndexController;
+use App\Http\Controllers\Forgot_PasswordController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\Internal_Server_ErrorController;
 use App\Http\Controllers\Layout_Sidenav_LightController;
 use App\Http\Controllers\Layout_Static_NavigationController;
@@ -25,13 +28,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Home
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [IndexController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
+Route::get('/forgot-password', [Forgot_PasswordController::class, 'index']);
 
 // Dashboard
-Route::get('/dashboard', [Dashboard_HomeController::class, 'index']);
+Route::get('/dashboard-index', [Dashboard_IndexController::class, 'index']);
 Route::get('/layout-static-navigation', [Layout_Static_NavigationController::class, 'index']);
 Route::get('/layout-sidenav-light', [Layout_Sidenav_LightController::class, 'index']);
 Route::get('/charts', [ChartsController::class, 'index']);
-Route::get('/tables', [SantriController::class, 'index']);
+Route::get('/santri-table', [SantriController::class, 'index']);
