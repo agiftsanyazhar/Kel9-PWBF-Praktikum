@@ -35,7 +35,5 @@ Route::get('/forgot-password', [Forgot_PasswordController::class, 'index']);
 
 // Dashboard
 Route::get('/dashboard-index', [Dashboard_IndexController::class, 'index']);
-Route::get('/layout-static-navigation', [Layout_Static_NavigationController::class, 'index']);
-Route::get('/layout-sidenav-light', [Layout_Sidenav_LightController::class, 'index']);
 Route::get('/charts', [ChartsController::class, 'index']);
 Route::get('/santri-table', [SantriController::class, 'index']);

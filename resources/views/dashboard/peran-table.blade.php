@@ -8,47 +8,41 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item">Database</li>
                 <li class="breadcrumb-item">Table</li>
-                <li class="breadcrumb-item active">Bab</li>
+                <li class="breadcrumb-item active">Pera</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Bab
+                    Peran
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Bab</th>
-                                <th>Judul</th>
-                                <th>Keterangan</th>
+                                <th>Peran</th>
+                                <th>Aktif</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
-                                <th>ID Buku</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Bab</th>
-                                <th>Judul</th>
-                                <th>Keterangan</th>
+                                <th>Peran</th>
+                                <th>Aktif</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
-                                <th>ID Buku</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($bab as $data_bab)
+                            @foreach ($peran as $data_peran)
                                 <tr>
-                                    <td>{{ $data_bab -> id }}</td>
-                                    <td>{{ $data_bab -> bab }}</td>
-                                    <td>{{ $data_bab -> judul }}</td>
-                                    <td>{{ $data_bab -> keterangan }}</td>
-                                    <td>{{ $data_bab -> created_at }}</td>
-                                    <td>{{ $data_bab -> updated_at }}</td>
-                                    <td>{{ $data_bab -> id_buku }}</td>
+                                    <td>{{ $data_peran -> id }}</td>
+                                    <td>{{ $data_peran -> peran }}</td>
+                                    <td>{{ $data_peran -> aktif }}</td>
+                                    <td>{{ $data_peran -> created_at }}</td>
+                                    <td>{{ $data_peran -> updated_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

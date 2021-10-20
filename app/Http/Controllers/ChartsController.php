@@ -13,7 +13,9 @@ class ChartsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.charts');
+        return view('dashboard.charts', [
+            "title" => "Perkembangan"
+        ]);
     }
 
     /**

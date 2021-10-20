@@ -8,47 +8,53 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item">Database</li>
                 <li class="breadcrumb-item">Table</li>
-                <li class="breadcrumb-item active">Bab</li>
+                <li class="breadcrumb-item active">Pengurus</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Bab
+                    Pengurus
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Bab</th>
-                                <th>Judul</th>
-                                <th>Keterangan</th>
+                                <th>Nama pengurus</th>
+                                <th>Email</th>
+                                <th>HP</th>
+                                <th>Gender</th>
+                                <th>Password</th>
+                                <th>Aktif</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
-                                <th>ID Buku</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Bab</th>
-                                <th>Judul</th>
-                                <th>Keterangan</th>
+                                <th>Nama pengurus</th>
+                                <th>Email</th>
+                                <th>HP</th>
+                                <th>Gender</th>
+                                <th>Password</th>
+                                <th>Aktif</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
-                                <th>ID Buku</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($bab as $data_bab)
+                            @foreach ($pengurus as $data_pengurus)
                                 <tr>
-                                    <td>{{ $data_bab -> id }}</td>
-                                    <td>{{ $data_bab -> bab }}</td>
-                                    <td>{{ $data_bab -> judul }}</td>
-                                    <td>{{ $data_bab -> keterangan }}</td>
-                                    <td>{{ $data_bab -> created_at }}</td>
-                                    <td>{{ $data_bab -> updated_at }}</td>
-                                    <td>{{ $data_bab -> id_buku }}</td>
+                                    <td>{{ $data_pengurus -> id }}</td>
+                                    <td>{{ $data_pengurus -> nama_pengurus }}</td>
+                                    <td>{{ $data_pengurus -> email }}</td>
+                                    <td>{{ $data_pengurus -> hp }}</td>
+                                    <td>{{ $data_pengurus -> gender }}</td>
+                                    <td>{{ $data_pengurus -> password }}</td>
+                                    <td>{{ $data_pengurus -> aktif }}</td>
+                                    <td>{{ $data_pengurus -> created_at }}</td>
+                                    <td>{{ $data_pengurus -> updated_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

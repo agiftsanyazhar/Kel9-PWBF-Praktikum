@@ -8,47 +8,47 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item">Database</li>
                 <li class="breadcrumb-item">Table</li>
-                <li class="breadcrumb-item active">Bab</li>
+                <li class="breadcrumb-item active">Kemajuan</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Bab
+                    Kemajuan
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Bab</th>
-                                <th>Judul</th>
-                                <th>Keterangan</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
-                                <th>ID Buku</th>
+                                <th>ID Santri</th>
+                                <th>ID Pengurus</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Bab</th>
-                                <th>Judul</th>
-                                <th>Keterangan</th>
+                                <th>Tanggal</th>
+                                <th>Status</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
-                                <th>ID Buku</th>
+                                <th>ID Santri</th>
+                                <th>ID Pengurus</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($bab as $data_bab)
+                            @foreach ($kemajuan as $data_kemajuan)
                                 <tr>
-                                    <td>{{ $data_bab -> id }}</td>
-                                    <td>{{ $data_bab -> bab }}</td>
-                                    <td>{{ $data_bab -> judul }}</td>
-                                    <td>{{ $data_bab -> keterangan }}</td>
-                                    <td>{{ $data_bab -> created_at }}</td>
-                                    <td>{{ $data_bab -> updated_at }}</td>
-                                    <td>{{ $data_bab -> id_buku }}</td>
+                                    <td>{{ $data_kemajuan -> id }}</td>
+                                    <td>{{ $data_kemajuan -> tanggal }}</td>
+                                    <td>{{ $data_kemajuan -> status }}</td>
+                                    <td>{{ $data_kemajuan -> created_at }}</td>
+                                    <td>{{ $data_kemajuan -> updated_at }}</td>
+                                    <td>{{ $data_kemajuan -> id_santri }}</td>
+                                    <td>{{ $data_kemajuan -> id_pengurus }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

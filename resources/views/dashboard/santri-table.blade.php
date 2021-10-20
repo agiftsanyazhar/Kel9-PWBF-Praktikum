@@ -3,15 +3,17 @@
 @section('container')
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Tables</h1>
+            <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item active">Databases</li>
+                <li class="breadcrumb-item">Database</li>
+                <li class="breadcrumb-item">Table</li>
+                <li class="breadcrumb-item active">Santri</li>
             </ol>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    DataTable
+                    Santri
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
