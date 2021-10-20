@@ -12,7 +12,7 @@
                             <form action="forms/register.php" method="post" role="form">
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputName" type="text" placeholder="Nama Santri" required/>
+                                        <input class="form-control" id="inputName" type="text" minlength="3" maxlength="50" placeholder="Nama Santri" required/>
                                     </div>
                                     <div class="col-md-6">
                                         <select class="form-control">
@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="Tempat Lahir" required/>
+                                        <input class="form-control" type="text" minlength="5" maxlength="40" placeholder="Tempat Lahir" required/>
                                     </div>
                                     <div class="col-md-6">
                                         <input class="form-control" type="text" placeholder="Tanggal Lahir" onfocus="(this.type='date')" required/>
@@ -32,10 +32,10 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputName" type="text" placeholder="Nama Orang Tua" required/>
+                                        <input class="form-control" id="inputName" type="text" minlength="3" maxlength="50" placeholder="Nama Orang Tua" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="Alamat Orang Tua" required/>
+                                        <input class="form-control" type="text" minlength="10" placeholder="Alamat Orang Tua" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
@@ -43,15 +43,15 @@
                                         <input class="form-control" id="inputEmail" type="email" placeholder="Email" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input  class="form-control" type="number" minlength="12" maxlength="13" name="txtEmpPhone" placeholder="Telepon" required/>
+                                        <input  class="form-control" id="phone" type="tel" minlength="13" maxlength="16" name="txtEmpPhone" placeholder="Telepon (Ex: +62812xxx)" required/>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputPassword" type="password" minlength="8" placeholder="Password" required/>
+                                        <input class="form-control" id="inputPassword" type="password" minlength="8" maxlength="32" placeholder="Password" required/>
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputPassword" type="password" minlength="8" placeholder="Konfirmasi Password" required/>
+                                        <input class="form-control" id="inputPassword" type="password" minlength="8" maxlength="32" placeholder="Konfirmasi Password" required/>
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">

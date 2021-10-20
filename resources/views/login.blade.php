@@ -19,7 +19,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control" id="inputPassword" type="password" minlength="8" placeholder="Password" required/>
+                                        <input class="form-control" id="inputPassword" type="password" minlength="8" maxlength="32" placeholder="Password" required/>
                                     </div>
                                 </div>
                                 <div class="form-check mb-3">
