@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BukuController extends Controller
 {
@@ -14,7 +15,9 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        $buku = DB::table('buku')->get();
+
+        return view('dashboard.buku-table', ['buku' => $buku]);
     }
 
     /**

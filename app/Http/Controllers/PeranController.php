@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Peran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PeranController extends Controller
 {
@@ -14,7 +15,9 @@ class PeranController extends Controller
      */
     public function index()
     {
-        //
+        $peran = DB::table('peran')->get();
+
+        return view('dashboard.peran-table', ['peran' => $peran]);
     }
 
     /**

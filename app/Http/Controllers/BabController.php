@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bab;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BabController extends Controller
 {
@@ -16,7 +17,7 @@ class BabController extends Controller
     {
         $bab = DB::table('bab')->get();
 
-        return view('dashboard.santri-table', ['santri' => $santri]);
+        return view('dashboard.bab-table', ['bab' => $bab]);
     }
 
     /**

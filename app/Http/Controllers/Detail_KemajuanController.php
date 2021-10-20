@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detail_Kemajuan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Detail_KemajuanController extends Controller
 {
@@ -14,7 +15,9 @@ class Detail_KemajuanController extends Controller
      */
     public function index()
     {
-        //
+        $detail_kemajuan = DB::table('detail_kemajuan')->get();
+
+        return view('dashboard.detail-kemajuan-table', ['detail_kemajuan' => $detail_kemajuan]);
     }
 
     /**
