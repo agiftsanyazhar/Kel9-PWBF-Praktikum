@@ -17,7 +17,7 @@ class KemajuanController extends Controller
     {
         $kemajuan = DB::table('kemajuan')->get();
 
-        return view('dashboard.bkemajuanab-table', ['kemajuan' => $kemajuan]);
+        return view('dashboard.kemajuan-table', ['kemajuan' => $kemajuan]);
     }
 
     /**
