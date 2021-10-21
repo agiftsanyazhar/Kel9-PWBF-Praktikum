@@ -22,7 +22,7 @@ class Detail_PeranFactory extends Factory
     public function definition()
     {
         return [
-            'id_pengurus' => mt_rand(1,20),
+            'id_pengurus' => mt_rand(1,5),
             'id_peran' => mt_rand(1,20)
         ];
     }

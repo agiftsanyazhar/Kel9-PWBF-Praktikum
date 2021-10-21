@@ -11,6 +11,8 @@ class Santri extends Model
 
     protected $table = 'santri';
 
+    protected $guarded = ['id'];
+
     public function kemajuan()
     {
         return $this->hasMany(Kemajuan::class,'id_santri','id');

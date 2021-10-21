@@ -23,9 +23,9 @@ class CreateSantris extends Migration
             $table->string('alamat_ortu',100);
             $table->string('hp',15);
             $table->string('email',50);
-            $table->string('password',32);
-            $table->date('tgl_masuk');
-            $table->boolean('aktif');
+            $table->string('password');
+            $table->date('tgl_masuk')->default(date("Y-m-d"));
+            $table->boolean('aktif')->default(1);
             $table->timestamps();
         });
     }

@@ -6,6 +6,13 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-5">
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
+                    
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">{{ $title }}</h3></div>
                         <div class="card-body">
@@ -28,7 +35,7 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <a class="small" href="forgot-password">Lupa Password?</a>
-                                    <a class="btn btn-primary" href="dashboard-index"><button class="submit" type="submit">Login</button></a>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Login</button></div>
                                 </div>
                             </form>
                         </div>

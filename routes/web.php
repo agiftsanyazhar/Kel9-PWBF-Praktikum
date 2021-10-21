@@ -3,24 +3,17 @@
 use App\Http\Controllers\BabController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\ChartsController;
-use App\Http\Controllers\Dashboard_HomeController;
 use App\Http\Controllers\Dashboard_IndexController;
 use App\Http\Controllers\Detail_KemajuanController;
 use App\Http\Controllers\Detail_PeranController;
 use App\Http\Controllers\Forgot_PasswordController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\Internal_Server_ErrorController;
 use App\Http\Controllers\KemajuanController;
-use App\Http\Controllers\Layout_Sidenav_LightController;
-use App\Http\Controllers\Layout_Static_NavigationController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Not_FoundController;
 use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PeranController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SantriController;
-use App\Http\Controllers\UnauthorizedController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -51,3 +44,7 @@ Route::get('/kemajuan-table', [KemajuanController::class, 'index']);
 Route::get('/pengurus-table', [PengurusController::class, 'index']);
 Route::get('/peran-table', [PeranController::class, 'index']);
 Route::get('/santri-table', [SantriController::class, 'index']);
+
+//Form
+//Register
+Route::post('/register', [RegisterController::class, 'store']);

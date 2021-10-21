@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                     <a class="small" href="login">Kembali ke login</a>
-                                    <a class="btn btn-primary" href="login"><button class="submit" type="submit">Reset Password</button></a>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Reset Password</button></div>
                                 </div>
                             </form>
                         </div>
