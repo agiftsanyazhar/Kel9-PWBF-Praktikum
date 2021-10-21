@@ -35,3 +35,6 @@ Route::get('/layout-static-navigation', [Layout_Static_NavigationController::cla
 Route::get('/layout-sidenav-light', [Layout_Sidenav_LightController::class, 'index']);
 Route::get('/charts', [ChartsController::class, 'index']);
 Route::get('/tables', [SantriController::class, 'index']);
+
+//Register
+Route::post('/register', [RegisterController::class, 'store']);

@@ -9,53 +9,95 @@
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">Daftar</h3></div>
                         <div class="card-body">
-                            <form action="forms/register.php" method="post" role="form">
+                            {{-- Form --}}
+                            <form action="/register" method="post" role="form">
+                                @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputName" type="text" placeholder="Nama Santri" required/>
+                                        <input class="form-control @error('nama_santri') is-invalid @enderror" id="inputName" name="nama_santri" type="text" placeholder="Nama Santri" value="{{ old('nama_santri') }}"/>
+                                        @error('nama_santri')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6">
-                                        <select class="form-control">
+                                        <select class="form-control @error('gender') is-invalid @enderror" name="gender" >
                                             <option value="" disabled selected hidden>Jenis Kelamin</option>
-                                            <option value="m">Laki-Laki</option>
-                                            <option value="f">Perempuan</option>
+                                            <option value="M">Laki-Laki</option>
+                                            <option value="F">Perempuan</option>
                                         </select>
+                                        @error('gender')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="Tempat Lahir" required/>
+                                        <input class="form-control  @error('kota_lhr') is-invalid @enderror" type="text" name="kota_lhr" placeholder="Tempat Lahir" value="{{ old('kota_lhr') }}"/>
+                                        @error('tgl_lhr')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="Tanggal Lahir" onfocus="(this.type='date')" required/>
+                                        <input class="form-control @error('tgl_lhr') is-invalid @enderror" type="text" name="tgl_lhr" placeholder="Tanggal Lahir" onfocus="(this.type='date')" value="{{ old('tgl_lhr') }}"/>
+                                        @error('tgl_lhr')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputName" type="text" placeholder="Nama Orang Tua" required/>
+                                        <input class="form-control @error('nama_ortu') is-invalid @enderror" id="inputName" type="text" name="nama_ortu" placeholder="Nama Orang Tua" value="{{ old('nama_ortu') }}"/>
+                                        @error('nama_ortu')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6">
-                                        <input class="form-control" type="text" placeholder="Alamat Orang Tua" required/>
+                                        <input class="form-control @error('alamat_ortu') is-invalid @enderror" type="text" name="alamat_ortu" placeholder="Alamat Orang Tua" value="{{ old('alamat_ortu') }}"/>
+                                        @error('alamat_ortu')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control" id="inputEmail" type="email" placeholder="Email" required/>
+                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" value="{{ old('email') }}"/>
+                                        @error('email')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6">
-                                        <input  class="form-control" type="number" minlength="12" maxlength="13" name="txtEmpPhone" placeholder="Telepon" required/>
+                                        <input  class="form-control @error('hp') is-invalid @enderror" type="number" name="hp" placeholder="Telepon" value="{{ old('hp') }}"/>
+                                        @error('hp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
-                                <div class="row mb-2">
-                                    <div class="col-md-6">
-                                        <input class="form-control" id="inputPassword" type="password" minlength="8" placeholder="Password" required/>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input class="form-control" id="inputPassword" type="password" minlength="8" placeholder="Konfirmasi Password" required/>
-                                    </div>
+                                <div class="col-md-12">
+                                    <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" name="password" placeholder="Password" />
+                                    @error('password')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><a class="btn btn-primary btn-block" href="login"><button class="submit" type="submit">Daftar</button></a></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Daftar</button></div>
                                 </div>
                             </form>
                         </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Models\Santri;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -36,7 +38,25 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_santri'   => 'required|max:50',
+            'gender'        => 'required',
+            'kota_lhr'      => 'required|max:40',
+            'tgl_lhr'       => 'required',
+            'nama_ortu'     => 'required|max:50',
+            'alamat_ortu'   => 'required|max:50',
+            'email'         => 'required|email',
+            'hp'            => 'required',
+            'password'      => 'required||min:7|max:32',
+        ]);
+        
+        $validatedData['password']=bcrypt($validatedData['password']);
+
+        Santri::create($validatedData);
+
+        $request->session()->flash('success','Registrasi Berhasil! Silahkan Login');
+
+        return redirect('/login');
     }
 
     /**

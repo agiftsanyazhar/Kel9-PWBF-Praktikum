@@ -21,7 +21,7 @@ class CreateKemajuan extends Migration
         });
 
         Schema::table('kemajuan', function (Blueprint $table) {
-            $table->foreignId('id_santri')->constrained('santri');
+            $table->foreignId('id_santri')->constrained('santris');
             $table->foreignId('id_pengurus')->constrained('pengurus');
         });
     }

@@ -22,13 +22,13 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //\App\Models\User::factory(10)->create();
-        Santri::factory(50)->create();
-        Pengurus::factory(20)->create();
+        Santri::factory(5)->create();
+        Pengurus::factory(5)->create();
         Buku::factory(10)->create();
         Bab::factory(20)->create();
         Peran::factory(20)->create();
-        Kemajuan::factory(50)->create();
-        Detail_Peran::factory(30)->create();
-        Detail_Kemajuan::factory(50)->create();
+        //Kemajuan::factory(50)->create();
+        //Detail_Peran::factory(30)->create();
+        //Detail_Kemajuan::factory(50)->create();
     }
 }

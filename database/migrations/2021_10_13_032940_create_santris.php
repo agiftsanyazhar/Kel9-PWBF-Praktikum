@@ -13,7 +13,7 @@ class CreateSantris extends Migration
      */
     public function up()
     {
-        Schema::create('santri', function (Blueprint $table) {
+        Schema::create('santris', function (Blueprint $table) {
             $table->id();
             $table->string('nama_santri',50);
             $table->char('gender',1);
@@ -23,9 +23,9 @@ class CreateSantris extends Migration
             $table->string('alamat_ortu',100);
             $table->string('hp',15);
             $table->string('email',50);
-            $table->string('password',32);
-            $table->date('tgl_masuk');
-            $table->boolean('aktif');
+            $table->string('password');
+            $table->date('tgl_masuk')->default(date("Y-m-d H:i:s"));
+            $table->boolean('aktif')->default(1);
             $table->timestamps();
         });
     }
@@ -37,6 +37,6 @@ class CreateSantris extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('santri');
+        Schema::dropIfExists('santris');
     }
 }
