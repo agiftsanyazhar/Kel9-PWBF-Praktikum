@@ -19,7 +19,7 @@ class CreatePengurus extends Migration
             $table->string('email',50);
             $table->string('hp',15);
             $table->char('gender',1);
-            $table->string('password',32);
+            $table->string('password');
             $table->boolean('aktif');
             $table->timestamps();
         });
