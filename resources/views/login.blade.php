@@ -12,21 +12,39 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     @endif
+
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('loginError') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    @endif
                     
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">{{ $title }}</h3></div>
                         <div class="card-body">
                             
                             {{-- jangan d hapus komen ini boiii --}}
-                            <form action="forms/login.php" method="post" role="form">
+                            <form action="/login" method="post" role="form">
+                                @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control" id="inputEmail" type="email" placeholder="Email" required/>
+                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" required/>
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control" id="inputPassword" type="password" minlength="8" maxlength="32" placeholder="Password" required/>
+                                        <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" minlength="8" maxlength="32" name="password" placeholder="Password" required/>
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-check mb-3">

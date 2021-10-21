@@ -48,3 +48,4 @@ Route::get('/santri-table', [SantriController::class, 'index']);
 //Form
 //Register
 Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/login', [LoginController::class, 'authenticate']);
