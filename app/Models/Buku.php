@@ -11,6 +11,8 @@ class Buku extends Model
     
     protected $table = 'buku';
 
+    protected $guarded = ['id'];
+
     public function bab()
     {
         return $this->hasMany(Bab::class, 'id_buku', 'id');

@@ -17,7 +17,10 @@ class Detail_PeranController extends Controller
     {
         $detail_peran = DB::table('detail_peran')->get();
 
-        return view('dashboard.detail-peran-table', ['detail_peran' => $detail_peran]);
+        return view('dashboard.detail-peran-table', [
+            'detail_peran' => $detail_peran,
+            "title" => "Detail Peran"
+        ]);
     }
 
     /**

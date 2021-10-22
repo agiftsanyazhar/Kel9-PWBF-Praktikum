@@ -6,12 +6,14 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item active">Detail Kemajuan</li>
+                <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
+            <button class="btn btn-primary btn-block" type="submit">Tambah</button>
+            <br><br>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Detail Kemajuan
+                    {{ $title }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -23,6 +25,8 @@
                                 <th>Updated at</th>
                                 <th>ID Kemajuan</th>
                                 <th>ID Bab</th>
+                                <th>Edit</th>
+                                <th>Hapus</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -33,6 +37,8 @@
                                 <th>Updated at</th>
                                 <th>ID Kemajuan</th>
                                 <th>ID Bab</th>
+                                <th>Edit</th>
+                                <th>Hapus</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -44,6 +50,8 @@
                                     <td>{{ $data_detail_kemajuan -> updated_at }}</td>
                                     <td>{{ $data_detail_kemajuan -> id_kemajuan }}</td>
                                     <td>{{ $data_detail_kemajuan -> id_bab }}</td>
+                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
                                 </tr>
                             @endforeach
                         </tbody>

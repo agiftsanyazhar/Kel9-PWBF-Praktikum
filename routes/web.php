@@ -45,7 +45,13 @@ Route::get('/pengurus-table', [PengurusController::class, 'index']);
 Route::get('/peran-table', [PeranController::class, 'index']);
 Route::get('/santri-table', [SantriController::class, 'index']);
 
-//Form
 //Register
 Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/destroy_santri/{id}','App\Http\Controllers\SantriController@destroy');
+
+//Login
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+//Buku
+Route::get('/create', [BukuController::class, 'showCreate']);
+Route::post('/create-buku', [BukuController::class, 'store']);

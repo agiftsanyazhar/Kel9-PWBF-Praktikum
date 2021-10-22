@@ -17,7 +17,10 @@ class Detail_KemajuanController extends Controller
     {
         $detail_kemajuan = DB::table('detail_kemajuan')->get();
 
-        return view('dashboard.detail-kemajuan-table', ['detail_kemajuan' => $detail_kemajuan]);
+        return view('dashboard.detail-kemajuan-table', [
+            'detail_kemajuan' => $detail_kemajuan,
+            "title" => "Detail Kemajuan"
+        ]);
     }
 
     /**

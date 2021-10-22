@@ -6,12 +6,14 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item active">Buku</li>
+                <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
+            <a href="{{ url('/create') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+            <br><br>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Buku
+                    {{ $title }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -22,6 +24,8 @@
                                 <th>Keterangan</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
+                                <th>Edit</th>
+                                <th>Hapus</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -31,6 +35,8 @@
                                 <th>Keterangan</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
+                                <th>Edit</th>
+                                <th>Hapus</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -41,6 +47,8 @@
                                     <td>{{ $data_buku -> keterangan }}</td>
                                     <td>{{ $data_buku -> created_at }}</td>
                                     <td>{{ $data_buku -> updated_at }}</td>
+                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
                                 </tr>
                             @endforeach
                         </tbody>

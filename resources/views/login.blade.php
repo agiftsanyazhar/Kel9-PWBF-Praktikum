@@ -29,7 +29,7 @@
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" required/>
+                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required/>
                                         @error('email')
                                             <div class="invalid-feedback">
                                             {{ $message }}

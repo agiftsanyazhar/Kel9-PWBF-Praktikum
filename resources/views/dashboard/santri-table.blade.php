@@ -6,12 +6,14 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item active">Santri</li>
+                <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
+            <button class="btn btn-primary btn-block" type="submit">Tambah</button>
+            <br><br>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    Santri
+                    {{ $title }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -31,6 +33,8 @@
                                 <th>Status</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
+                                <th>Edit</th>
+                                <th>Hapus</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -49,6 +53,8 @@
                                 <th>Status</th>
                                 <th>Created at</th>
                                 <th>Updated at</th>
+                                <th>Edit</th>
+                                <th>Hapus</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -68,6 +74,12 @@
                                     <td>{{ $data_santri -> aktif }}</td>
                                     <td>{{ $data_santri -> created_at }}</td>
                                     <td>{{ $data_santri -> updated_at }}</td>
+                                    <form>
+                                        @csrf
+                                        @method('delete')
+                                        <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    </form>
+                                        <td><a href="{{ url('/destroy_santri',$data_santri->id) }}"><button class="btn btn-danger btn-block" type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button></a></td>
                                 </tr>
                             @endforeach
                         </tbody>

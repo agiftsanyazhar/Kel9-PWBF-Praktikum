@@ -17,7 +17,10 @@ class BabController extends Controller
     {
         $bab = DB::table('bab')->get();
 
-        return view('dashboard.bab-table', ['bab' => $bab]);
+        return view('dashboard.bab-table', [
+            'bab'   => $bab,
+            "title" => "Bab"
+        ]);
     }
 
     /**

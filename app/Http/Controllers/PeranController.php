@@ -17,7 +17,10 @@ class PeranController extends Controller
     {
         $peran = DB::table('peran')->get();
 
-        return view('dashboard.peran-table', ['peran' => $peran]);
+        return view('dashboard.peran-table', [
+            'peran' => $peran,
+            "title" => "Peran"
+        ]);
     }
 
     /**

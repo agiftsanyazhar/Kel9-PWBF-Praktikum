@@ -17,7 +17,10 @@ class PengurusController extends Controller
     {
         $pengurus = DB::table('pengurus')->get();
 
-        return view('dashboard.pengurus-table', ['pengurus' => $pengurus]);
+        return view('dashboard.pengurus-table', [
+            'pengurus' => $pengurus,
+            "title" => "Pengurus"
+        ]);
     }
 
     /**

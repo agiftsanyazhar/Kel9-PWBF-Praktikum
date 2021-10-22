@@ -17,7 +17,10 @@ class SantriController extends Controller
     {
         $santri = DB::table('santri')->get();
 
-        return view('dashboard.santri-table', ['santri' => $santri]);
+        return view('dashboard.santri-table', [
+            'santri' => $santri,
+            "title" => "Santri"
+        ]);
     }
 
     /**
@@ -81,8 +84,11 @@ class SantriController extends Controller
      * @param  \App\Models\Santri  $santri
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Santri $santri)
+    public function destroy($id)
     {
-        //
+        $data_santri = Santri::find($id);
+        $data_santri->delete();
+
+        return redirect('/santri-table');
     }
 }

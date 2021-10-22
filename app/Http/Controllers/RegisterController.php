@@ -50,7 +50,7 @@ class RegisterController extends Controller
             'password'      => 'required||min:8|max:32',
         ]);
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         Santri::create($validatedData);
 
