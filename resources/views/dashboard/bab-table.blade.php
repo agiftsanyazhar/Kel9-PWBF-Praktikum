@@ -6,8 +6,6 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item">Database</li>
-                <li class="breadcrumb-item">Table</li>
                 <li class="breadcrumb-item active">Bab</li>
             </ol>
             <div class="card mb-4">
