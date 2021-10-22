@@ -24,8 +24,8 @@
                                     <div class="col-md-6">
                                         <select class="form-control @error('gender') is-invalid @enderror" name="gender" required>
                                             <option value="" disabled selected hidden>Jenis Kelamin</option>
-                                            <option value="m">Laki-Laki</option>
-                                            <option value="f">Perempuan</option>
+                                            <option value="M">Laki-Laki</option>
+                                            <option value="F">Perempuan</option>
                                         </select>
                                         @error('gender')
                                             <div class="invalid-feedback">
