@@ -23,6 +23,13 @@ class BabController extends Controller
         ]);
     }
 
+    public function showCreate()
+    {
+        return view('dashboard.create.bab', [
+            "title" => "Bab"
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +48,18 @@ class BabController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'bab'           => 'required|max:50',
+            'judul'         => 'required|max:100',
+            'keterangan'    => 'required',
+            // 'id_buku'       => 'required',
+        ]);
+
+        Bab::create($validatedData);
+
+        $request->session()->flash('success','Bab Berhasil Ditambahkan');
+
+        return redirect('/bab-table');
     }
 
     /**

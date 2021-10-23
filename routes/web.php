@@ -63,7 +63,11 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //================================================================================
 //==================================== Create ====================================
 //================================================================================
-// //Buku
+//Bab
+Route::get('/form-create-bab', [BabController::class, 'showCreate']);
+Route::post('/create-bab', [BabController::class, 'store']);
+
+//Buku
 Route::get('/form-create-buku', [BukuController::class, 'showCreate']);
 Route::post('/create-buku', [BukuController::class, 'store']);
 

@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/create') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+            <a href="{{ url('/form-create-bab') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
             <br><br>
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
