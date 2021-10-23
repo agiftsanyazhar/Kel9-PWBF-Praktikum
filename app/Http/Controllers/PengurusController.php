@@ -23,6 +23,13 @@ class PengurusController extends Controller
         ]);
     }
 
+    public function showCreate()
+    {
+        return view('dashboard.create.pengurus', [
+            "title" => "Pengurus"
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +48,21 @@ class PengurusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_pengurus' => 'required|min:3|max:50',
+            'gender'        => 'required',
+            'hp'            => 'required',
+            'email'         => 'required|email:dns|unique:pengurus',
+            'password'      => 'required||min:8|max:32',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        Pengurus::create($validatedData);
+
+        $request->session()->flash('success','Registrasi Berhasil!');
+
+        return redirect('/pengurus-table');
     }
 
     /**

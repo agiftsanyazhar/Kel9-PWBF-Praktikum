@@ -23,6 +23,13 @@ class PeranController extends Controller
         ]);
     }
 
+    public function showCreate()
+    {
+        return view('dashboard.create.peran', [
+            "title" => "Peran"
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -41,7 +48,15 @@ class PeranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'peran'     => 'required|max:20|unique:peran',
+        ]);
+
+        Peran::create($validatedData);
+
+        $request->session()->flash('success','Peran Berhasil Ditambahkan');
+
+        return redirect('/peran-table');
     }
 
     /**

@@ -27,13 +27,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Home
+//================================================================================
+//===================================== Home =====================================
+//================================================================================
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/login', [LoginController::class, 'index']);
 Route::get('/forgot-password', [Forgot_PasswordController::class, 'index']);
 
-// Dashboard
+//================================================================================
+//================================== Dashboard ===================================
+//================================================================================
 Route::get('/dashboard-index', [Dashboard_IndexController::class, 'index']);
 Route::get('/charts', [ChartsController::class, 'index']);
 Route::get('/bab-table', [BabController::class, 'index']);
@@ -45,13 +49,28 @@ Route::get('/pengurus-table', [PengurusController::class, 'index']);
 Route::get('/peran-table', [PeranController::class, 'index']);
 Route::get('/santri-table', [SantriController::class, 'index']);
 
-//Register
+//================================================================================
+//=================================== Register ===================================
+//================================================================================
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/destroy_santri/{id}','App\Http\Controllers\SantriController@destroy');
 
-//Login
+//================================================================================
+//===================================== Login ====================================
+//================================================================================
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-//Buku
-Route::get('/create', [BukuController::class, 'showCreate']);
+//================================================================================
+//==================================== Create ====================================
+//================================================================================
+// //Buku
+Route::get('/form-create-buku', [BukuController::class, 'showCreate']);
 Route::post('/create-buku', [BukuController::class, 'store']);
+
+//Pengurus
+Route::get('/form-create-pengurus', [PengurusController::class, 'showCreate']);
+Route::post('/create-pengurus', [PengurusController::class, 'store']);
+
+//Peran
+Route::get('/form-create-peran', [PeranController::class, 'showCreate']);
+Route::post('/create-peran', [PeranController::class, 'store']);

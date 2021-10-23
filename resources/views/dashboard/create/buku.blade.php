@@ -9,7 +9,7 @@
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">Tambah {{ $title }}</h3></div>
                         <div class="card-body">
-                            <form action="/create-buku" method="post" role="form">
+                            <form action="/create-buku" method="post">
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">

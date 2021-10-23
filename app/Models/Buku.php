@@ -10,7 +10,6 @@ class Buku extends Model
     use HasFactory;
     
     protected $table = 'buku';
-
     protected $guarded = ['id'];
 
     public function bab()
