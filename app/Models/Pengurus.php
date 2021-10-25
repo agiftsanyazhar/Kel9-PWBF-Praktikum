@@ -8,13 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pengurus extends Model
 {
     use HasFactory;
-<<<<<<< HEAD
-    
-    protected $table = 'pengurus';
-=======
 
     protected $table = 'penguruses';
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
     protected $guarded = ['id'];
 
     public function Kemajuan()

@@ -65,19 +65,13 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //================================================================================
 //Bab
 Route::get('/form-create-bab', [BabController::class, 'showCreate']);
-<<<<<<< HEAD
-=======
 Route::get('/delete/{id}', [BabController::class, 'destroy']);
 Route::get('/form-edit-bab-{id}', [BabController::class, 'edit']);
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
 Route::post('/create-bab', [BabController::class, 'store']);
 
 //Buku
 Route::get('/form-create-buku', [BukuController::class, 'showCreate']);
-<<<<<<< HEAD
-=======
 Route::delete('/buku-table/delete/{id}', [BukuController::class, 'destroy']);
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
 Route::post('/create-buku', [BukuController::class, 'store']);
 
 //Pengurus
@@ -86,13 +80,9 @@ Route::post('/create-pengurus', [PengurusController::class, 'store']);
 
 //Peran
 Route::get('/form-create-peran', [PeranController::class, 'showCreate']);
-<<<<<<< HEAD
-Route::post('/create-peran', [PeranController::class, 'store']);
-=======
 Route::post('/create-peran', [PeranController::class, 'store']);
 
 //kemajuan
 Route::get('/kemajuan-table-{id}', [KemajuanController::class, 'showIndex']);
 Route::get('/form-create-peran', [KemajuanController::class, 'showCreate']);
 Route::post('/create-peran', [KemajuanController::class, 'store']);
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1

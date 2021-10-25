@@ -28,11 +28,6 @@
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
-<<<<<<< HEAD:resources/views/dashboard/santri-table.blade.php
-                                <th>Created at</th>
-                                <th>Updated at</th>
-=======
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1:resources/views/dashboard/tables.blade.php
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -50,11 +45,6 @@
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
-<<<<<<< HEAD:resources/views/dashboard/santri-table.blade.php
-                                <th>Created at</th>
-                                <th>Updated at</th>
-=======
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1:resources/views/dashboard/tables.blade.php
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -73,11 +63,6 @@
                                     <td>{{ $data_santri -> email }}</td>
                                     <td>{{ $data_santri -> tgl_masuk }}</td>
                                     <td>{{ $data_santri -> aktif }}</td>
-<<<<<<< HEAD:resources/views/dashboard/santri-table.blade.php
-                                    <td>{{ $data_santri -> created_at }}</td>
-                                    <td>{{ $data_santri -> updated_at }}</td>
-=======
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1:resources/views/dashboard/tables.blade.php
                                     <form>
                                         @csrf
                                         @method('delete')

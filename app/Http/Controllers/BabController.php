@@ -16,15 +16,8 @@ class BabController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $bab = DB::table('bab')->get();
-
-        return view('dashboard.bab-table', [
-            'bab'   => $bab,
-=======
         return view('dashboard.bab-table', [
             'bab'   => Bab::all(),
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             "title" => "Bab"
         ]);
     }
@@ -32,10 +25,7 @@ class BabController extends Controller
     public function showCreate()
     {
         return view('dashboard.create.bab', [
-<<<<<<< HEAD
-=======
             'buku' => Buku::all(),
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             "title" => "Bab"
         ]);
     }
@@ -62,11 +52,7 @@ class BabController extends Controller
             'bab'           => 'required|max:50',
             'judul'         => 'required|max:100',
             'keterangan'    => 'required',
-<<<<<<< HEAD
-            // 'id_buku'       => 'required',
-=======
             'id_buku'       => 'required',
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
         ]);
 
         Bab::create($validatedData);

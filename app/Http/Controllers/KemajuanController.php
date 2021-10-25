@@ -16,14 +16,6 @@ class KemajuanController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        $kemajuan = DB::table('kemajuan')->get();
-
-        return view('dashboard.kemajuan-table', [
-            'kemajuan' => $kemajuan,
-            "title" => "Kemajuan"
-        ]);
-=======
         return view('dashboard.kemajuan-table', [
             'santri' => Santri::all(),
             "title" => "Kemajuan"
@@ -36,7 +28,6 @@ class KemajuanController extends Controller
             'kemajuan' => Kemajuan::all(),
             'title' => "testing",
         ]);
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
     }
 
     /**

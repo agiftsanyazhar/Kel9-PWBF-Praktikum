@@ -15,15 +15,8 @@ class PeranController extends Controller
      */
     public function index(Peran $peran)
     {
-<<<<<<< HEAD
-        $peran = DB::table('peran')->get();
-
-        return view('dashboard.peran-table', [
-            'peran' => $peran,
-=======
         return view('dashboard.peran-table', [
             'peran' => Peran::all(),
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             "title" => "Peran"
         ]);
     }

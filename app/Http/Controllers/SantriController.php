@@ -15,15 +15,8 @@ class SantriController extends Controller
      */
     public function index(Santri $santri)
     {
-<<<<<<< HEAD
-        $santri = DB::table('santri')->get();
-
-        return view('dashboard.santri-table', [
-            'santri' => $santri,
-=======
         return view('dashboard.santri-table', [
             'santris' => Santri::all(),
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             "title" => "Santri"
         ]);
     }

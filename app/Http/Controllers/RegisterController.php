@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Santri;
-<<<<<<< HEAD
-=======
 use App\Models\User;
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -43,22 +40,14 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-<<<<<<< HEAD
-            'nama_santri'   => 'required|min:3|max:50',
-=======
             'nama'          => 'required|min:3|max:50',
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             'gender'        => 'required',
             'tgl_lhr'       => 'required',
             'kota_lhr'      => 'required|max:40',
             'nama_ortu'     => 'required|min:3|max:50',
             'alamat_ortu'   => 'required|max:100',
             'hp'            => 'required',
-<<<<<<< HEAD
-            'email'         => 'required|email:dns|unique:santri',
-=======
             'email'         => 'required|email:dns|unique:santris',
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             'password'      => 'required||min:8|max:32',
         ]);
 
@@ -66,11 +55,8 @@ class RegisterController extends Controller
 
         Santri::create($validatedData);
 
-<<<<<<< HEAD
-=======
         User::create($validatedData);
 
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
         $request->session()->flash('success','Registrasi Berhasil! Silahkan Login');
 
         return redirect('/login');

@@ -15,15 +15,8 @@ class BukuController extends Controller
      */
     public function index(Buku $buku)
     {
-<<<<<<< HEAD
-        $buku = DB::table('buku')->get();
-
-        return view('dashboard.buku-table', [
-            'buku' => $buku,
-=======
         return view('dashboard.buku-table', [
             'bukus' => Buku::all(),
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             "title" => "Buku"
         ]);
     }

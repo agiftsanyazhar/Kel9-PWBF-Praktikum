@@ -46,11 +46,7 @@
                             </tr>
                         </tfoot>
                         <tbody>
-<<<<<<< HEAD
-                            @foreach ($buku as $data_buku)
-=======
                             @foreach ($bukus as $data_buku)
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
                                 <tr>
                                     <td>{{ $data_buku -> id }}</td>
                                     <td>{{ $data_buku -> buku }}</td>

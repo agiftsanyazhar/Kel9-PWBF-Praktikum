@@ -16,15 +16,8 @@ class PengurusController extends Controller
      */
     public function index(Pengurus $pengurus)
     {
-<<<<<<< HEAD
-        $pengurus = DB::table('pengurus')->get();
-
-        return view('dashboard.pengurus-table', [
-            'pengurus' => $pengurus,
-=======
         return view('dashboard.pengurus-table', [
             'pengurus' => Pengurus::all(),
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
             "title" => "Pengurus"
         ]);
     }
