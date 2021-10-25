@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Detail_Kemajuan extends Model
 {
     use HasFactory;
-    
-    protected $table = 'detail_kemajuan';
+
+    protected $table = 'detail__kemajuans';
 
     public function bab()
     {
@@ -20,4 +20,5 @@ class Detail_Kemajuan extends Model
     {
         return $this->belongsTo(Kemajuan::class, 'id_kemajuan', 'id');
     }
+
 }

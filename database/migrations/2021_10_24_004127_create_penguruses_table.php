@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSantris extends Migration
+class CreatePengurusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,20 +13,16 @@ class CreateSantris extends Migration
      */
     public function up()
     {
-        Schema::create('santri', function (Blueprint $table) {
+        Schema::create('penguruses', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_santri',50);
-            $table->char('gender',1);
-            $table->date('tgl_lhr');
-            $table->string('kota_lhr',40);
-            $table->string('nama_ortu',50);
-            $table->string('alamat_ortu',100);
-            $table->string('hp',15);
+            $table->string('nama_pengurus',50);
             $table->string('email',50);
+            $table->string('hp',15);
+            $table->char('gender',1);
             $table->string('password');
-            $table->date('tgl_masuk')->default(date("Y-m-d"));
             $table->boolean('aktif')->default(1);
             $table->timestamps();
+
         });
     }
 
@@ -37,6 +33,6 @@ class CreateSantris extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('santri');
+        Schema::dropIfExists('penguruses');
     }
 }

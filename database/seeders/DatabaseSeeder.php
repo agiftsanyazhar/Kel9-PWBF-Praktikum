@@ -8,7 +8,7 @@ use App\Models\Detail_Kemajuan;
 use App\Models\Detail_Peran;
 use App\Models\Kemajuan;
 use Illuminate\Database\Seeder;
-use App\Models\santri;
+use App\Models\Santri;
 use App\Models\pengurus;
 use App\Models\Peran;
 
@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //\App\Models\User::factory(10)->create();
-        Santri::factory(50)->create();
-        Pengurus::factory(20)->create();
+        Santri::factory(5)->create();
+        Pengurus::factory(5)->create();
         Buku::factory(10)->create();
         Bab::factory(20)->create();
         Peran::factory(20)->create();

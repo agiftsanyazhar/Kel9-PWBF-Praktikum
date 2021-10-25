@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailPeran extends Migration
+class CreatePeransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateDetailPeran extends Migration
      */
     public function up()
     {
-        Schema::create('detail_peran', function (Blueprint $table) {
+        Schema::create('perans', function (Blueprint $table) {
             $table->id();
+            $table->string('peran',50);
+            $table->boolean('aktif')->default(1);
             $table->timestamps();
-        });
 
-        Schema::table('detail_peran', function (Blueprint $table) {
-            $table->foreignId('id_peran')->constrained('peran');
-            $table->foreignId('id_pengurus')->constrained('pengurus');
         });
     }
 
@@ -31,6 +29,6 @@ class CreateDetailPeran extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_peran');
+        Schema::dropIfExists('perans');
     }
 }

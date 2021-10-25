@@ -58,7 +58,7 @@
                             </form>
                         </div>
                         <div class="card-footer text-center py-3">
-                            <div class="small"><a href="register">Butuh Akun? Daftar!</a></div>
+                            <div class="small"><a href="/register">Butuh Akun? Daftar!</a></div>
                         </div>
                     </div>
                 </div>

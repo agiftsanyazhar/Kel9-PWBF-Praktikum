@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Detail_Peran extends Model
 {
     use HasFactory;
-    
-    protected $table = 'detail_peran';
+
+    protected $table = 'detail__perans';
 
     public function peran()
     {
@@ -20,4 +20,5 @@ class Detail_Peran extends Model
     {
         return $this->belongsTo(Pengurus::class, 'id_pengurus', 'id');
     }
+
 }

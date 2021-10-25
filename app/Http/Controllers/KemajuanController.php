@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kemajuan;
+use App\Models\Santri;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,12 +16,27 @@ class KemajuanController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $kemajuan = DB::table('kemajuan')->get();
 
         return view('dashboard.kemajuan-table', [
             'kemajuan' => $kemajuan,
             "title" => "Kemajuan"
         ]);
+=======
+        return view('dashboard.kemajuan-table', [
+            'santri' => Santri::all(),
+            "title" => "Kemajuan"
+        ]);
+    }
+
+    public function showIndex(Santri $santri)
+    {
+        return view('dashboard.show.kemajuan', [
+            'kemajuan' => Kemajuan::all(),
+            'title' => "testing",
+        ]);
+>>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
     }
 
     /**

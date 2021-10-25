@@ -7,17 +7,14 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Tambah {{ $title }}</h3></div>
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit {{ $title }}</h3></div>
                         <div class="card-body">
-                            <form action="/create-bab" method="post">
+                            <form action="/edit-bab/{{ $bab->id }}" method="post">
+                                @method('put')
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-<<<<<<< HEAD
-                                        <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="number" maxlength="50" placeholder="Bab" value="{{ old('bab') }}" required/>
-=======
-                                        <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="text" maxlength="50" placeholder="Bab" value="{{ old('bab') }}" required/>
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
+                                        <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="text" maxlength="50" placeholder="Bab" autofokus value="{{ old('bab', $bab->bab) }}" required/>
                                         @error('bab')
                                             <div class="invalid-feedback">
                                             {{ $message }}
@@ -27,7 +24,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('judul') is-invalid @enderror" id="inputName" name="judul" type="text" maxlength="50" placeholder="Judul" value="{{ old('judul') }}" required/>
+                                        <input class="form-control @error('judul') is-invalid @enderror" id="inputName" name="judul" type="text" maxlength="50" placeholder="Judul" autofokus value="{{ old('judul', $bab->judul) }}" required/>
                                         @error('judul')
                                             <div class="invalid-feedback">
                                             {{ $message }}
@@ -37,7 +34,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12 row-lg-10">
-                                        <textarea rows="5" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan" required></textarea>
+                                        <textarea rows="5" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan" autofokus value="{{ old('keterangan', $bab->keterangan) }}" required></textarea>
                                         @error('Keterangan')
                                             <div class="invalid-feedback">
                                             {{ $message }}
@@ -45,14 +42,16 @@
                                         @enderror
                                     </div>
                                 </div>
-<<<<<<< HEAD
-=======
                                 <div class="col-md-2">
                                     <div class="col-md-12 row-lg-10">
                                         <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
                                             <option value="" disabled selected hidden>Judul Buku</option>
-                                            @foreach ($buku as $bukus)
-                                                <option value={{ $bukus->id }}>{{ $bukus->buku }}</option>
+                                            @foreach ($bukus as $buku)
+                                                @if (old('id_buku', $bab->id_buku) == $buku->id)
+                                                    <option value={{ $buku->id }} selected>{{ $buku->buku }}</option>
+                                                @else
+                                                    <option value={{ $buku->id }} >{{ $buku->buku }}</option>
+                                                @endif    
                                             @endforeach
                                         </select>
                                         @error('id_buku')
@@ -62,9 +61,8 @@
                                         @enderror
                                     </div>
                                 </div>
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambah</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Perbarui</button></div>
                                 </div>
                             </form>
                         </div>
