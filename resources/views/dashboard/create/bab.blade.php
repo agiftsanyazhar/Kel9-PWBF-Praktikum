@@ -13,11 +13,22 @@
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-<<<<<<< HEAD
-                                        <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="number" maxlength="50" placeholder="Bab" value="{{ old('bab') }}" required/>
-=======
+                                        <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
+                                            <option value="" disabled selected hidden>Judul Buku</option>
+                                            @foreach ($buku as $bukus)
+                                                <option value={{ $bukus->id }}>{{ $bukus->buku }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('id_buku')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-6">
                                         <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="text" maxlength="50" placeholder="Bab" value="{{ old('bab') }}" required/>
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
                                         @error('bab')
                                             <div class="invalid-feedback">
                                             {{ $message }}
@@ -45,24 +56,6 @@
                                         @enderror
                                     </div>
                                 </div>
-<<<<<<< HEAD
-=======
-                                <div class="col-md-2">
-                                    <div class="col-md-12 row-lg-10">
-                                        <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
-                                            <option value="" disabled selected hidden>Judul Buku</option>
-                                            @foreach ($buku as $bukus)
-                                                <option value={{ $bukus->id }}>{{ $bukus->buku }}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('id_buku')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                </div>
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
                                 <div class="mt-4 mb-0">
                                     <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambah</button></div>
                                 </div>

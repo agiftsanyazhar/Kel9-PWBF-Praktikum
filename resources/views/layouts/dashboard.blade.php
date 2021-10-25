@@ -20,11 +20,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-<<<<<<< HEAD
                     <input class="form-control" type="text" placeholder="Cari..." aria-label="Search" aria-describedby="btnNavbarSearch" />
-=======
-                    <input class="form-control" type="text" placeholder="Cari" aria-label="Search" aria-describedby="btnNavbarSearch" />
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>

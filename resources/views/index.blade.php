@@ -55,8 +55,10 @@
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
           <li class="dropdown"><a href="#" style="pointer-events: none"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="login">Login</a></li>
               <li><a href="register">Daftar</a></li>
+              <li><a href="login">Login Santri</a></li>
+              <li><a href="login">Login Guru</a></li>
+              <li><a href="login">Login Staff</a></li>
             </ul>
           </li>
         </ul>
@@ -413,7 +415,7 @@
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Apakah Santri yang Tidak Bisa Membaca Al-Quran Boleh Mendaftar di <strong>TPQ AL-HIKMAH</strong>? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Jangan khawatir. Semua santri nantinya akan dibimbing oleh ustadz/ustadzah profesional di bidangnya.
+                  Jangan khawatir. Semua santri nantinya akan dibimbing oleh ustaz/ustazah profesional di bidangnya.
                 </p>
               </div>
             </li>
@@ -545,7 +547,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="useful-links/terms-of-service">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="useful-links/terms-of-service">Terms of Service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="useful-links/privacy-policy">Privacy Policy</a></li>
             </ul>
           </div>

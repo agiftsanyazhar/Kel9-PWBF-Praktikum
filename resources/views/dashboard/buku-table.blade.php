@@ -54,9 +54,6 @@
                                     <td>{{ $data_buku -> created_at }}</td>
                                     <td>{{ $data_buku -> updated_at }}</td>
                                     <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-<<<<<<< HEAD
-                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
-=======
                                     <td>
                                     <form action="/buku-table/delete/{{ $data_buku->id }}" method="POST">
                                         @method('delete')
@@ -64,7 +61,6 @@
                                         <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Yakin Data Akan Di Hapus?')" type="submit">Hapus</button>
                                     </form>
                                     </td>
->>>>>>> 744484b7bdab7551e909281cebc6760bbd9ddaf1
                                 </tr>
                             @endforeach
                         </tbody>
