@@ -10,6 +10,7 @@ class Peran extends Model
     use HasFactory;
     
     protected $table = 'peran';
+    protected $guarded = ['id'];
 
     public function peran()
     {

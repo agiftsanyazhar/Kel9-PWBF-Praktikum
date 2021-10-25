@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Pengurus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PengurusController extends Controller
 {
@@ -14,7 +15,19 @@ class PengurusController extends Controller
      */
     public function index()
     {
-        //
+        $pengurus = DB::table('pengurus')->get();
+
+        return view('dashboard.pengurus-table', [
+            'pengurus' => $pengurus,
+            "title" => "Pengurus"
+        ]);
+    }
+
+    public function showCreate()
+    {
+        return view('dashboard.create.pengurus', [
+            "title" => "Pengurus"
+        ]);
     }
 
     /**
@@ -35,7 +48,21 @@ class PengurusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'nama_pengurus' => 'required|min:3|max:50',
+            'gender'        => 'required',
+            'hp'            => 'required',
+            'email'         => 'required|email:dns|unique:pengurus|unique:santri',
+            'password'      => 'required||min:8|max:32',
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        Pengurus::create($validatedData);
+
+        $request->session()->flash('success','Registrasi Berhasil!');
+
+        return redirect('/pengurus-table');
     }
 
     /**

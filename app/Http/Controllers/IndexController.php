@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Layout_Sidenav_LightController extends Controller
+class IndexController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class Layout_Sidenav_LightController extends Controller
      */
     public function index()
     {
-        return view('dashboard.layout-static-navigation');
+        return view('index');
     }
 
     /**

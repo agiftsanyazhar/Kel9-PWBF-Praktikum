@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kemajuan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KemajuanController extends Controller
 {
@@ -14,7 +15,12 @@ class KemajuanController extends Controller
      */
     public function index()
     {
-        //
+        $kemajuan = DB::table('kemajuan')->get();
+
+        return view('dashboard.kemajuan-table', [
+            'kemajuan' => $kemajuan,
+            "title" => "Kemajuan"
+        ]);
     }
 
     /**

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Dashboard_HomeController extends Controller
+class Forgot_PasswordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,9 @@ class Dashboard_HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard.index');
+        return view('forgot-password', [
+            "title" => "Forgot Password"
+        ]);
     }
 
     /**

@@ -16,7 +16,7 @@ class CreatePeran extends Migration
         Schema::create('peran', function (Blueprint $table) {
             $table->id();
             $table->string('peran',50);
-            $table->boolean('aktif');
+            $table->boolean('aktif')->default(1);
             $table->timestamps();
         });
     }

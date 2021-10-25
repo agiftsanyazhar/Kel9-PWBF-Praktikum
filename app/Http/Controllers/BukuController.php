@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Buku;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BukuController extends Controller
 {
@@ -14,7 +15,19 @@ class BukuController extends Controller
      */
     public function index()
     {
-        //
+        $buku = DB::table('buku')->get();
+
+        return view('dashboard.buku-table', [
+            'buku' => $buku,
+            "title" => "Buku"
+        ]);
+    }
+
+    public function showCreate()
+    {
+        return view('dashboard.create.buku', [
+            "title" => "Buku"
+        ]);
     }
 
     /**
@@ -35,7 +48,16 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'buku'          => 'required|max:50',
+            'keterangan'    => 'required',
+        ]);
+
+        Buku::create($validatedData);
+
+        $request->session()->flash('success','Buku Berhasil Ditambahkan');
+
+        return redirect('/buku-table');
     }
 
     /**

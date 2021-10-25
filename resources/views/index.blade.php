@@ -73,7 +73,7 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <br>
-          <h1>Solusi yang Tepat untuk Masa Depan Anda</h1>
+          <h1>Solusi yang Tepat untuk Generasi Anda</h1>
           <h2>Menyiapkan Generasi Muslim yang Beriman, Berakhlakul Karimah, dan Mecintai Al-Quran</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started scrollto">Mulai</a>
@@ -100,15 +100,8 @@
         <div class="row content">
           <div class="col-lg-12">
             <p>
-              <strong>TPQ AL-HIKMAH</strong> didirikan pada 8 September 2021 di Universitas Airlangga Kampus C, Mulyorejo, Surabaya dalam rangka membantu menunaikan tugas utama orang tua yaitu menjaga kefitrahan anak dengan pendidikan Al-Quran dan As-Sunnah. TPQ Al-Hikmah menyelenggarakan pendidikan dan pengajaran Al-Quran secara menyeluruh dan intensif untuk menciptakan genarasi yang Qurani dengan jalan:
+              Mengawali semester 3, <strong>TPQ AL-HIKMAH</strong> yang berlokasi di Universitas Airlangga Kampus C, Mulyorejo, Surabaya lahir dengan Metode Ummi dan sistem mutunya. Sebagai metode yang baru hadir di tengah–tengah banyaknya metode lain yang sudah ada, Metode Ummi mencoba mengambil positioning sebagai mitra terbaik sekolah atau lembaga pendidikan dalam menjamin kualitas baca Al-Quran santri. Diperkuat dengan diferensiasi sebagai metode yang mudah, cepat, dan berkualitas. Strategi yang digunakan agar <strong>TPQ AL-HIKMAH</strong> tumbuh cepat adalah dengan memberdayakan SDM daerah sehingga mereka bisa mengembangkan Metode Ummi di wilayah masing-masing. Sistem manajemen mutu terus dikembangkan agar terjaga kualitas proses dan produknya seiring dengan tumbuh pesatnya pengguna Metode Ummi.
             </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Menguatkan keimanan dan ketakwaan kepada Allah SWT dengan pemahaman akidah yang benar</li>
-              <li><i class="ri-check-double-line"></i> Memberikan pengetahuan teori dan praktik yang benar tentang tata cara beribadah kepada Allah SWT dengan landasan ilmu yang bermuara pada Al-Quran dan As-Sunnah</li>
-              <li><i class="ri-check-double-line"></i> Menanamkan dan membiasakan perilaku atau akhlak yang sesuai dengan tuntunan ajaran Islam</li>
-              <li><i class="ri-check-double-line"></i> Mendidik dan melatih untuk dapat membaca Al-Quran dengan baik sesuai dengan kaidah ilmu tajwid</li>
-              <li><i class="ri-check-double-line"></i> Mengajarkan hafalan, terjemah dan tafsir, surat-surat pendek dan ayat-ayat tertentu, serta doa-doa</li>
-            </ul>
           </div>
 
       </div>
@@ -138,10 +131,10 @@
                 </li>
 
                 <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Metode Tahsin Talaqqi <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Metode Ummi <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      Membimbing secara langsung bacaan santri, baik makharijul huruf maupun sifat huruf, sesuai dengan kaidahnya.
+                      Direct method (langsung), repetition (diulang-ulang), dan affection (kasih sayang yang tulus).
                     </p>
                   </div>
                 </li>
@@ -150,7 +143,7 @@
                   <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Mengaji Al-Quran dari Dasar <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      Membimbing santri mengaji Al-Quran dari dasar.
+                      Program yang cocok bagi santri yang baru memulai belajar mengaji.
                     </p>
                   </div>
                 </li>
@@ -361,7 +354,7 @@
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box featured">
               <h3>Reguler</h3>
-              <h4><sup>Rp</sup>200.000<span>per bulan</span></h4>
+              <h4><sup>Rp</sup>500.000<span>per bulan</span></h4>
               <a href="register" class="buy-btn">Daftar</a>
             </div>
           </div>
@@ -390,46 +383,46 @@
         <div class="faq-list">
           <ul>
             <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">Apakah Belajar di <strong>TPQ AL-HIKMAH</strong> Gratis?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+                  Ya, belajar di <strong>TPQ AL-HIKMAH</strong> tidak dipungut biaya apapun. Namun, Anda tetap dapat berdonasi untuk keperluan pengembangan kami.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">Apa Saja Syarat Mendaftar di <strong>TPQ AL-HIKMAH</strong>?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+                  Berusia minimal 5 tahun saat mendaftar, melengkapi administrasi pendaftaran sesuai ketentuan, dan siap mematuhi serta mengikuti aturan di <strong>TPQ AL-HIKMAH</strong>.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Apa itu Metode Ummi?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+                  Kata 'Ummi' berasal dari bahasa Arab 'Ummun' yang bermakna 'Ibuku' dengan penambahan 'Ya Mutakallim'. Pemilihan nama Ummi juga untuk menghormati dan mengingat jasa ibu. Tiada orang yang paling berjasa pada kita semua kecuali orang tua kita terutama ibu. Ibulah yang mengajarkan banyak hal pada kita dan orang yang sukses mengajarkan bahasa di dunia ini adalah ibu. Pendekatan yang digunakan dalam pembelajaran Al-Quran Metode Ummi adalah pendekatan bahasa ibu.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Apakah Santri yang Tidak Bisa Membaca Al-Quran Boleh Mendaftar di <strong>TPQ AL-HIKMAH</strong>? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
+                  Jangan khawatir. Semua santri nantinya akan dibimbing oleh ustadz/ustadzah profesional di bidangnya.
                 </p>
               </div>
             </li>
 
             <li data-aos="fade-up" data-aos-delay="500">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">Apakah Ada Program selain yang Disebutkan di Atas?<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
               <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
                 <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
+                  Ya, ada program lain. Nantinya semua santri akan mengikuti semua progragram yang ada di <strong>TPQ AL-HIKMAH</strong>.
                 </p>
               </div>
             </li>
@@ -550,33 +543,31 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Beranda</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">Tentang</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="useful-links/terms-of-service">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="useful-links/privacy-policy">Privacy Policy</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Program</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="program/">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="program/">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="program/">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="program/">Marketing</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Media Sosial</h4>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.twitter.com" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.skype.com" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="https://www.linkedin.com" class="linkedin"><i class="bx bxl-linkedin"></i></a>
             </div>
           </div>
 

@@ -24,7 +24,7 @@ class CreateSantris extends Migration
             $table->string('hp',15);
             $table->string('email',50);
             $table->string('password');
-            $table->date('tgl_masuk')->default(date("Y-m-d H:i:s"));
+            $table->date('tgl_masuk')->default(date("Y-m-d"));
             $table->boolean('aktif')->default(1);
             $table->timestamps();
         });

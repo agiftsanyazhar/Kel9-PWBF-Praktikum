@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Santri;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -16,7 +16,7 @@ class RegisterController extends Controller
     public function index()
     {
         return view('register', [
-            "title" => "Register"
+            "title" => "Daftar"
         ]);
     }
 
@@ -39,18 +39,18 @@ class RegisterController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama_santri'   => 'required|max:50',
+            'nama_santri'   => 'required|min:3|max:50',
             'gender'        => 'required',
-            'kota_lhr'      => 'required|max:40',
             'tgl_lhr'       => 'required',
-            'nama_ortu'     => 'required|max:50',
-            'alamat_ortu'   => 'required|max:50',
-            'email'         => 'required|email',
+            'kota_lhr'      => 'required|max:40',
+            'nama_ortu'     => 'required|min:3|max:50',
+            'alamat_ortu'   => 'required|max:100',
             'hp'            => 'required',
-            'password'      => 'required||min:7|max:32',
+            'email'         => 'required|email:dns|unique:santri',
+            'password'      => 'required||min:8|max:32',
         ]);
-        
-        $validatedData['password']=bcrypt($validatedData['password']);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
 
         Santri::create($validatedData);
 
