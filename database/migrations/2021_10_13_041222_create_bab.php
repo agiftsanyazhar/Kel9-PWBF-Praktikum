@@ -15,7 +15,7 @@ class CreateBab extends Migration
     {
         Schema::create('bab', function (Blueprint $table) {
             $table->id();
-            $table->string('bab',50);
+            $table->string('bab');
             $table->string('judul',100);
             $table->text('keterangan');
             $table->timestamps();

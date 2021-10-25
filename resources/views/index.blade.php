@@ -237,7 +237,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-file"></i></div>
+              <div class="icon"><i class="bi bi-book"></i></div>
               <h4><a href="" style="pointer-events: none">Perpustakaan</a></h4>
               <p>Tersedia lebih dari 5.000 buku untuk menambah wawasan tentang Islam</p>
             </div>
@@ -245,7 +245,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <div class="icon"><i class="bi bi-wifi"></i></div>
               <h4><a href="" style="pointer-events: none">Internet</a></h4>
               <p>Akses internet cepat untuk menunjang pembelajaran</p>
             </div>
@@ -253,7 +253,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
             <div class="icon-box">
-              <div class="icon"><i class="bx bx-layer"></i></div>
+              <div class="icon"><i class="bi bi-building"></i></div>
               <h4><a href="" style="pointer-events: none">Fasilitas Lainnya</a></h4>
               <p>Dapatkan fasilitas menarik lainnya yang tersedia di <strong>TPQ AL-HIKMAH</strong></p>
             </div>
