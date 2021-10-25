@@ -97,8 +97,10 @@ class PeranController extends Controller
      * @param  \App\Models\Peran  $peran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Peran $peran)
+    public function destroy($id)
     {
-        //
+        Peran::find($id)->delete();
+
+        return redirect('/peran-table')->with('delete','Data Berhasil di Hapus');
     }
 }

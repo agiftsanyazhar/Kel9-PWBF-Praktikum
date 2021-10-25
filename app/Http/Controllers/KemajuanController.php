@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kemajuan;
 use App\Models\Santri;
+use App\Models\Pengurus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,7 +27,7 @@ class KemajuanController extends Controller
     {
         return view('dashboard.show.kemajuan', [
             'kemajuan' => Kemajuan::all(),
-            'title' => "testing",
+            'title' => "Detail",
         ]);
     }
 
@@ -48,7 +49,18 @@ class KemajuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_santri'     => 'required',
+            'id_pengurus'   => 'required',
+            'tanggal'       => 'required',
+            'status'        => 'required',
+        ]);
+
+        Kemajuan::create($validatedData);
+
+        $request->session()->flash('success','Kemajuan Berhasil Ditambahkan');
+
+        return redirect('/bab-kemajuan');
     }
 
     /**

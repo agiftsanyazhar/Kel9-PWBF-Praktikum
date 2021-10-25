@@ -84,9 +84,6 @@ class SantriController extends Controller
      */
     public function destroy($id)
     {
-        $data_santri = Santri::find($id);
-        $data_santri->delete();
-
-        return redirect('/santri-table');
+        
     }
 }

@@ -102,6 +102,6 @@ class BukuController extends Controller
     {
         Buku::find($id)->delete();
 
-        return redirect('/buku-table')->with('delete','Data Berhasil Di Hapus');
+        return redirect('/buku-table')->with('delete','Data Berhasil di Hapus');
     }
 }

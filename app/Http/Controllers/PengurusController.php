@@ -104,8 +104,10 @@ class PengurusController extends Controller
      * @param  \App\Models\Pengurus  $pengurus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pengurus $pengurus)
+    public function destroy($id)
     {
-        //
+        Pengurus::find($id)->delete();
+
+        return redirect('/pengurus-table')->with('delete','Data Berhasil di Hapus');
     }
 }

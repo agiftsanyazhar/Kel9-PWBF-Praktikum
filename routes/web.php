@@ -53,7 +53,7 @@ Route::get('/santri-table', [SantriController::class, 'index']);
 //=================================== Register ===================================
 //================================================================================
 Route::post('/register', [RegisterController::class, 'store']);
-Route::get('/destroy_santri/{id}','App\Http\Controllers\SantriController@destroy');
+Route::delete('/santri-table/delete/{id}', [RegisterController::class, 'destroy']);
 
 //================================================================================
 //===================================== Login ====================================
@@ -61,26 +61,28 @@ Route::get('/destroy_santri/{id}','App\Http\Controllers\SantriController@destroy
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 //================================================================================
-//==================================== Create ====================================
+//===================================== CRUD =====================================
 //================================================================================
 //Bab
 Route::get('/form-create-bab', [BabController::class, 'showCreate']);
-Route::get('/delete/{id}', [BabController::class, 'destroy']);
-Route::get('/form-edit-bab-{id}', [BabController::class, 'edit']);
 Route::post('/create-bab', [BabController::class, 'store']);
+Route::get('/form-edit-bab-{id}', [BabController::class, 'edit']);
+Route::delete('/bab-table/delete/{id}', [BabController::class, 'destroy']);
 
 //Buku
 Route::get('/form-create-buku', [BukuController::class, 'showCreate']);
-Route::delete('/buku-table/delete/{id}', [BukuController::class, 'destroy']);
 Route::post('/create-buku', [BukuController::class, 'store']);
+Route::delete('/buku-table/delete/{id}', [BukuController::class, 'destroy']);
 
 //Pengurus
 Route::get('/form-create-pengurus', [PengurusController::class, 'showCreate']);
 Route::post('/create-pengurus', [PengurusController::class, 'store']);
+Route::delete('/pengurus-table/delete/{id}', [PengurusController::class, 'destroy']);
 
 //Peran
 Route::get('/form-create-peran', [PeranController::class, 'showCreate']);
 Route::post('/create-peran', [PeranController::class, 'store']);
+Route::delete('/peran-table/delete/{id}', [PeranController::class, 'destroy']);
 
 //kemajuan
 Route::get('/kemajuan-table-{id}', [KemajuanController::class, 'showIndex']);

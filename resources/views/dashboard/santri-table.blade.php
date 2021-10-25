@@ -63,12 +63,14 @@
                                     <td>{{ $data_santri -> email }}</td>
                                     <td>{{ $data_santri -> tgl_masuk }}</td>
                                     <td>{{ $data_santri -> aktif }}</td>
-                                    <form>
-                                        @csrf
-                                        @method('delete')
-                                        <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-                                    </form>
-                                        <td><a href="{{ url('/destroy_santri',$data_santri->id) }}"><button class="btn btn-danger btn-block" type="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</button></a></td>
+                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td>
+                                        <form action="/peran-table/delete/{{ $data_santri->id }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

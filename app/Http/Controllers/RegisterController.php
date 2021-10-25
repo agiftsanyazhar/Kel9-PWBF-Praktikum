@@ -54,7 +54,6 @@ class RegisterController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         Santri::create($validatedData);
-
         User::create($validatedData);
 
         $request->session()->flash('success','Registrasi Berhasil! Silahkan Login');
@@ -104,6 +103,9 @@ class RegisterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Santri::find($id)->delete();
+        User::find($id)->delete();
+
+        return redirect('/santri-table')->with('delete','Data Berhasil di Hapus');
     }
 }

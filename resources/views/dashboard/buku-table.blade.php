@@ -58,7 +58,7 @@
                                     <form action="/buku-table/delete/{{ $data_buku->id }}" method="POST">
                                         @method('delete')
                                         @csrf
-                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Yakin Data Akan Di Hapus?')" type="submit">Hapus</button>
+                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
                                     </form>
                                     </td>
                                 </tr>

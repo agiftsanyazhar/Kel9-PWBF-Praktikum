@@ -54,7 +54,13 @@
                                     <td>{{ $data_peran -> created_at }}</td>
                                     <td>{{ $data_peran -> updated_at }}</td>
                                     <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
+                                    <td>
+                                        <form action="/peran-table/delete/{{ $data_peran->id }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

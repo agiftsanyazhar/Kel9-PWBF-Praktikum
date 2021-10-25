@@ -34,10 +34,10 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Buku</th>
                                 <th>Bab</th>
                                 <th>Judul</th>
                                 <th>Keterangan</th>
-                                <th>Buku</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -45,10 +45,10 @@
                         <tfoot>
                             <tr>
                                 <th>ID</th>
+                                <th>Buku</th>
                                 <th>Bab</th>
                                 <th>Judul</th>
                                 <th>Keterangan</th>
-                                <th>Buku</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -57,12 +57,24 @@
                             @foreach ($bab as $babs)
                                 <tr>
                                     <td>{{ $babs ->id }}</td>
+                                    <td>{{ $babs ->buku->buku }}</td>
                                     <td>{{ $babs ->bab }}</td>
                                     <td>{{ $babs ->judul }}</td>
                                     <td>{{ $babs ->keterangan }}</td>
-                                    <td>{{ $babs ->buku->buku }}</td>
-                                    <td><div class="d-grid"><a href = "{{ url('/form-edit-bab-') }}{{ $babs->bab }}"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-                                    <td><div class="d-grid"><a href = '/delete/{{ $babs->id }}'><button class="btn btn-danger btn-block" type="submit">Hapus</button></a></div></td>
+                                    <td>
+                                        <div class="d-grid">
+                                            <a href = "{{ url('/form-edit-bab-') }}{{ $babs->bab }}">
+                                                <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                            </a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <form action="/bab-table/delete/{{ $babs->id }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
