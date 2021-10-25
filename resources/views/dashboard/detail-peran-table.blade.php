@@ -46,7 +46,7 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($detail_peran as $data_detail_peran)
+                            @foreach ($detail_perans as $data_detail_peran)
                                 <tr>
                                     <td>{{ $data_detail_peran -> id }}</td>
                                     <td>{{ $data_detail_peran -> created_at }}</td>

@@ -13,12 +13,10 @@ class Detail_KemajuanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Detail_Kemajuan $detail_kemajuan)
     {
-        $detail_kemajuan = DB::table('detail_kemajuan')->get();
-
         return view('dashboard.detail-kemajuan-table', [
-            'detail_kemajuan' => $detail_kemajuan,
+            'detail_kemajuan' => Detail_Kemajuan::all(),
             "title" => "Detail Kemajuan"
         ]);
     }

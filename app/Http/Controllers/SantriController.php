@@ -13,12 +13,10 @@ class SantriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Santri $santri)
     {
-        $santri = DB::table('santri')->get();
-
         return view('dashboard.santri-table', [
-            'santri' => $santri,
+            'santris' => Santri::all(),
             "title" => "Santri"
         ]);
     }

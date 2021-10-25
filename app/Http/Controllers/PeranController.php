@@ -13,12 +13,10 @@ class PeranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Peran $peran)
     {
-        $peran = DB::table('peran')->get();
-
         return view('dashboard.peran-table', [
-            'peran' => $peran,
+            'peran' => Peran::all(),
             "title" => "Peran"
         ]);
     }

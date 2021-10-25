@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSantris extends Migration
+class CreateSantrisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,7 @@ class CreateSantris extends Migration
     {
         Schema::create('santris', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_santri',50);
+            $table->string('nama',50);
             $table->char('gender',1);
             $table->date('tgl_lhr');
             $table->string('kota_lhr',40);

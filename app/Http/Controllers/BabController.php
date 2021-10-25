@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bab;
+use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,10 +16,8 @@ class BabController extends Controller
      */
     public function index()
     {
-        $bab = DB::table('bab')->get();
-
         return view('dashboard.bab-table', [
-            'bab'   => $bab,
+            'bab'   => Bab::all(),
             "title" => "Bab"
         ]);
     }
@@ -26,6 +25,7 @@ class BabController extends Controller
     public function showCreate()
     {
         return view('dashboard.create.bab', [
+            'buku' => Buku::all(),
             "title" => "Bab"
         ]);
     }
@@ -52,7 +52,7 @@ class BabController extends Controller
             'bab'           => 'required|max:50',
             'judul'         => 'required|max:100',
             'keterangan'    => 'required',
-            // 'id_buku'       => 'required',
+            'id_buku'       => 'required',
         ]);
 
         Bab::create($validatedData);
@@ -81,7 +81,11 @@ class BabController extends Controller
      */
     public function edit(Bab $bab)
     {
-        //
+        return view('dashboard.edit.bab', [
+            'bab'   => $bab,
+            'bukus' => Buku::all(),
+            "title" => "Bab"
+        ]);
     }
 
     /**
@@ -102,8 +106,12 @@ class BabController extends Controller
      * @param  \App\Models\Bab  $bab
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bab $bab)
+    public function destroy(Request $request, $id)
     {
-        //
+        Bab::find($id)->delete();
+
+        $request->session()->flash('delete','Data Berhasil Di Hapus');
+
+        return redirect('/bab-table');
     }
 }

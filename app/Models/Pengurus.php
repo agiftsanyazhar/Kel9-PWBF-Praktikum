@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Pengurus extends Model
 {
     use HasFactory;
-    
-    protected $table = 'pengurus';
+
+    protected $table = 'penguruses';
     protected $guarded = ['id'];
 
     public function Kemajuan()
@@ -21,4 +21,5 @@ class Pengurus extends Model
     {
         return $this->hasMany(Detail_Peran::class, 'id_pengurus', 'id');
     }
+
 }

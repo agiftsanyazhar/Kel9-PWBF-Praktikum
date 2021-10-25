@@ -13,12 +13,10 @@ class BukuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Buku $buku)
     {
-        $buku = DB::table('buku')->get();
-
         return view('dashboard.buku-table', [
-            'buku' => $buku,
+            'bukus' => Buku::all(),
             "title" => "Buku"
         ]);
     }
@@ -100,8 +98,10 @@ class BukuController extends Controller
      * @param  \App\Models\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buku $buku)
+    public function destroy($id)
     {
-        //
+        Buku::find($id)->delete();
+
+        return redirect('/buku-table')->with('delete','Data Berhasil Di Hapus');
     }
 }

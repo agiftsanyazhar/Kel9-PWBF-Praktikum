@@ -46,7 +46,7 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($buku as $data_buku)
+                            @foreach ($bukus as $data_buku)
                                 <tr>
                                     <td>{{ $data_buku -> id }}</td>
                                     <td>{{ $data_buku -> buku }}</td>
@@ -54,7 +54,13 @@
                                     <td>{{ $data_buku -> created_at }}</td>
                                     <td>{{ $data_buku -> updated_at }}</td>
                                     <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
+                                    <td>
+                                    <form action="/buku-table/delete/{{ $data_buku->id }}" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Yakin Data Akan Di Hapus?')" type="submit">Hapus</button>
+                                    </form>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

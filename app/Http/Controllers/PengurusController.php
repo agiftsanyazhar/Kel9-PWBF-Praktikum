@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pengurus;
+use Illuminate\Foundation\Bus\PendingChain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,12 +14,10 @@ class PengurusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Pengurus $pengurus)
     {
-        $pengurus = DB::table('pengurus')->get();
-
         return view('dashboard.pengurus-table', [
-            'pengurus' => $pengurus,
+            'pengurus' => Pengurus::all(),
             "title" => "Pengurus"
         ]);
     }

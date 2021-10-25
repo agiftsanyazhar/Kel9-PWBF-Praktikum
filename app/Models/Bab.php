@@ -8,9 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Bab extends Model
 {
     use HasFactory;
-
-    protected $table = 'bab';
-    protected $guarded = ['id', 'id_buku'];
+    
+    protected $guarded = ['id'];
 
     public function buku()
     {
@@ -21,4 +20,5 @@ class Bab extends Model
     {
         return $this->hasMany(Detail_Kemajuan::class, 'id_bab', 'id');
     }
+
 }

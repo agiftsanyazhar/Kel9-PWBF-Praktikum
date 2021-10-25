@@ -9,7 +9,7 @@ class Santri extends Model
 {
     use HasFactory;
 
-    protected $table = 'santri';
+    protected $table = 'santris';
     protected $guarded = ['id'];
 
     public function kemajuan()
@@ -18,4 +18,3 @@ class Santri extends Model
     }
 
 }
-

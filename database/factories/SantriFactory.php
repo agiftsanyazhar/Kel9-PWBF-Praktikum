@@ -22,7 +22,7 @@ class SantriFactory extends Factory
     public function definition()
     {
         return [
-            'nama_santri' => $this->faker->name(),
+            'nama' => $this->faker->name(),
             'gender' => $this->faker->randomElement(['M','F']),
             'tgl_lhr' => $this->faker->date(),
             'kota_lhr' => $this->faker->city(),

@@ -40,12 +40,6 @@ Route::get('/forgot-password', [Forgot_PasswordController::class, 'index']);
 //================================================================================
 Route::get('/dashboard-index', [Dashboard_IndexController::class, 'index']);
 Route::get('/charts', [ChartsController::class, 'index']);
-<<<<<<< HEAD
-Route::get('/tables', [SantriController::class, 'index']);
-
-//Register
-Route::post('/register', [RegisterController::class, 'store']);
-=======
 Route::get('/bab-table', [BabController::class, 'index']);
 Route::get('/buku-table', [BukuController::class, 'index']);
 Route::get('/detail-kemajuan-table', [Detail_KemajuanController::class, 'index']);
@@ -71,10 +65,13 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //================================================================================
 //Bab
 Route::get('/form-create-bab', [BabController::class, 'showCreate']);
+Route::get('/delete/{id}', [BabController::class, 'destroy']);
+Route::get('/form-edit-bab-{id}', [BabController::class, 'edit']);
 Route::post('/create-bab', [BabController::class, 'store']);
 
 //Buku
 Route::get('/form-create-buku', [BukuController::class, 'showCreate']);
+Route::delete('/buku-table/delete/{id}', [BukuController::class, 'destroy']);
 Route::post('/create-buku', [BukuController::class, 'store']);
 
 //Pengurus
@@ -84,4 +81,8 @@ Route::post('/create-pengurus', [PengurusController::class, 'store']);
 //Peran
 Route::get('/form-create-peran', [PeranController::class, 'showCreate']);
 Route::post('/create-peran', [PeranController::class, 'store']);
->>>>>>> 1e30e227fdea51a4af0dd9392162e3eda13518cd
+
+//kemajuan
+Route::get('/kemajuan-table-{id}', [KemajuanController::class, 'showIndex']);
+Route::get('/form-create-peran', [KemajuanController::class, 'showCreate']);
+Route::post('/create-peran', [KemajuanController::class, 'store']);
