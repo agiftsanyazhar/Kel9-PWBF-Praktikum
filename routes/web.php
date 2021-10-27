@@ -64,15 +64,17 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //===================================== CRUD =====================================
 //================================================================================
 //Bab
-Route::get('/form-create-bab', [BabController::class, 'showCreate']);
+Route::get('/form-create-bab-{id}', [BabController::class, 'showCreate']);
 Route::post('/create-bab', [BabController::class, 'store']);
 Route::get('/form-edit-bab-{id}', [BabController::class, 'edit']);
-Route::delete('/bab-table/delete/{id}', [BabController::class, 'destroy']);
+Route::post('/edit-bab-{id}', [BabController::class, 'edit']);
+Route::delete('/delete-bab-{id}', [BabController::class, 'destroy']);
 
 //Buku
 Route::get('/form-create-buku', [BukuController::class, 'showCreate']);
 Route::post('/create-buku', [BukuController::class, 'store']);
-Route::delete('/buku-table/delete/{id}', [BukuController::class, 'destroy']);
+Route::get('/buku-table-bab-{id}', [BabController::class, 'index']);
+Route::delete('/delete-buku-{id}', [BukuController::class, 'destroy']);
 
 //Pengurus
 Route::get('/form-create-pengurus', [PengurusController::class, 'showCreate']);

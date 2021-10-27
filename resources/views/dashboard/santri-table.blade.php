@@ -69,7 +69,7 @@
                                     <td>{{ $data_santri -> email }}</td>
                                     <td>{{ $data_santri -> tgl_masuk }}</td>
                                     <td>{{ $data_santri -> aktif }}</td>
-                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
                                         <form action="/santri-table/delete/{{ $data_santri->id }}" method="POST">
                                             @method('delete')

@@ -56,8 +56,8 @@
                                     <td>{{ $data_detail_kemajuan -> updated_at }}</td>
                                     <td>{{ $data_detail_kemajuan -> id_kemajuan }}</td>
                                     <td>{{ $data_detail_kemajuan -> id_bab }}</td>
-                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
+                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-block" type="submit">Hapus</button></td>
                                 </tr>
                             @endforeach
                         </tbody>

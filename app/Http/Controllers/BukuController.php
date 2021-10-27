@@ -75,9 +75,12 @@ class BukuController extends Controller
      * @param  \App\Models\Buku  $buku
      * @return \Illuminate\Http\Response
      */
-    public function edit(Buku $buku)
+    public function edit($id)
     {
-        //
+        return view('dashboard.edit.buku', [
+            'buku'  => Buku::find($id),
+            "title" => Buku::find($id)->buku
+        ]);
     }
 
     /**
@@ -102,6 +105,6 @@ class BukuController extends Controller
     {
         Buku::find($id)->delete();
 
-        return redirect('/buku-table')->with('delete','Data Berhasil Di Hapus');
+        return redirect('/buku-table')->with('delete','Data Berhasil di Hapus');
     }
 }

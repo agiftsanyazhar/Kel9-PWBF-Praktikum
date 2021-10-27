@@ -15,9 +15,7 @@
                                     <div class="col-md-6">
                                         <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
                                             <option value="" disabled selected hidden>Judul Buku</option>
-                                            @foreach ($buku as $bukus)
-                                                <option value={{ $bukus->id }}>{{ $bukus->buku }}</option>
-                                            @endforeach
+                                                <option value={{ $buku->id }}>{{ $buku->buku }}</option>
                                         </select>
                                         @error('id_buku')
                                             <div class="invalid-feedback">
@@ -57,7 +55,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambah</button></div>
+                                    <button class="btn btn-primary btn-block" type="submit">Tambah</button>
                                 </div>
                             </form>
                         </div>

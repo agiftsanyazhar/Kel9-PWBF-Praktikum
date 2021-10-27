@@ -34,8 +34,7 @@
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Show</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -45,8 +44,7 @@
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Show</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -57,11 +55,14 @@
                                     <td>{{ $data_buku -> id }}</td>
                                     <td>{{ $data_buku -> buku }}</td>
                                     <td>{{ $data_buku -> keterangan }}</td>
-                                    <td>{{ $data_buku -> created_at }}</td>
-                                    <td>{{ $data_buku -> updated_at }}</td>
-                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td><a href="{{ url('buku-table-bab-') }}{{ $data_buku->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
                                     <td>
-                                    <form action="/buku-table/delete/{{ $data_buku->id }}" method="POST">
+                                        <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}">
+                                            <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                    <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST">
                                         @method('delete')
                                         @csrf
                                         <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>

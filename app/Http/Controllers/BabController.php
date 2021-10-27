@@ -14,19 +14,21 @@ class BabController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Buku $id)
     {
-        return view('dashboard.bab-table', [
-            'bab'   => Bab::all(),
-            "title" => "Bab"
+        //$buku = Buku::find($id)->get();
+        return view('dashboard.show.bab', [
+            'bab'   => Bab::where('id_buku', $id->id)->get(),
+            'buku' => $id,
+            "title" => "Buku",
         ]);
     }
 
-    public function showCreate()
+    public function showCreate($id)
     {
         return view('dashboard.create.bab', [
-            'buku' => Buku::all(),
-            "title" => "Bab"
+            'buku' => Buku::find($id),
+            "title" => "Bab",
         ]);
     }
 
@@ -51,15 +53,15 @@ class BabController extends Controller
         $validatedData = $request->validate([
             'bab'           => 'required|max:50',
             'judul'         => 'required|max:100',
-            'keterangan'    => 'required',
             'id_buku'       => 'required',
+            'keterangan'    => 'required',
         ]);
 
         Bab::create($validatedData);
 
         $request->session()->flash('success','Bab Berhasil Ditambahkan');
 
-        return redirect('/bab-table');
+        return redirect('/buku-table');
     }
 
     /**
@@ -79,12 +81,12 @@ class BabController extends Controller
      * @param  \App\Models\Bab  $bab
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bab $bab)
+    public function edit($id)
     {
         return view('dashboard.edit.bab', [
-            'bab'   => $bab,
+            'bab'   => Bab::find($id),
             'bukus' => Buku::all(),
-            "title" => "Bab"
+            "title" => Bab::find($id)->bab
         ]);
     }
 
@@ -110,8 +112,8 @@ class BabController extends Controller
     {
         Bab::find($id)->delete();
 
-        $request->session()->flash('delete','Data Berhasil Di Hapus');
+        $request->session()->flash('delete','Data Berhasil di Hapus');
 
-        return redirect('/bab-table');
+        return redirect('/buku-table');
     }
 }

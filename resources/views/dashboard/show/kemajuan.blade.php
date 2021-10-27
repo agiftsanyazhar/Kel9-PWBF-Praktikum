@@ -51,8 +51,8 @@
                                     <td>{{ $kemajuans -> id_pengurus }}</td> --}}
                                     <td>{{ $kemajuans -> tanggal }}</td>
                                     <td>{{ $kemajuans -> status }}</td>
-                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
-                                    <td><div class="d-grid"><button class="btn btn-danger btn-block" type="submit">Hapus</button></div></td>
+                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
+                                    <td><button class="btn btn-danger btn-block" type="submit">Hapus</button></td>
                                 </tr>
                             @endforeach
                         </tbody>

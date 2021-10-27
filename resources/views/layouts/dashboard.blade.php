@@ -65,11 +65,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="{{ url('/bab-table') }}">Bab</a>
                                             <a class="nav-link" href="{{ url('/buku-table') }}">Buku</a>
-                                            <a class="nav-link" href="{{ url('/detail-kemajuan-table') }}">Detail Kemajuan</a>
-                                            <a class="nav-link" href="{{ url('/detail-peran-table') }}">Detail Peran</a>
-                                            <a class="nav-link" href="{{ url('/kemajuan-table') }}">Kemajuan</a>
                                             <a class="nav-link" href="{{ url('/pengurus-table') }}">Pengurus</a>
                                             <a class="nav-link" href="{{ url('/peran-table') }}">Peran</a>
                                             <a class="nav-link" href="{{ url('/santri-table') }}">Santri</a>

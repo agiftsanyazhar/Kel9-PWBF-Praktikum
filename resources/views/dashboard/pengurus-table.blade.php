@@ -71,7 +71,7 @@
                                     <td>{{ $data_pengurus -> aktif }}</td>
                                     <td>{{ $data_pengurus -> created_at }}</td>
                                     <td>{{ $data_pengurus -> updated_at }}</td>
-                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
                                         <form action="/pengurus-table/delete/{{ $data_pengurus->id }}" method="POST">
                                             @method('delete')

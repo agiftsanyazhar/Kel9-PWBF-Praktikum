@@ -19,7 +19,7 @@ class Kemajuan extends Model
         return $this->belongsTo(Pengurus::class, 'id_pengurus');
     }
 
-    public function detaiKemajuan()
+    public function detailKemajuan()
     {
         return $this->hasMany(Detail_Kemajuan::class, 'id_kemajuan');
     }

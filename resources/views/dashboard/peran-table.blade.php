@@ -59,7 +59,7 @@
                                     <td>{{ $data_peran -> aktif }}</td>
                                     <td>{{ $data_peran -> created_at }}</td>
                                     <td>{{ $data_peran -> updated_at }}</td>
-                                    <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
+                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
                                         <form action="/peran-table/delete/{{ $data_peran->id }}" method="POST">
                                             @method('delete')
