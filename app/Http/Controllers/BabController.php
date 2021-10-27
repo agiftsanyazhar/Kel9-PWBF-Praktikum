@@ -110,7 +110,7 @@ class BabController extends Controller
     {
         Bab::find($id)->delete();
 
-        $request->session()->flash('delete','Data Berhasil di Hapus');
+        $request->session()->flash('delete','Data Berhasil Di Hapus');
 
         return redirect('/bab-table');
     }
