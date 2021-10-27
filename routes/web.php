@@ -86,5 +86,5 @@ Route::delete('/peran-table/delete/{id}', [PeranController::class, 'destroy']);
 
 //kemajuan
 Route::get('/kemajuan-table-{id}', [KemajuanController::class, 'showIndex']);
-Route::get('/form-create-peran', [KemajuanController::class, 'showCreate']);
-Route::post('/create-peran', [KemajuanController::class, 'store']);
+Route::get('/form-create-kemajuan', [KemajuanController::class, 'showCreate']);
+Route::post('/create-kemajuan', [KemajuanController::class, 'store']);

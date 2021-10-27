@@ -47,7 +47,7 @@ class PeranController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'peran'     => 'required|max:20|unique:peran',
+            'peran'     => 'required|max:20|unique:perans',
         ]);
 
         Peran::create($validatedData);

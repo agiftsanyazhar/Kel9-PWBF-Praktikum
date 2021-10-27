@@ -8,6 +8,12 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
+            @if (session()->has('delete'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('delete') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
@@ -65,7 +71,7 @@
                                     <td>{{ $data_santri -> aktif }}</td>
                                     <td><div class="d-grid"><button class="btn btn-warning btn-block" type="submit">Edit</button></div></td>
                                     <td>
-                                        <form action="/peran-table/delete/{{ $data_santri->id }}" method="POST">
+                                        <form action="/santri-table/delete/{{ $data_santri->id }}" method="POST">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>

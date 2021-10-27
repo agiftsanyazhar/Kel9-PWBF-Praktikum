@@ -51,7 +51,7 @@ class PengurusController extends Controller
             'nama_pengurus' => 'required|min:3|max:50',
             'gender'        => 'required',
             'hp'            => 'required',
-            'email'         => 'required|email:dns|unique:pengurus|unique:santri',
+            'email'         => 'required|email:dns|unique:penguruses|unique:santris',
             'password'      => 'required||min:8|max:32',
         ]);
 
