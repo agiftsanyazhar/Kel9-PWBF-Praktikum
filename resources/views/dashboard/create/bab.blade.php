@@ -12,7 +12,7 @@
                             <form action="/create-bab" method="post">
                                 @csrf
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
                                             <option value="" disabled selected hidden>Judul Buku</option>
                                                 <option value={{ $buku->id }}>{{ $buku->buku }}</option>
@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="text" maxlength="50" placeholder="Bab" value="{{ old('bab') }}" required/>
                                         @error('bab')
                                             <div class="invalid-feedback">
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input class="form-control @error('judul') is-invalid @enderror" id="inputName" name="judul" type="text" maxlength="50" placeholder="Judul" value="{{ old('judul') }}" required/>
                                         @error('judul')
                                             <div class="invalid-feedback">

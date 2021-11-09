@@ -34,6 +34,7 @@
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
+                                <th>Kemajuan</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -51,6 +52,7 @@
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
+                                <th>Kemajuan</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -68,7 +70,14 @@
                                     <td>{{ $data_santri -> hp }}</td>
                                     <td>{{ $data_santri -> email }}</td>
                                     <td>{{ $data_santri -> tgl_masuk }}</td>
-                                    <td>{{ $data_santri -> aktif }}</td>
+                                    <td>
+                                        @if ($data_santri->aktif === 1)
+                                            Aktif
+                                        @else
+                                            Tidak Aktif
+                                        @endif
+                                    </td>
+                                    <td><a href="{{ url('santri-table-kemajuan-') }}{{ $data_santri->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
                                     <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
                                         <form action="/santri-table/delete/{{ $data_santri->id }}" method="POST">

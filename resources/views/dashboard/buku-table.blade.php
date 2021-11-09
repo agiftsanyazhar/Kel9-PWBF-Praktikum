@@ -10,15 +10,43 @@
             </ol>
             <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
             <br><br>
-            @if (session()->has('success'))
+            
+            {{-- Buku --}}
+            @if (session()->has('successBuku'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                    {{ session('successBuku') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            @if (session()->has('delete'))
+            @if (session()->has('updateBuku'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('updateBuku') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session()->has('deleteBuku'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('delete') }}
+                    {{ session('deleteBuku') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            {{-- Bab --}}
+            @if (session()->has('successBab'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('successBab') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session()->has('updateBab'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('updateBab') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session()->has('deleteBab'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('deleteBab') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif

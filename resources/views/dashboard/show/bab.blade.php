@@ -7,7 +7,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="buku-table">{{ $title }}</a></li>
-                <li class="breadcrumb-item active">{{ $title }} - {{ $buku->buku }}</li>
+                <li class="breadcrumb-item active">{{ $buku->buku }}</li>
             </ol>
             <a href="{{ url('/form-create-bab-') }}{{ $buku->id }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
             <a href="{{ url('/buku-table') }}"><button class="btn btn-warning btn-block" type="submit">Kembali ke Daftar Buku</button></a>

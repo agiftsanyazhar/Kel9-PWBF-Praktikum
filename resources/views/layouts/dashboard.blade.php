@@ -32,7 +32,7 @@
                         <li><a class="dropdown-item" href="#!">Pengaturan</a></li>
                         <li><a class="dropdown-item" href="#!">Log Aktivitas</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="/">Logout</a></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Masuk sebagai:</div>
-                            Start Bootstrap
+                        {{ auth()->user()->nama }}
                     </div>
                 </nav>
             </div>

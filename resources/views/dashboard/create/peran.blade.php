@@ -12,7 +12,7 @@
                             <form action="/create-peran" method="post">
                                 @csrf
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input class="form-control @error('peran') is-invalid @enderror" id="inputName" name="peran" type="text" maxlength="50" placeholder="Peran" value="{{ old('peran') }}" required/>
                                         @error('peran')
                                             <div class="invalid-feedback">

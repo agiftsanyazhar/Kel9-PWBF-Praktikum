@@ -12,7 +12,7 @@
                             <form action="/create-buku" method="post">
                                 @csrf
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input class="form-control @error('buku') is-invalid @enderror" id="inputName" name="buku" type="text" maxlength="50" placeholder="Buku" value="{{ old('buku') }}" required/>
                                         @error('buku')
                                             <div class="invalid-feedback">

@@ -28,6 +28,14 @@ class BukuController extends Controller
         ]);
     }
 
+    public function showEdit($id)
+    {
+        return view('dashboard.edit.buku', [
+            'buku'  => Buku::find($id),
+            "title" => Buku::find($id)->buku
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -53,7 +61,7 @@ class BukuController extends Controller
 
         Buku::create($validatedData);
 
-        $request->session()->flash('success','Buku Berhasil Ditambahkan');
+        $request->session()->flash('successBuku','Buku Berhasil Ditambahkan');
 
         return redirect('/buku-table');
     }
@@ -92,7 +100,17 @@ class BukuController extends Controller
      */
     public function update(Request $request, Buku $buku)
     {
-        //
+        $validatedData = $request->validate([
+            'buku'          => 'required|max:50',
+            'keterangan'    => 'required',
+        ]);
+
+        DB::table('bukus')->where('id',$request->id)->update([
+            'buku'          => $request->buku,
+            'keterangan'    => $request->keterangan
+        ]);
+
+        return redirect('/buku-table')->with('updateBuku','Data Buku Berhasil di Update');
     }
 
     /**
@@ -105,6 +123,6 @@ class BukuController extends Controller
     {
         Buku::find($id)->delete();
 
-        return redirect('/buku-table')->with('delete','Data Berhasil di Hapus');
+        return redirect('/buku-table')->with('deleteBuku','Data Berhasil di Hapus');
     }
 }

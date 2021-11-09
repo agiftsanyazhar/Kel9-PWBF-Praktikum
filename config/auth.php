@@ -14,8 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'santri',
+        'passwords' => 'santris',
     ],
 
     /*
@@ -39,6 +39,10 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'santri' => [
+            'driver' => 'session',
+            'provider' => 'santris',
         ],
     ],
 
@@ -65,10 +69,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'santris' => [
+            'driver' => 'database',
+            'table' => 'santris',
+        ],
     ],
 
     /*
@@ -87,7 +91,7 @@ return [
     */
 
     'passwords' => [
-        'users' => [
+        'santris' => [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,

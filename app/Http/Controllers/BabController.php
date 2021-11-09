@@ -16,7 +16,6 @@ class BabController extends Controller
      */
     public function index(Buku $id)
     {
-        //$buku = Buku::find($id)->get();
         return view('dashboard.show.bab', [
             'bab'   => Bab::where('id_buku', $id->id)->get(),
             'buku' => $id,
@@ -59,7 +58,7 @@ class BabController extends Controller
 
         Bab::create($validatedData);
 
-        $request->session()->flash('success','Bab Berhasil Ditambahkan');
+        $request->session()->flash('successBab','Bab Berhasil Ditambahkan');
 
         return redirect('/buku-table');
     }
@@ -97,9 +96,23 @@ class BabController extends Controller
      * @param  \App\Models\Bab  $bab
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bab $bab)
+    public function update(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'bab'           => 'required|max:50',
+            'judul'         => 'required|max:100',
+            'id_buku'       => 'required',
+            'keterangan'    => 'required',
+        ]);
+
+        DB::table('babs')->where('id',$request->id)->update([
+            'bab'           => $request->bab,
+            'judul'         => $request->judul,
+            'id_buku'       => $request->id_buku,
+            'keterangan'    => $request->keterangan,
+        ]);
+
+        return redirect('/buku-table')->with('updateBab','Data Bab Berhasil di Update');
     }
 
     /**
@@ -112,7 +125,7 @@ class BabController extends Controller
     {
         Bab::find($id)->delete();
 
-        $request->session()->flash('delete','Data Berhasil di Hapus');
+        $request->session()->flash('deleteBab','Data Berhasil di Hapus');
 
         return redirect('/buku-table');
     }

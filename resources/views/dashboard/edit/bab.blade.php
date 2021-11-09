@@ -9,11 +9,11 @@
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
                         <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Bab {{ $title }}</h3></div>
                         <div class="card-body">
-                            <form action="/edit-bab/{{ $bab->id }}" method="post">
+                            <form action="/update-{{ $bab->id }}" method="post">
                                 @method('put')
                                 @csrf
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input class="form-control @error('bab') is-invalid @enderror" id="inputName" name="bab" type="text" maxlength="50" placeholder="Bab" autofokus value="{{ old('bab', $bab->bab) }}" required/>
                                         @error('bab')
                                             <div class="invalid-feedback">
@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <input class="form-control @error('judul') is-invalid @enderror" id="inputName" name="judul" type="text" maxlength="50" placeholder="Judul" autofokus value="{{ old('judul', $bab->judul) }}" required/>
                                         @error('judul')
                                             <div class="invalid-feedback">
@@ -33,7 +33,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
                                             @foreach ($bukus as $buku)
                                                 @if (old('id_buku', $bab->id_buku) == $buku->id)

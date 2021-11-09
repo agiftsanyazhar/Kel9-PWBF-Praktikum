@@ -56,9 +56,7 @@
           <li class="dropdown"><a href="#" style="pointer-events: none"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="register">Daftar</a></li>
-              <li><a href="login">Login Santri</a></li>
-              <li><a href="login">Login Guru</a></li>
-              <li><a href="login">Login Staff</a></li>
+              <li><a href="login">Login</a></li>
             </ul>
           </li>
         </ul>
