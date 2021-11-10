@@ -23,22 +23,17 @@ class BabController extends Controller
         ]);
     }
 
-    public function showCreate($id)
-    {
-        return view('dashboard.create.bab', [
-            'buku' => Buku::find($id),
-            "title" => "Bab",
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('dashboard.create.bab', [
+            'buku' => Buku::find($id),
+            "title" => "Bab",
+        ]);
     }
 
     /**
@@ -98,13 +93,6 @@ class BabController extends Controller
      */
     public function update(Request $request)
     {
-        $validatedData = $request->validate([
-            'bab'           => 'required|max:50',
-            'judul'         => 'required|max:100',
-            'id_buku'       => 'required',
-            'keterangan'    => 'required',
-        ]);
-
         DB::table('babs')->where('id',$request->id)->update([
             'bab'           => $request->bab,
             'judul'         => $request->judul,
@@ -125,7 +113,7 @@ class BabController extends Controller
     {
         Bab::find($id)->delete();
 
-        $request->session()->flash('deleteBab','Data Berhasil di Hapus');
+        $request->session()->flash('deleteBab','Bab Berhasil di Hapus');
 
         return redirect('/buku-table');
     }

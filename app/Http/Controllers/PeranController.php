@@ -21,13 +21,6 @@ class PeranController extends Controller
         ]);
     }
 
-    public function showCreate()
-    {
-        return view('dashboard.create.peran', [
-            "title" => "Peran"
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +28,9 @@ class PeranController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.create.peran', [
+            "title" => "Peran"
+        ]);
     }
 
     /**
@@ -74,9 +69,12 @@ class PeranController extends Controller
      * @param  \App\Models\Peran  $peran
      * @return \Illuminate\Http\Response
      */
-    public function edit(Peran $peran)
+    public function edit($id)
     {
-        //
+        return view('dashboard.edit.peran', [
+            'peran'     => Peran::find($id),
+            "title"     => Peran::find($id)->peran
+        ]);
     }
 
     /**
@@ -88,7 +86,15 @@ class PeranController extends Controller
      */
     public function update(Request $request, Peran $peran)
     {
-        //
+        $validatedData = $request->validate([
+            'peran'     => 'required|max:20|unique:perans',
+        ]);
+
+        DB::table('perans')->where('id',$request->id)->update([
+            'peran'     => $request->peran,
+        ]);
+
+        return redirect('/peran-table')->with('update','Data Peran Berhasil di Update');
     }
 
     /**
@@ -101,6 +107,6 @@ class PeranController extends Controller
     {
         Peran::find($id)->delete();
 
-        return redirect('/peran-table')->with('delete','Data Berhasil di Hapus');
+        return redirect('/peran-table')->with('delete','Peran Berhasil di Hapus');
     }
 }

@@ -10,18 +10,12 @@
             </ol>
             <a href="{{ url('/create') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
             <br><br>
-            @if (session()->has('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
             <div class="card mb-4" >
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>
-                <div class="card-body" action="/show-santri" method="post">>
+                <div class="card-body" action="/show-santri" method="post">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
@@ -29,7 +23,7 @@
                                 <th>Nama Santri</th>
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
-                                <th>Lihat</th>
+                                <th>Detail</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -38,7 +32,7 @@
                                 <th>Nama Santri</th>
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
-                                <th>Lihat</th>
+                                <th>Detail</th>
                             </tr>
                         </tfoot>
                         <tbody>

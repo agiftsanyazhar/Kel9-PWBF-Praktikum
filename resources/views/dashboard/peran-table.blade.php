@@ -16,6 +16,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            @if (session()->has('update'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('update') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @if (session()->has('delete'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ session('delete') }}
@@ -33,9 +39,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Peran</th>
-                                <th>Aktif</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Status</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -44,9 +48,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Peran</th>
-                                <th>Aktif</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Status</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -56,10 +58,18 @@
                                 <tr>
                                     <td>{{ $data_peran -> id }}</td>
                                     <td>{{ $data_peran -> peran }}</td>
-                                    <td>{{ $data_peran -> aktif }}</td>
-                                    <td>{{ $data_peran -> created_at }}</td>
-                                    <td>{{ $data_peran -> updated_at }}</td>
-                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
+                                    <td>
+                                        @if ($data_peran->aktif === 1)
+                                            Aktif
+                                        @else
+                                            Tidak Aktif
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <a href = "{{ url('/form-edit-peran-') }}{{ $data_peran->id }}">
+                                            <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                        </a>
+                                    </td>
                                     <td>
                                         <form action="/peran-table/delete/{{ $data_peran->id }}" method="POST">
                                             @method('delete')

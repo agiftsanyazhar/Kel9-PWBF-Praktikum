@@ -8,6 +8,12 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
+            @if (session()->has('update'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('update') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @if (session()->has('delete'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ session('delete') }}
@@ -80,7 +86,7 @@
                                     <td><a href="{{ url('santri-table-kemajuan-') }}{{ $data_santri->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
                                     <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
-                                        <form action="/santri-table/delete/{{ $data_santri->id }}" method="POST">
+                                        <form action="/delete-santri-{{ $data_santri->id }}" method="POST">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>

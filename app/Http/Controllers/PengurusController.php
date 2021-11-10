@@ -6,6 +6,7 @@ use App\Models\Pengurus;
 use Illuminate\Foundation\Bus\PendingChain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class PengurusController extends Controller
 {
@@ -22,13 +23,6 @@ class PengurusController extends Controller
         ]);
     }
 
-    public function showCreate()
-    {
-        return view('dashboard.create.pengurus', [
-            "title" => "Pengurus"
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -36,7 +30,9 @@ class PengurusController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.create.pengurus', [
+            "title" => "Pengurus"
+        ]);
     }
 
     /**
@@ -81,9 +77,12 @@ class PengurusController extends Controller
      * @param  \App\Models\Pengurus  $pengurus
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pengurus $pengurus)
+    public function edit($id)
     {
-        //
+        return view('dashboard.edit.pengurus', [
+            'pengurus'  => Pengurus::find($id),
+            "title"     => Pengurus::find($id)->pengurus
+        ]);
     }
 
     /**
@@ -95,7 +94,19 @@ class PengurusController extends Controller
      */
     public function update(Request $request, Pengurus $pengurus)
     {
-        //
+        $validatedData = $request->validate([
+            'hp'            => 'required',
+            'email'         => 'required|email:dns|unique:penguruses|unique:santris',
+            'password'      => 'required||min:8|max:32',
+        ]);
+
+        DB::table('penguruses')->where('id',$request->id)->update([
+            'hp'            => $request->hp,
+            'email'         => $request->email,
+            'password'      => Hash::make($request->newPassword)
+        ]);
+
+        return redirect('/pengurus-table')->with('update','Data Pengurus Berhasil di Update');
     }
 
     /**
@@ -108,6 +119,6 @@ class PengurusController extends Controller
     {
         Pengurus::find($id)->delete();
 
-        return redirect('/pengurus-table')->with('delete','Data Berhasil di Hapus');
+        return redirect('/pengurus-table')->with('delete','Pengurus Berhasil di Hapus');
     }
 }

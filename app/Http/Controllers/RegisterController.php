@@ -6,6 +6,8 @@ use App\Models\Santri;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+
 
 class RegisterController extends Controller
 {
@@ -56,7 +58,7 @@ class RegisterController extends Controller
         Santri::create($validatedData);
         User::create($validatedData);
 
-        $request->session()->flash('success','Registrasi Berhasil! Silahkan Login');
+        $request->session()->flash('success','Registrasi Berhasil! Silakan Login');
 
         return redirect('/login');
     }
@@ -106,6 +108,6 @@ class RegisterController extends Controller
         Santri::find($id)->delete();
         User::find($id)->delete();
 
-        return redirect('/santri-table')->with('delete','Data Berhasil di Hapus');
+        return redirect('/santri-table')->with('delete','Santri Berhasil di Hapus');
     }
 }

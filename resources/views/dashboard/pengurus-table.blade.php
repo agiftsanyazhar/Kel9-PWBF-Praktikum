@@ -16,6 +16,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+            @if (session()->has('update'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('update') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @if (session()->has('delete'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
                     {{ session('delete') }}
@@ -32,31 +38,27 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama pengurus</th>
+                                <th>Nama Pengurus</th>
                                 <th>Email</th>
                                 <th>HP</th>
                                 <th>Gender</th>
-                                <th>Password</th>
-                                <th>Aktif</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Status</th>
+                                <th>Peran</th>
                                 <th>Edit</th>
-                                <th>Hapus</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Nama pengurus</th>
+                                <th>Nama Pengurus</th>
                                 <th>Email</th>
                                 <th>HP</th>
                                 <th>Gender</th>
-                                <th>Password</th>
-                                <th>Aktif</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
+                                <th>Status</th>
+                                <th>Peran</th>
                                 <th>Edit</th>
-                                <th>Hapus</th>
+                                <th>Delete</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -67,13 +69,21 @@
                                     <td>{{ $data_pengurus -> email }}</td>
                                     <td>{{ $data_pengurus -> hp }}</td>
                                     <td>{{ $data_pengurus -> gender }}</td>
-                                    <td>{{ $data_pengurus -> password }}</td>
-                                    <td>{{ $data_pengurus -> aktif }}</td>
-                                    <td>{{ $data_pengurus -> created_at }}</td>
-                                    <td>{{ $data_pengurus -> updated_at }}</td>
-                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
-                                        <form action="/pengurus-table/delete/{{ $data_pengurus->id }}" method="POST">
+                                        @if ($data_pengurus->aktif === 1)
+                                            Aktif
+                                        @else
+                                            Tidak Aktif
+                                        @endif
+                                    </td>
+                                    <td><a href="{{ url('pengurus-table-peran-') }}{{ $data_pengurus->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
+                                    <td>
+                                        <a href = "{{ url('/form-edit-pengurus-') }}{{ $data_pengurus->id }}">
+                                            <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ url('/delete-pengurus-') }} {{ $data_pengurus->id }}" method="POST">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>

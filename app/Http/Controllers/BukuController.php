@@ -21,21 +21,6 @@ class BukuController extends Controller
         ]);
     }
 
-    public function showCreate()
-    {
-        return view('dashboard.create.buku', [
-            "title" => "Buku"
-        ]);
-    }
-
-    public function showEdit($id)
-    {
-        return view('dashboard.edit.buku', [
-            'buku'  => Buku::find($id),
-            "title" => Buku::find($id)->buku
-        ]);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -43,7 +28,9 @@ class BukuController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.create.buku', [
+            "title" => "Buku"
+        ]);
     }
 
     /**
@@ -123,6 +110,6 @@ class BukuController extends Controller
     {
         Buku::find($id)->delete();
 
-        return redirect('/buku-table')->with('deleteBuku','Data Berhasil di Hapus');
+        return redirect('/buku-table')->with('deleteBuku','Buku Berhasil di Hapus');
     }
 }

@@ -7,15 +7,23 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Buku - {{ $title }}</h3></div>
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4"> Edit Pengurus - {{ $title }} GA MUNCUL???</h3></div>
                         <div class="card-body">
-                            <form action="/update-buku-{{ $buku->id }}" method="post">
+                            <form action="/update-pengurus-{{ $pengurus->id }}" method="post">
                                 @method('put')
                                 @csrf
                                 <div class="row mb-2">
-                                    <div class="col-md-12">
-                                        <input class="form-control @error('buku') is-invalid @enderror" id="inputName" name="buku" type="text" maxlength="50" placeholder="buku" autofokus value="{{ old('buku', $buku->buku) }}" required/>
-                                        @error('buku')
+                                    <div class="col-md-6">
+                                        <input class="form-control @error('email') is-invalid @enderror" id="inputEmail" type="email" name="email" placeholder="Email" value="{{ old('email', $pengurus->email) }}" required/>
+                                        @error('email')
+                                            <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input  class="form-control @error('hp') is-invalid @enderror" type="number" name="hp" placeholder="Telepon" value="{{ old('hp', $pengurus->hp) }}" required/>
+                                        @error('hp')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -23,9 +31,9 @@
                                     </div>
                                 </div>
                                 <div class="row mb-2">
-                                    <div class="col-md-12 row-lg-10">
-                                        <textarea rows="5" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan" required>{{ old('keterangan', $buku->keterangan) }}</textarea>
-                                        @error('Keterangan')
+                                    <div class="col-md-12">
+                                        <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" minlength="8" maxlength="32" name="password" placeholder="Password" required/>
+                                        @error('password')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>

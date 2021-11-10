@@ -77,7 +77,7 @@
                     </div>
                     <div class="sb-sidenav-footer">
                         <div class="small">Masuk sebagai:</div>
-                        {{ auth()->user()->nama }}
+                        {{-- {{ auth()->user()->nama }} --}}
                     </div>
                 </nav>
             </div>

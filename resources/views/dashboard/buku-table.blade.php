@@ -62,7 +62,7 @@
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                <th>Show</th>
+                                <th>Bab</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
@@ -72,7 +72,7 @@
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                <th>Show</th>
+                                <th>Bab</th>
                                 <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
