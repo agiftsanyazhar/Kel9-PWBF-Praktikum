@@ -9,10 +9,13 @@
                 <li class="breadcrumb-item"><a href="kemajuan-table">Kemajuan</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+            @can('pengurus')
+                <a href="{{ url('/form-create-kemajuan') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+            @endcan
+            <a href="{{ url('/kemajuan-table') }}"><button class="btn btn-warning btn-block" type="submit">Kembali ke Daftar Santri</button></a>
             <br><br>
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>
@@ -20,33 +23,44 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                {{-- <th>ID Pengurus</th>
-                                <th>Nama Pengurus</th> --}}
+                                <th>Nama Pengurus</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
-                                <th>Edit</th>
-                                <th>Hapus</th>
+                                <th>Detail Kemajuan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                {{-- <th>ID Pengurus</th>
-                                <th>Nama Pengurus</th> --}}
+                                <th>Nama Pengurus</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
-                                <th>Edit</th>
-                                <th>Hapus</th>
+                                <th>Detail Kemajuan</th>
+                                <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach ($kemajuan as $kemajuans)
                                 <tr>
-                                    {{-- <td>{{ $kemajuans -> id_pengurus }}</td>
-                                    <td>{{ $kemajuans -> id_pengurus }}</td> --}}
+                                    <td>{{ $kemajuans -> nama }}</td>
                                     <td>{{ $kemajuans -> tanggal }}</td>
                                     <td>{{ $kemajuans -> status }}</td>
-                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-block" type="submit">Hapus</button></td>
+                                    <td>
+                                        <div class="d-inline md-center">
+                                            <a href="{{ url('kemajuan-table-detail-kemajuan-') }}{{ $kemajuans->id }}">
+                                                <button class="btn btn-info btn-block" type="submit">Show</button>
+                                            </a>
+                                    </td>
+                                    <td>
+                                            <a href = "{{ url('/form-edit-kemajuan-') }}{{ $kemajuans->id }}">
+                                                <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                            </a>
+                                            <form action="{{ url('/delete-kemajuan-') }} {{ $kemajuans->id }}" method="POST" class="d-inline">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                            </form>
+                                        </div>
                                 </tr>
                             @endforeach
                         </tbody>

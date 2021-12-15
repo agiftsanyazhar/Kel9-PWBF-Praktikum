@@ -9,7 +9,6 @@ class Pengurus extends Model
 {
     use HasFactory;
 
-    protected $table = 'penguruses';
     protected $guarded = ['id'];
 
     public function Kemajuan()

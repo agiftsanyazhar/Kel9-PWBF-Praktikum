@@ -49,14 +49,23 @@ class RegisterController extends Controller
             'nama_ortu'     => 'required|min:3|max:50',
             'alamat_ortu'   => 'required|max:100',
             'hp'            => 'required',
-            'email'         => 'required|email:dns|unique:santris',
+            'email'         => 'required|email:dns|unique:santris|unique:penguruses',
             'password'      => 'required||min:8|max:32',
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         Santri::create($validatedData);
-        User::create($validatedData);
+        
+        $santriid = Santri::latest()->first()->id;
+
+        DB::table('users')->insert([
+            'id_santri'     => $santriid,
+            'nama'          => $validatedData['nama'],
+            'email'         => $validatedData['email'],
+            'password'      => $validatedData['password'],
+            'role'          => 'Santri',
+        ]);
 
         $request->session()->flash('success','Registrasi Berhasil! Silakan Login');
 
@@ -108,6 +117,6 @@ class RegisterController extends Controller
         Santri::find($id)->delete();
         User::find($id)->delete();
 
-        return redirect('/santri-table')->with('delete','Santri Berhasil di Hapus');
+        return redirect('/santri-table')->with('delete','Santri Berhasil Dihapus!');
     }
 }

@@ -11,6 +11,8 @@ class Detail_Kemajuan extends Model
 
     protected $table = 'detail__kemajuans';
 
+    protected $guarded = ['id'];
+
     public function bab()
     {
         return $this->belongsTo(Bab::class, 'id_bab', 'id');

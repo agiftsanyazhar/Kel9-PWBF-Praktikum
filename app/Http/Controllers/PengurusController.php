@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail_Peran;
 use App\Models\Pengurus;
 use Illuminate\Foundation\Bus\PendingChain;
 use Illuminate\Http\Request;
@@ -18,8 +19,16 @@ class PengurusController extends Controller
     public function index(Pengurus $pengurus)
     {
         return view('dashboard.pengurus-table', [
-            'pengurus' => Pengurus::all(),
-            "title" => "Pengurus"
+            'pengurus'  => Pengurus::all(),
+            "title"     => "Pengurus"
+        ]);
+    }
+
+    public function showPeranIndex($id)
+    {
+        return view('dashboard.show.peran', [
+            'peran'     => Detail_Peran::where('id_pengurus', $id)->with('peran')->get(),
+            "title"     => Pengurus::find($id)->nama
         ]);
     }
 
@@ -44,7 +53,7 @@ class PengurusController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'nama_pengurus' => 'required|min:3|max:50',
+            'nama'          => 'required|min:3|max:50',
             'gender'        => 'required',
             'hp'            => 'required',
             'email'         => 'required|email:dns|unique:penguruses|unique:santris',
@@ -55,7 +64,17 @@ class PengurusController extends Controller
 
         Pengurus::create($validatedData);
 
-        $request->session()->flash('success','Registrasi Berhasil!');
+        $pengurusid = Pengurus::latest()->first()->id;
+
+        DB::table('users')->insert([
+            'id_pengurus'   => $pengurusid,
+            'nama'          => $validatedData['nama'],
+            'email'         => $validatedData['email'],
+            'password'      => $validatedData['password'],
+            'role'          => 'Pengurus',
+        ]);
+
+        $request->session()->flash('success','Data Pengurus Berhasil Ditambahkan!');
 
         return redirect('/pengurus-table');
     }
@@ -94,19 +113,13 @@ class PengurusController extends Controller
      */
     public function update(Request $request, Pengurus $pengurus)
     {
-        $validatedData = $request->validate([
-            'hp'            => 'required',
-            'email'         => 'required|email:dns|unique:penguruses|unique:santris',
-            'password'      => 'required||min:8|max:32',
-        ]);
-
         DB::table('penguruses')->where('id',$request->id)->update([
             'hp'            => $request->hp,
             'email'         => $request->email,
             'password'      => Hash::make($request->newPassword)
         ]);
 
-        return redirect('/pengurus-table')->with('update','Data Pengurus Berhasil di Update');
+        return redirect('/pengurus-table')->with('update','Data Pengurus Berhasil Di-Update!');
     }
 
     /**
@@ -119,6 +132,6 @@ class PengurusController extends Controller
     {
         Pengurus::find($id)->delete();
 
-        return redirect('/pengurus-table')->with('delete','Pengurus Berhasil di Hapus');
+        return redirect('/pengurus-table')->with('delete','Pengurus Berhasil Dihapus!');
     }
 }

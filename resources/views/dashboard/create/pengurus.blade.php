@@ -7,19 +7,18 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Tambah {{ $title }}</h3></div>
+                        <div class="card-header mb-3"><h3 class="text-center font-weight-light my-4">Tambah {{ $title }}</h3></div>
                         <div class="card-body">
                             <form action="/create-pengurus" method="post">
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('nama_pengurus') is-invalid @enderror" id="inputName" name="nama_pengurus" type="text" minlength="3" maxlength="50" placeholder="Nama Pengurus" value="{{ old('nama_pengurus') }}" required/>
+                                        <input class="form-control @error('nama_pengurus') is-invalid @enderror" id="inputName" name="nama" type="text" minlength="3" maxlength="50" placeholder="Nama Pengurus" value="{{ old('nama_pengurus') }}" required/>
                                         @error('nama_pengurus')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
                                         @enderror
-                                        
                                     </div>
                                     <div class="col-md-6">
                                         <select class="form-control @error('gender') is-invalid @enderror" name="gender" required>

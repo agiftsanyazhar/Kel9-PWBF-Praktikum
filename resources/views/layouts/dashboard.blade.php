@@ -9,8 +9,16 @@
         <title>Dashboard</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/dashboard.css" rel="stylesheet" />
+        <link href="assets/css/style.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
+        <!-- Favicons -->
+        <link href="img/favicon.png" rel="icon">
+        <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     </head>
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -29,10 +37,12 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Pengaturan</a></li>
-                        <li><a class="dropdown-item" href="#!">Log Aktivitas</a></li>
+                        <li><a class="dropdown-item" href="profile">Profil</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <li><button class="dropdown-item" type="submit">Logout</button></li>
+                        </form>
                     </ul>
                 </li>
             </ul>
@@ -66,9 +76,12 @@
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="{{ url('/buku-table') }}">Buku</a>
+                                            <a class="nav-link" href="{{ url('/kemajuan-table') }}">Kemajuan</a>
                                             <a class="nav-link" href="{{ url('/pengurus-table') }}">Pengurus</a>
-                                            <a class="nav-link" href="{{ url('/peran-table') }}">Peran</a>
-                                            <a class="nav-link" href="{{ url('/santri-table') }}">Santri</a>
+                                            @can('admin')
+                                                <a class="nav-link" href="{{ url('/peran-table') }}">Peran</a>
+                                                <a class="nav-link" href="{{ url('/santri-table') }}">Santri</a>
+                                            @endcan
                                         </nav>
                                     </div>
                                 </nav>
@@ -76,8 +89,8 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Masuk sebagai:</div>
-                        {{-- {{ auth()->user()->nama }} --}}
+                        <div class="small">Masuk sebagai {{ auth()->user()->role }}:</div>
+                        {{ auth()->user()->nama }}
                     </div>
                 </nav>
             </div>
@@ -100,5 +113,24 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
         <script src="js/chart-pie-demo.js"></script>
+        
+        <!-- =======================================================
+        * Template Name: NiceAdmin - v2.2.0
+        * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+        * Author: BootstrapMade.com
+        * License: https://bootstrapmade.com/license/
+        ======================================================== -->
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+        {{-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+        <script src="assets/vendor/chart.js/chart.min.js"></script>
+        <script src="assets/vendor/echarts/echarts.min.js"></script>
+        <script src="assets/vendor/quill/quill.min.js"></script>
+        <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+        <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+        <script src="assets/vendor/php-email-form/validate.js"></script>
+
+        <!-- Template Main JS File -->
+        <script src="assets/js/main.js"></script>
     </body>
 </html>

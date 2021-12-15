@@ -8,9 +8,10 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
-            <br><br>
-            
+            @can('adminpengurus')
+                <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+                <br><br>
+            @endcan
             {{-- Buku --}}
             @if (session()->has('successBuku'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -51,7 +52,7 @@
                 </div>
             @endif
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>
@@ -63,8 +64,9 @@
                                 <th>Buku</th>
                                 <th>Keterangan</th>
                                 <th>Bab</th>
-                                <th>Edit</th>
-                                <th>Hapus</th>
+                                @can('adminpengurus')
+                                    <th>Aksi</th>
+                                @endcan
                             </tr>
                         </thead>
                         <tfoot>
@@ -73,8 +75,9 @@
                                 <th>Buku</th>
                                 <th>Keterangan</th>
                                 <th>Bab</th>
-                                <th>Edit</th>
-                                <th>Hapus</th>
+                                @can('adminpengurus')
+                                    <th>Aksi</th>
+                                @endcan
                             </tr>
                         </tfoot>
                         <tbody>
@@ -84,18 +87,18 @@
                                     <td>{{ $data_buku -> buku }}</td>
                                     <td>{{ $data_buku -> keterangan }}</td>
                                     <td><a href="{{ url('buku-table-bab-') }}{{ $data_buku->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
-                                    <td>
-                                        <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}">
-                                            <button class="btn btn-warning btn-block" type="submit">Edit</button>
-                                        </a>
-                                    </td>
-                                    <td>
-                                    <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST">
-                                        @method('delete')
-                                        @csrf
-                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
-                                    </form>
-                                    </td>
+                                    @can('adminpengurus')
+                                        <td>
+                                            <div class="d-inline">
+                                                <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}"><button class="btn btn-warning btn-block" type="submit">Edit</button></a>
+                                                <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                                </form>
+                                            </div>
+                                        </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                         </tbody>

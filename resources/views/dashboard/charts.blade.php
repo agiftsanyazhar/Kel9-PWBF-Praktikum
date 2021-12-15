@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3 mb-3">
                     <i class="fas fa-chart-area me-1"></i>
                     Area Chart
                 </div>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="card mb-4">
-                        <div class="card-header">
+                        <div class="card-header mb-3">
                             <i class="fas fa-chart-bar me-1"></i>
                             Bar Chart
                         </div>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="card mb-4">
-                        <div class="card-header">
+                        <div class="card-header mb-3">
                             <i class="fas fa-chart-pie me-1"></i>
                             Pie Chart
                         </div>

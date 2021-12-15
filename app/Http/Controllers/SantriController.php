@@ -16,9 +16,14 @@ class SantriController extends Controller
     public function index(Santri $santri)
     {
         return view('dashboard.santri-table', [
-            'santris' => Santri::all(),
-            "title" => "Santri"
+            'santris'   => Santri::all(),
+            "title"     => "Santri"
         ]);
+    }
+
+    public function showProfileIndex(Santri $santri)
+    {
+        return view('dashboard.users-profile');
     }
 
     /**
@@ -39,7 +44,11 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'image'         => 'required|image|mimes:jpeg,png,jpg,gif',
+        ]);
+
+        Santri::create($validatedData);
     }
 
     /**

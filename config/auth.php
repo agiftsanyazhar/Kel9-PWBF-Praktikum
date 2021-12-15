@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'santri',
+        'guard' => 'web',
         'passwords' => 'santris',
     ],
 
@@ -40,9 +40,15 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
         'santri' => [
             'driver' => 'session',
             'provider' => 'santris',
+        ],
+
+        'pengurus' => [
+            'driver' => 'session',
+            'provider' => 'penguruses',
         ],
     ],
 
@@ -73,6 +79,11 @@ return [
             'driver' => 'database',
             'table' => 'santris',
         ],
+
+        'penguruses' => [
+            'driver' => 'database',
+            'table' => 'penguruses',
+        ],
     ],
 
     /*
@@ -91,8 +102,22 @@ return [
     */
 
     'passwords' => [
+        'users' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
         'santris' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'pengurus' => [
+            'provider' => 'pengurus',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

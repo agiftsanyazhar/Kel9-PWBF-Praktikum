@@ -21,7 +21,7 @@
                 </div>
             @endif
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>
@@ -41,7 +41,6 @@
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
                                 <th>Kemajuan</th>
-                                <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
                         </thead>
@@ -59,7 +58,6 @@
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
                                 <th>Kemajuan</th>
-                                <th>Edit</th>
                                 <th>Hapus</th>
                             </tr>
                         </tfoot>
@@ -84,7 +82,6 @@
                                         @endif
                                     </td>
                                     <td><a href="{{ url('santri-table-kemajuan-') }}{{ $data_santri->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
-                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
                                     <td>
                                         <form action="/delete-santri-{{ $data_santri->id }}" method="POST">
                                             @method('delete')

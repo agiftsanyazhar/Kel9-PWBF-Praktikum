@@ -14,11 +14,11 @@ class BabController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Buku $id)
+    public function index(Buku $buku)
     {
         return view('dashboard.show.bab', [
-            'bab'   => Bab::where('id_buku', $id->id)->get(),
-            'buku' => $id,
+            'bab'   => Bab::where('id_buku', $buku->id)->with('buku')->get(),
+            'buku'  => $buku,
             "title" => "Buku",
         ]);
     }
@@ -31,7 +31,7 @@ class BabController extends Controller
     public function create($id)
     {
         return view('dashboard.create.bab', [
-            'buku' => Buku::find($id),
+            'buku'  => Buku::find($id),
             "title" => "Bab",
         ]);
     }
@@ -53,7 +53,7 @@ class BabController extends Controller
 
         Bab::create($validatedData);
 
-        $request->session()->flash('successBab','Bab Berhasil Ditambahkan');
+        $request->session()->flash('successBab','Bab Berhasil Ditambahkan!');
 
         return redirect('/buku-table');
     }
@@ -93,14 +93,14 @@ class BabController extends Controller
      */
     public function update(Request $request)
     {
-        DB::table('babs')->where('id',$request->id)->update([
-            'bab'           => $request->bab,
-            'judul'         => $request->judul,
-            'id_buku'       => $request->id_buku,
-            'keterangan'    => $request->keterangan,
+        DB::table('babs')->where('id',$request['id'])->update([
+            'bab'           => $request['bab'],
+            'judul'         => $request['judul'],
+            'id_buku'       => $request['id_buku'],
+            'keterangan'    => $request['keterangan'],
         ]);
 
-        return redirect('/buku-table')->with('updateBab','Data Bab Berhasil di Update');
+        return redirect('/buku-table')->with('updateBab','Data Bab Berhasil Di-Update!');
     }
 
     /**
@@ -113,7 +113,7 @@ class BabController extends Controller
     {
         Bab::find($id)->delete();
 
-        $request->session()->flash('deleteBab','Bab Berhasil di Hapus');
+        $request->session()->flash('deleteBab','Bab Berhasil Dihapus!');
 
         return redirect('/buku-table');
     }

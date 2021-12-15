@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail_Kemajuan;
 use App\Models\Kemajuan;
 use App\Models\Santri;
 use App\Models\Pengurus;
@@ -18,16 +19,17 @@ class KemajuanController extends Controller
     public function index()
     {
         return view('dashboard.kemajuan-table', [
-            'santri' => Santri::all(),
-            "title" => "Kemajuan"
+            'santri'    => Santri::all(),
+            "title"     => "Kemajuan"
         ]);
     }
 
-    public function showIndex(Santri $santri)
+    public function showIndex(Santri $santri, $id)
     {
         return view('dashboard.show.kemajuan', [
-            'kemajuan' => Kemajuan::all(),
-            'title' => "Detail",
+            'kemajuan'  => Kemajuan::where('id_santri', $id)->orderby('tanggal', 'desc')->with('pengurus')->get(),
+            'title'     => $santri->nama,
+            'idsantri'  => $santri->id,
         ]);
     }
 
@@ -36,9 +38,13 @@ class KemajuanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('dashboard.create.kemajuan', [
+            'title'     => Santri::find($id)->nama,
+            'idsantri'  => Santri::find($id)->id,
+            'pengurus'  => Pengurus::all(),
+        ]);
     }
 
     /**
@@ -58,7 +64,7 @@ class KemajuanController extends Controller
 
         Kemajuan::create($validatedData);
 
-        $request->session()->flash('success','Kemajuan Berhasil Ditambahkan');
+        $request->session()->flash('success','Kemajuan Berhasil Ditambahkan!');
 
         return redirect('/bab-kemajuan');
     }
@@ -103,8 +109,12 @@ class KemajuanController extends Controller
      * @param  \App\Models\Kemajuan  $kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kemajuan $kemajuan)
+    public function destroy(Request $request, $id)
     {
-        //
+        Kemajuan::find($id)->delete();
+
+        $request->session()->flash('delete','Kemajuan Berhasil Dihapus!');
+
+        return redirect('/kemajuan-table');
     }
 }

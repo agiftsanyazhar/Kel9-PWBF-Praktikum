@@ -11,6 +11,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Santri;
 use App\Models\pengurus;
 use App\Models\Peran;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,7 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //\App\Models\User::factory(10)->create();
+        User::factory(1)->create();
         Santri::factory(60)->create();
         Pengurus::factory(5)->create();
         Buku::factory(10)->create();

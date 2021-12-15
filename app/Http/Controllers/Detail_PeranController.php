@@ -17,7 +17,7 @@ class Detail_PeranController extends Controller
     {
         return view('dashboard.detail-peran-table', [
             'detail_perans' => Detail_Peran::all(),
-            "title" => "Detail Peran"
+            "title"         => "Detail Peran"
         ]);
     }
 

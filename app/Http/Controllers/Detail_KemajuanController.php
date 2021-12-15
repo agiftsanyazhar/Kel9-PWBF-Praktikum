@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail_Kemajuan;
+use App\Models\Kemajuan;
+use App\Models\Bab;
+use App\Models\Buku;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,11 +16,13 @@ class Detail_KemajuanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Detail_Kemajuan $detail_kemajuan)
+    public function index($id)
     {
-        return view('dashboard.detail-kemajuan-table', [
-            'detail_kemajuan' => Detail_Kemajuan::all(),
-            "title" => "Detail Kemajuan"
+        return view('dashboard.show.detail-kemajuan-table', [
+            'detail'            => Detail_Kemajuan::where('id_kemajuan', $id)->with('bab.buku')->get(),
+            'santri'            => Kemajuan::find($id)->santri->nama,
+            'santriid'          => Kemajuan::find($id)->santri->id,
+            'id'                => Kemajuan::find($id)->id,
         ]);
     }
 
@@ -26,9 +31,19 @@ class Detail_KemajuanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('dashboard.show.detail-kemajuan', [
+            'buku'  => Buku::all,
+            'title' => $id,
+        ]);
+    }
+
+    public function getBab($id)
+    {
+        $bab = DB::table('babs')->where('id_buku',$id)->pluck('id','judul');
+
+        return response()->json($bab);
     }
 
     /**
@@ -39,7 +54,17 @@ class Detail_KemajuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData   = $request->validate([
+            'id_kemajuan'   => 'required',
+            'id_bab'        => 'required',
+            'keterangan'    => 'required',
+        ]);
+
+        Detail_Kemajuan::create($validatedData);
+
+        $request->session()->flash('success','Data Kemajuan Berhasil Ditambahkan!');
+
+        return redirect('/kemajuan-table');
     }
 
     /**

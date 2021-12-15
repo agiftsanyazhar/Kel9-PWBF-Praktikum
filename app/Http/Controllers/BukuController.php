@@ -48,7 +48,7 @@ class BukuController extends Controller
 
         Buku::create($validatedData);
 
-        $request->session()->flash('successBuku','Buku Berhasil Ditambahkan');
+        $request->session()->flash('successBuku','Buku Berhasil Ditambahkan!');
 
         return redirect('/buku-table');
     }
@@ -87,17 +87,12 @@ class BukuController extends Controller
      */
     public function update(Request $request, Buku $buku)
     {
-        $validatedData = $request->validate([
-            'buku'          => 'required|max:50',
-            'keterangan'    => 'required',
-        ]);
-
         DB::table('bukus')->where('id',$request->id)->update([
             'buku'          => $request->buku,
             'keterangan'    => $request->keterangan
         ]);
 
-        return redirect('/buku-table')->with('updateBuku','Data Buku Berhasil di Update');
+        return redirect('/buku-table')->with('updateBuku','Data Buku Berhasil Di-Update!');
     }
 
     /**
@@ -110,6 +105,6 @@ class BukuController extends Controller
     {
         Buku::find($id)->delete();
 
-        return redirect('/buku-table')->with('deleteBuku','Buku Berhasil di Hapus');
+        return redirect('/buku-table')->with('deleteBuku','Buku Berhasil Dihapus!');
     }
 }

@@ -8,8 +8,11 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/create') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
-            <br><br>
+            @can('pengurus')
+                <a href="{{ url('/create') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+                <br><br>
+            @endcan
+            
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ session('success') }}
@@ -17,7 +20,7 @@
                 </div>
             @endif
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>

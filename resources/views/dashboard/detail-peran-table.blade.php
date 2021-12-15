@@ -17,7 +17,7 @@
                 </div>
             @endif
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>

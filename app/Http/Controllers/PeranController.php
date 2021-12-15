@@ -47,7 +47,7 @@ class PeranController extends Controller
 
         Peran::create($validatedData);
 
-        $request->session()->flash('success','Peran Berhasil Ditambahkan');
+        $request->session()->flash('success','Peran Berhasil Ditambahkan!');
 
         return redirect('/peran-table');
     }
@@ -86,15 +86,11 @@ class PeranController extends Controller
      */
     public function update(Request $request, Peran $peran)
     {
-        $validatedData = $request->validate([
-            'peran'     => 'required|max:20|unique:perans',
-        ]);
-
         DB::table('perans')->where('id',$request->id)->update([
             'peran'     => $request->peran,
         ]);
 
-        return redirect('/peran-table')->with('update','Data Peran Berhasil di Update');
+        return redirect('/peran-table')->with('update','Data Peran Berhasil Di-Update!');
     }
 
     /**
@@ -107,6 +103,6 @@ class PeranController extends Controller
     {
         Peran::find($id)->delete();
 
-        return redirect('/peran-table')->with('delete','Peran Berhasil di Hapus');
+        return redirect('/peran-table')->with('delete','Peran Berhasil Dihapus!');
     }
 }

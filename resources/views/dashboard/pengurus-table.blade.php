@@ -8,8 +8,10 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/form-create-pengurus') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
-            <br><br>
+            @can('admin')
+                <a href="{{ url('/form-create-pengurus') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+                <br><br>
+            @endcan
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ session('success') }}
@@ -29,7 +31,7 @@
                 </div>
             @endif
             <div class="card mb-4">
-                <div class="card-header">
+                <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
                     {{ $title }}
                 </div>
@@ -44,8 +46,9 @@
                                 <th>Gender</th>
                                 <th>Status</th>
                                 <th>Peran</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                @can('admin')
+                                    <th>Aksi</th>
+                                @endcan
                             </tr>
                         </thead>
                         <tfoot>
@@ -57,15 +60,16 @@
                                 <th>Gender</th>
                                 <th>Status</th>
                                 <th>Peran</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                @can('admin')
+                                    <th>Aksi</th>
+                                @endcan
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach ($pengurus as $data_pengurus)
                                 <tr>
                                     <td>{{ $data_pengurus -> id }}</td>
-                                    <td>{{ $data_pengurus -> nama_pengurus }}</td>
+                                    <td>{{ $data_pengurus -> nama }}</td>
                                     <td>{{ $data_pengurus -> email }}</td>
                                     <td>{{ $data_pengurus -> hp }}</td>
                                     <td>{{ $data_pengurus -> gender }}</td>
@@ -76,19 +80,23 @@
                                             Tidak Aktif
                                         @endif
                                     </td>
-                                    <td><a href="{{ url('pengurus-table-peran-') }}{{ $data_pengurus->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
                                     <td>
-                                        <a href = "{{ url('/form-edit-pengurus-') }}{{ $data_pengurus->id }}">
-                                            <button class="btn btn-warning btn-block" type="submit">Edit</button>
-                                        </a>
+                                        <a href="{{ url('pengurus-table-peran-') }}{{ $data_pengurus->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a>
                                     </td>
-                                    <td>
-                                        <form action="{{ url('/delete-pengurus-') }} {{ $data_pengurus->id }}" method="POST">
+                                    @can('admin')
+                                        <td>
+                                        <div class="d-inline">
+                                            <a href = "{{ url('/form-edit-pengurus-') }}{{ $data_pengurus->id }}">
+                                                <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                            </a>
+                                        </div>
+                                        <form action="{{ url('/delete-pengurus-') }} {{ $data_pengurus->id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
                                         </form>
                                     </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                         </tbody>

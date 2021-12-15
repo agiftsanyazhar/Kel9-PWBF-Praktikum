@@ -296,9 +296,9 @@
               <div class="pic"><img src="img/team/Faisal.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Faisal Maulana</h4>
-                <span>Chief Executive Officer</span>
+                <span>Chief Executive Officer - Back End</span>
+                <p>Universitas Airlangga</p>
                 <p>D3-Sistem Informasi | 152011513009</p>
-                <p>Cah Bojonegoro :v</p>
                 <div class="social">
                   <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
                   <a href="https://www.facebook.com" target="_blank"><i class="ri-facebook-fill"></i></a>
@@ -314,9 +314,9 @@
               <div class="pic"><img src="img/team/Agif.jpg" class="img-fluid" alt=""></div>
               <div class="member-info">
                 <h4>Agiftsany Azhar</h4>
-                <span>Product Manager</span>
+                <span>Product Manager - Front End</span>
+                <p>Universitas Airlangga</p>
                 <p>D3-Sistem Informasi | 152011513020</p>
-                <p>Cah Krian :v</p>
                 <div class="social">
                   <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
                   <a href="https://www.facebook.com/agiftsany" target="_blank"><i class="ri-facebook-fill"></i></a>
@@ -454,10 +454,7 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>
-                  muhammad.faisal.maulana-2020@vokasi.unair.ac.id<br>
-                  agiftsany.azhar-2020@vokasi.unair.ac.id
-                </p>
+                <p>cs@tpq-alhikmah.my.id</p>
               </div>
 
               <div class="phone">
@@ -532,11 +529,8 @@
               Kampus C,<br>
               Mulyorejo, Surabaya 60115,<br>
               Indonesia<br><br>
-              <strong>Telepon:</strong> <br>
-              0812-3456-7890<br>
-              <strong>Email:</strong> <br>
-              muhammad.faisal.maulana-2020@vokasi.unair.ac.id<br>
-              agiftsany.azhar-2020@vokasi.unair.ac.id
+              <strong>Telepon: </strong>0812-3456-7890<br>
+              <strong>Email: </strong>cs@tpq-alhikmah.my.id<br>
             </p>
           </div>
 
