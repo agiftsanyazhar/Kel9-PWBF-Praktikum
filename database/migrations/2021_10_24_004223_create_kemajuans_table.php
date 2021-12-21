@@ -20,7 +20,6 @@ class CreateKemajuansTable extends Migration
             $table->date('tanggal');
             $table->char('status',1);
             $table->timestamps();
-
         });
     }
 

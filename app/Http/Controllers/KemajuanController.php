@@ -18,18 +18,20 @@ class KemajuanController extends Controller
      */
     public function index()
     {
-        return view('dashboard.kemajuan-table', [
+        return view('dashboard.kemajuan-santri-table', [
             'santri'    => Santri::all(),
-            "title"     => "Kemajuan"
+            "title"     => "Kemajuan",
+            'counter'   => 1
         ]);
     }
 
-    public function showIndex(Santri $santri, $id)
+    public function showKemajuanIndex(Santri $santri, $id)
     {
         return view('dashboard.show.kemajuan', [
             'kemajuan'  => Kemajuan::where('id_santri', $id)->orderby('tanggal', 'desc')->with('pengurus')->get(),
-            'title'     => $santri->nama,
-            'idsantri'  => $santri->id,
+            'title'     => Santri::find($id)->nama,
+            'idsantri'  => Santri::find($id)->id,
+            'counter'   => 1
         ]);
     }
 
@@ -43,6 +45,7 @@ class KemajuanController extends Controller
         return view('dashboard.create.kemajuan', [
             'title'     => Santri::find($id)->nama,
             'idsantri'  => Santri::find($id)->id,
+            'idsantri'  => Santri::find($id)->nama,
             'pengurus'  => Pengurus::all(),
         ]);
     }
@@ -66,7 +69,7 @@ class KemajuanController extends Controller
 
         $request->session()->flash('success','Kemajuan Berhasil Ditambahkan!');
 
-        return redirect('/bab-kemajuan');
+        return redirect('/kemajuan-table');
     }
 
     /**
@@ -86,9 +89,13 @@ class KemajuanController extends Controller
      * @param  \App\Models\Kemajuan  $kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kemajuan $kemajuan)
+    public function edit($id)
     {
-        //
+        return view('dashboard.edit.kemajuan', [
+            'kemajuan'   => Kemajuan::find($id),
+            'santris'    => Santri::all(),
+            "title"      => Santri::find($id)->nama
+        ]);
     }
 
     /**
@@ -100,7 +107,12 @@ class KemajuanController extends Controller
      */
     public function update(Request $request, Kemajuan $kemajuan)
     {
-        //
+        DB::table('kemajuans')->where('id',$request['id'])->update([
+            'tanggal'           => $request['tanggal'],
+            'status'         => $request['status'],
+        ]);
+
+        return redirect('/kemajuan-table')->with('update','Data Kemajuan Berhasil Di-Update!');
     }
 
     /**

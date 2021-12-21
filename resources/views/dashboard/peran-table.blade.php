@@ -8,7 +8,7 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/form-create-peran') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+            <a href="{{ url('/form-create-peran') }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
             <br><br>
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -37,7 +37,7 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>No.</th>
                                 <th>Peran</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
@@ -45,7 +45,7 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
+                                <th>No.</th>
                                 <th>Peran</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
@@ -54,7 +54,7 @@
                         <tbody>
                             @foreach ($peran as $data_peran)
                                 <tr>
-                                    <td>{{ $data_peran -> id }}</td>
+                                    <td>{{ $counter++ }}</td>
                                     <td>{{ $data_peran -> peran }}</td>
                                     <td>
                                         @if ($data_peran->aktif === 1)
@@ -66,14 +66,14 @@
                                     <td>
                                         <div class="d-inline">
                                             <a href = "{{ url('/form-edit-peran-') }}{{ $data_peran->id }}">
-                                                <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                                <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
                                             </a>
-                                        </div>
                                         <form action="/delete-peran-{{ $data_peran->id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
-                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
                                         </form>
+                                    </div>
                                     </td>
                                 </tr>
                             @endforeach

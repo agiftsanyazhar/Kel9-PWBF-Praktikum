@@ -65,7 +65,7 @@
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label ">Nama Santri</div>
-                      <div class="col-lg-9 col-md-8" value="{{ auth()->user()->nama }}">Agiftsany</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->nama }}</div>
                     </div>
   
                     <div class="row">
@@ -116,10 +116,10 @@
                           <img src="assets/img/profile-img.jpg" alt="Profile">
                           <div class="pt-2">
                             <div class="mb-3">
-                              <label for="image" class="form-label">Upload new profile image</label>
+                              <label for="image" class="form-label">Upload Foto</label>
                               <input class="form-control" type="file" id="image" name="image">
                             </div>
-                            <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+                            {{-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> --}}
                             <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
                           </div>
                         </div>

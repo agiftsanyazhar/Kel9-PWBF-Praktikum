@@ -11,6 +11,8 @@ class Detail_Peran extends Model
 
     protected $table = 'detail__perans';
 
+    protected $guarded = ['id'];
+
     public function peran()
     {
         return $this->belongsTo(Peran::class, 'id_peran', 'id');

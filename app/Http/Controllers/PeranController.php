@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail_Peran;
+use App\Models\Pengurus;
 use App\Models\Peran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +19,8 @@ class PeranController extends Controller
     {
         return view('dashboard.peran-table', [
             'peran' => Peran::all(),
-            "title" => "Peran"
+            "title" => "Peran",
+            'counter'   => 1
         ]);
     }
 

@@ -6,9 +6,11 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="dashboard-index">Pengurus</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            <a href="{{ url('/form-create-peran') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+            <a href="{{ url('/pengurus-table') }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Pengurus</button></a>
+            <a href="{{ url('/form-create-detail-peran-') }}{{ $idpengurus }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
             <br><br>
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -31,13 +33,13 @@
             <div class="card mb-4">
                 <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
-                    {{ $title }}
+                    Peran - {{ $title }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>No.</th>
                                 <th>Peran</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
@@ -45,7 +47,7 @@
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
+                                <th>No.</th>
                                 <th>Peran</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
@@ -54,8 +56,8 @@
                         <tbody>
                             @foreach ($peran as $data_peran)
                                 <tr>
-                                    <td>{{ $data_peran -> id }}</td>
-                                    <td>{{ $data_peran -> peran }}</td>
+                                    <td>{{ $counter++ }}</td>
+                                    <td>{{ $data_peran -> peran -> peran}}</td>
                                     <td>
                                         @if ($data_peran->aktif === 1)
                                             Aktif
@@ -65,14 +67,14 @@
                                     </td>
                                     <td>
                                         <div class="d-inline">
-                                            <a href = "{{ url('/form-edit-peran-') }}{{ $data_peran->id }}">
-                                                <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                            <a href = "{{ url('/form-edit-detail-peran-') }}{{ $data_peran->id }}">
+                                                <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
                                             </a>
                                         </div>
                                         <form action="/delete-peran-{{ $data_peran->id }}" method="POST" class="d-inline">
                                             @method('delete')
                                             @csrf
-                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
+                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>

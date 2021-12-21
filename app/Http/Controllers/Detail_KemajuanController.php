@@ -21,7 +21,7 @@ class Detail_KemajuanController extends Controller
         return view('dashboard.show.detail-kemajuan-table', [
             'detail'            => Detail_Kemajuan::where('id_kemajuan', $id)->with('bab.buku')->get(),
             'santri'            => Kemajuan::find($id)->santri->nama,
-            'santriid'          => Kemajuan::find($id)->santri->id,
+            'idsantri'          => Kemajuan::find($id)->santri->id,
             'id'                => Kemajuan::find($id)->id,
         ]);
     }
@@ -34,7 +34,7 @@ class Detail_KemajuanController extends Controller
     public function create($id)
     {
         return view('dashboard.show.detail-kemajuan', [
-            'buku'  => Buku::all,
+            'buku'  => Buku::all(),
             'title' => $id,
         ]);
     }

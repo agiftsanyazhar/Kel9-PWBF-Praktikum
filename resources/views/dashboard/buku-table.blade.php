@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
             @can('adminpengurus')
-                <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+                <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
                 <br><br>
             @endcan
             {{-- Buku --}}
@@ -60,10 +60,10 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                <th>Bab</th>
                                 @can('adminpengurus')
                                     <th>Aksi</th>
                                 @endcan
@@ -71,10 +71,10 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>No.</th>
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                <th>Bab</th>
                                 @can('adminpengurus')
                                     <th>Aksi</th>
                                 @endcan
@@ -83,22 +83,23 @@
                         <tbody>
                             @foreach ($bukus as $data_buku)
                                 <tr>
+                                    <td>{{ $counter++ }}</td>
                                     <td>{{ $data_buku -> id }}</td>
                                     <td>{{ $data_buku -> buku }}</td>
                                     <td>{{ $data_buku -> keterangan }}</td>
-                                    <td><a href="{{ url('buku-table-bab-') }}{{ $data_buku->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
-                                    @can('adminpengurus')
                                         <td>
                                             <div class="d-inline">
-                                                <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}"><button class="btn btn-warning btn-block" type="submit">Edit</button></a>
-                                                <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST" class="d-inline">
-                                                    @method('delete')
-                                                    @csrf
-                                                    <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
-                                                </form>
+                                                <a href="{{ url('buku-table-bab-') }}{{ $data_buku->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
+                                                @can('adminpengurus')
+                                                    <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button></a>
+                                                    <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST" class="d-inline">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
+                                                    </form>
+                                                @endcan
                                             </div>
                                         </td>
-                                    @endcan
                                 </tr>
                             @endforeach
                         </tbody>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Detail_Peran;
+use App\Models\Pengurus;
+use App\Models\Peran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -13,11 +15,13 @@ class Detail_PeranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Detail_Peran $detail_peran)
+    public function index($id)
     {
-        return view('dashboard.detail-peran-table', [
-            'detail_perans' => Detail_Peran::all(),
-            "title"         => "Detail Peran"
+        return view('dashboard.show.detail-peran', [
+            'peran'         => Detail_Peran::where('id_pengurus', $id)->with('peran')->get(),
+            "title"         => Pengurus::find($id)->nama,
+            'idpengurus'    => Pengurus::find($id)->id,
+            'counter'       => 1
         ]);
     }
 
@@ -26,9 +30,19 @@ class Detail_PeranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        return view('dashboard.create.detail-peran', [
+            'pengurus' => Pengurus::find($id),
+            "title"    => Pengurus::find($id)->nama,
+            'peran'    => Peran::all()
+        ]);
+    }
+
+    public function getDetailPeran($id)
+    {
+        $detailperan  = DB::table('detail__perans')->where("id_peran",$id)->pluck('id','peran');
+        return response()->json($detailperan);
     }
 
     /**
@@ -39,7 +53,16 @@ class Detail_PeranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'id_pengurus'   => 'required',
+            'id_peran'      => 'required',
+        ]);
+
+        Detail_Peran::create($validatedData);
+
+        $request->session()->flash('successDetailPeran','Data Peran Berhasil Ditambahkan!');
+
+        return redirect('/pengurus-table');
     }
 
     /**
@@ -59,9 +82,17 @@ class Detail_PeranController extends Controller
      * @param  \App\Models\Detail_Peran  $detail_Peran
      * @return \Illuminate\Http\Response
      */
-    public function edit(Detail_Peran $detail_Peran)
+    public function edit(Detail_Peran $detail_Peran, $id)
     {
-        //
+        return view('dashboard.edit.detail-peran', [
+            // 'bab'   => Bab::find($id),
+            // 'bukus' => Buku::all(),
+            // "title" => Bab::find($id)->bab
+
+            'pengurus' => Pengurus::find($id),
+            "title"    => Pengurus::find($id),
+            'peran'    => Peran::find($id)
+        ]);
     }
 
     /**

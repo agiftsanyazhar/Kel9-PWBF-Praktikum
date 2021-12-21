@@ -6,7 +6,7 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item active">{{ $title }}</li>
+                <li class="breadcrumb-item active">Daftar Santri</li>
             </ol>
 
             {{-- Buku --}}
@@ -32,12 +32,13 @@
             <div class="card mb-4" >
                 <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
-                    {{ $title }}
+                    Daftar Santri
                 </div>
                 <div class="card-body" action="/show-santri" method="post">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>ID Santri</th>
                                 <th>Nama Santri</th>
                                 <th>Email</th>
@@ -47,6 +48,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>No.</th>
                                 <th>ID Santri</th>
                                 <th>Nama Santri</th>
                                 <th>Email</th>
@@ -57,11 +59,12 @@
                         <tbody>
                             @foreach ($santri as $santris)
                                 <tr>
+                                    <td>{{ $counter++ }}</td>
                                     <td>{{ $santris -> id }}</td>
                                     <td>{{ $santris -> nama }}</td>
                                     <td>{{ $santris -> email }}</td>
                                     <td>{{ $santris -> tgl_masuk }}</td>
-                                    <td><a href="{{ url('/kemajuan-table-') }}{{ $santris->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></td>
+                                    <td><a href="{{ url('/kemajuan-table-') }}{{ $santris->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></td>
                                 </tr>
                             @endforeach
                         </tbody>

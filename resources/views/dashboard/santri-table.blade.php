@@ -29,46 +29,56 @@
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>ID</th>
                                 <th>Nama Santri</th>
                                 <th>Gender</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Kota Lahir</th>
+                                <th>Foto</th>
                                 <th>Nama Ortu</th>
                                 <th>Alamat Ortu</th>
                                 <th>HP</th>
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
-                                <th>Kemajuan</th>
                                 <th>Hapus</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>No.</th>
                                 <th>ID</th>
                                 <th>Nama Santri</th>
                                 <th>Gender</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Kota Lahir</th>
+                                <th>Foto</th>
                                 <th>Nama Ortu</th>
                                 <th>Alamat Ortu</th>
                                 <th>HP</th>
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
-                                <th>Kemajuan</th>
                                 <th>Hapus</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach ($santris as $data_santri)
                                 <tr>
+                                    <td>{{ $counter++ }}</td>
                                     <td>{{ $data_santri -> id }}</td>
                                     <td>{{ $data_santri -> nama }}</td>
-                                    <td>{{ $data_santri -> gender }}</td>
+                                    <td>
+                                        @if ($data_santri->gender === "M")
+                                            Laki-Laki
+                                        @else
+                                            Perempuan
+                                        @endif    
+                                    </td>
                                     <td>{{ $data_santri -> tgl_lhr }}</td>
                                     <td>{{ $data_santri -> kota_lhr }}</td>
+                                    <td>{{ $data_santri -> image }}</td>
                                     <td>{{ $data_santri -> nama_ortu }}</td>
                                     <td>{{ $data_santri -> alamat_ortu }}</td>
                                     <td>{{ $data_santri -> hp }}</td>
@@ -80,14 +90,15 @@
                                         @else
                                             Tidak Aktif
                                         @endif
-                                    </td>
-                                    <td><a href="{{ url('santri-table-kemajuan-') }}{{ $data_santri->id }}"><button class="btn btn-info btn-block" type="submit">Show</button></a></td>
                                     <td>
-                                        <form action="/delete-santri-{{ $data_santri->id }}" method="POST">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
-                                        </form>
+                                        <div class="d-inline">
+                                            <a href="{{ url('santri-table-kemajuan-') }}{{ $data_santri->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
+                                            <form action="/delete-santri-{{ $data_santri->id }}" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

@@ -53,12 +53,28 @@
           <li><a class="nav-link scrollto" href="#services">Fasilitas</a></li>
           <li><a class="nav-link scrollto" href="#team">Tim</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
-          <li class="dropdown"><a href="#" style="pointer-events: none"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="register">Daftar</a></li>
-              <li><a href="login">Login</a></li>
-            </ul>
-          </li>
+          @auth
+            <li class="dropdown"><a href="#" style="pointer-events: none"><span>Hai, {{ auth()->user()->nama }}</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="register">Dashboard</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                  <form id="form1" action="/logout" method="post">
+                    @csrf
+                    <a href="javascript:;" onclick="document.getElementById('form1').submit();">Logout</a>
+                    <input type="hidden" name="mess" value="Logout">
+                  </form>
+                </li>
+              </ul>
+            </li>
+            @else
+              <li class="dropdown"><a href="#" style="pointer-events: none"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="register">Daftar</a></li>
+                <li><a href="login">Login</a></li>
+              </ul>
+            </li>
+          @endauth
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

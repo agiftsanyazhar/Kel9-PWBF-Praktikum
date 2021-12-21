@@ -17,7 +17,8 @@ class SantriController extends Controller
     {
         return view('dashboard.santri-table', [
             'santris'   => Santri::all(),
-            "title"     => "Santri"
+            "title"     => "Santri",
+            'counter'   => 1
         ]);
     }
 
@@ -44,11 +45,23 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'image'         => 'required|image|mimes:jpeg,png,jpg,gif',
-        ]);
+        // $validatedData = $request->validate([
+        //     'image'         => 'required|image|mimes:jpeg,png,jpg',
+        // ]);
 
-        Santri::create($validatedData);
+        // if($request->file('image')){
+        //     $validatedData['image']  = $request->file('image')->store('santri-images');
+        // }
+
+        // // DB::table('santris')->where('id',$request->id)->update([
+        // //     'image'         => $request->image.'required|image|mimes:jpeg,png,jpg',
+        // // ]);
+
+        // Santri::create($validatedData);
+
+        // $request->session()->flash('success','Profil Berhasil Di-Update!');
+
+        // return redirect('/login');
     }
 
     /**
@@ -82,7 +95,17 @@ class SantriController extends Controller
      */
     public function update(Request $request, Santri $santri)
     {
-        //
+        DB::table('santris')->where('id',$request->id)->update([
+            'image'         => $request->image,
+        ]);
+
+        if($request->file('image')){
+            $request->file('image')->store('santri-images');
+        }
+
+        $request->session()->flash('success','Profil Berhasil Di-Update!');
+
+        return redirect('/dashboard-index');
     }
 
     /**

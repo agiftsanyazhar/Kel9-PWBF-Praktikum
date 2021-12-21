@@ -48,7 +48,7 @@ class RegisterController extends Controller
             'kota_lhr'      => 'required|max:40',
             'nama_ortu'     => 'required|min:3|max:50',
             'alamat_ortu'   => 'required|max:100',
-            'hp'            => 'required',
+            'hp'            => 'required|unique:santris|unique:penguruses',
             'email'         => 'required|email:dns|unique:santris|unique:penguruses',
             'password'      => 'required||min:8|max:32',
         ]);
@@ -115,7 +115,7 @@ class RegisterController extends Controller
     public function destroy($id)
     {
         Santri::find($id)->delete();
-        User::find($id)->delete();
+        User::where('id_santri', $id)->delete();
 
         return redirect('/santri-table')->with('delete','Santri Berhasil Dihapus!');
     }

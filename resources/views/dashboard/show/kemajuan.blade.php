@@ -6,61 +6,71 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="kemajuan-table">Kemajuan</a></li>
+                <li class="breadcrumb-item"><a href="kemajuan-table">Daftar Santri</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-            @can('pengurus')
-                <a href="{{ url('/form-create-kemajuan') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
-            @endcan
-            <a href="{{ url('/kemajuan-table') }}"><button class="btn btn-warning btn-block" type="submit">Kembali ke Daftar Santri</button></a>
+            <a href="{{ url('/kemajuan-table') }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Santri</button></a>
+            {{-- @can('pengurus') --}}
+                <a href="{{ url('/form-create-kemajuan-') }}{{ $idsantri }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
+            {{-- @endcan --}}
             <br><br>
             <div class="card mb-4">
                 <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
-                    {{ $title }}
+                    Kemajuan - {{ $title }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>No.</th>
                                 <th>Nama Pengurus</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
-                                <th>Detail Kemajuan</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>No.</th>
                                 <th>Nama Pengurus</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
-                                <th>Detail Kemajuan</th>
                                 <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
                             @foreach ($kemajuan as $kemajuans)
                                 <tr>
-                                    <td>{{ $kemajuans -> nama }}</td>
+                                    <td>{{ $counter++ }}</td>
+                                    <td>{{ $kemajuans -> pengurus }}</td>
                                     <td>{{ $kemajuans -> tanggal }}</td>
-                                    <td>{{ $kemajuans -> status }}</td>
                                     <td>
-                                        <div class="d-inline md-center">
-                                            <a href="{{ url('kemajuan-table-detail-kemajuan-') }}{{ $kemajuans->id }}">
-                                                <button class="btn btn-info btn-block" type="submit">Show</button>
-                                            </a>
+                                        @if ($kemajuans -> status === "N")
+                                            Naik
+                                        @elseif ($kemajuans -> status === "T")
+                                            Tetap
+                                        @elseif ($kemajuans -> status === "M")
+                                            Mundur
+                                        @endif
                                     </td>
                                     <td>
-                                            <a href = "{{ url('/form-edit-kemajuan-') }}{{ $kemajuans->id }}">
-                                                <button class="btn btn-warning btn-block" type="submit">Edit</button>
+                                        <div class="d-inline">
+                                            <a href="{{ url('kemajuan-table-detail-kemajuan-') }}{{ $kemajuans->id }}">
+                                                <button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button>
                                             </a>
-                                            <form action="{{ url('/delete-kemajuan-') }} {{ $kemajuans->id }}" method="POST" class="d-inline">
-                                                @method('delete')
-                                                @csrf
-                                                <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit">Hapus</button>
-                                            </form>
+                                            @can('pengurus')
+                                                <a href = "{{ url('/form-edit-kemajuan-') }}{{ $kemajuans->id }}">
+                                                    <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
+                                                </a>
+                                                <form action="{{ url('/delete-kemajuan-') }} {{ $kemajuans->id }}" method="POST" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
+                                                </form>
+                                            @endcan
                                         </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

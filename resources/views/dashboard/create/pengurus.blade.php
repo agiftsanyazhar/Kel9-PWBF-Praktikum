@@ -13,8 +13,8 @@
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
-                                        <input class="form-control @error('nama_pengurus') is-invalid @enderror" id="inputName" name="nama" type="text" minlength="3" maxlength="50" placeholder="Nama Pengurus" value="{{ old('nama_pengurus') }}" required/>
-                                        @error('nama_pengurus')
+                                        <input class="form-control @error('nama') is-invalid @enderror" id="inputName" name="nama" type="text" minlength="3" maxlength="50" placeholder="Nama Pengurus" value="{{ old('nama') }}" required/>
+                                        @error('nama')
                                             <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <button class="btn btn-primary btn-block" type="submit">Daftar</button>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Daftar</button></div>
                                 </div>
                             </form>
                         </div>

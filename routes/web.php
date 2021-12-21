@@ -94,15 +94,25 @@ Route::put('/update-peran-{id}', [PeranController::class, 'update'])->middleware
 Route::delete('/delete-peran-{id}', [PeranController::class, 'destroy'])->middleware('auth');
 
 //Kemajuan
-Route::get('/kemajuan-table-{id}', [KemajuanController::class, 'showIndex'])->middleware('auth');
-Route::get('/form-create-kemajuan', [KemajuanController::class, 'create'])->middleware('auth');
+Route::get('/kemajuan-table-{id}', [KemajuanController::class, 'showKemajuanIndex'])->middleware('auth');
+Route::get('/form-create-kemajuan-{id}', [KemajuanController::class, 'create'])->middleware('auth');
 Route::post('/create-kemajuan', [KemajuanController::class, 'store'])->middleware('auth');
 Route::get('/form-edit-kemajuan-{id}', [KemajuanController::class, 'edit'])->middleware('auth');
+Route::put('/update-kemajuan-{id}', [KemajuanController::class, 'update'])->middleware('auth');
 Route::get('/santri-table-kemajuan-{id}', [KemajuanController::class, 'index'])->middleware('auth');
 Route::delete('/delete-kemajuan-{id}', [KemajuanController::class, 'destroy'])->middleware('auth');
+
+//Detail Kemajuan
+Route::get('/kemajuan-table-detail-kemajuan-{id}', [Detail_KemajuanController::class, 'index'])->middleware('auth');
+
+//Detail Peran
+Route::get('/pengurus-table-peran-{id}', [Detail_PeranController::class, 'index'])->middleware('auth');
+Route::get('/form-create-detail-peran-{id}', [Detail_PeranController::class, 'create'])->middleware('auth');
+Route::post('/create-detail-peran', [Detail_PeranController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-detail-peran-{id}', [Detail_PeranController::class, 'edit'])->middleware('auth');
 
 //================================================================================
 //=================================== Profile ===================================
 //================================================================================
 Route::get('/profile', [SantriController::class, 'showProfileIndex'])->middleware('auth');
-Route::post('/update-profile', [SantriController::class, 'store'])->middleware('auth');
+Route::post('/update-profile', [SantriController::class, 'update'])->middleware('auth');

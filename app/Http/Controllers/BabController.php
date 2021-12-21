@@ -14,12 +14,13 @@ class BabController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Buku $buku)
+    public function index(Buku $id)
     {
         return view('dashboard.show.bab', [
-            'bab'   => Bab::where('id_buku', $buku->id)->with('buku')->get(),
-            'buku'  => $buku,
+            'bab'   => Bab::where('id_buku', $id->id)->get(),
+            'buku'  => $id,
             "title" => "Buku",
+            "counter" => 1,
         ]);
     }
 

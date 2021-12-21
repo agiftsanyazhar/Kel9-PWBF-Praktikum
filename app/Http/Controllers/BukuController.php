@@ -17,7 +17,8 @@ class BukuController extends Controller
     {
         return view('dashboard.buku-table', [
             'bukus' => Buku::all(),
-            "title" => "Buku"
+            "title" => "Buku",
+            'counter' => 1,
         ]);
     }
 

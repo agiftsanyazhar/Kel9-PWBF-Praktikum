@@ -32,7 +32,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <button class="btn btn-primary btn-block" type="submit">Tambah</button>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambah</button></div>
                                 </div>
                             </form>
                         </div>

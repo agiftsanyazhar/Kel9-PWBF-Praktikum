@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Detail_Peran;
 use App\Models\Pengurus;
+use App\Models\User;
 use Illuminate\Foundation\Bus\PendingChain;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -20,15 +21,8 @@ class PengurusController extends Controller
     {
         return view('dashboard.pengurus-table', [
             'pengurus'  => Pengurus::all(),
-            "title"     => "Pengurus"
-        ]);
-    }
-
-    public function showPeranIndex($id)
-    {
-        return view('dashboard.show.peran', [
-            'peran'     => Detail_Peran::where('id_pengurus', $id)->with('peran')->get(),
-            "title"     => Pengurus::find($id)->nama
+            "title"     => "Pengurus",
+            'counter'   => 1
         ]);
     }
 
@@ -55,7 +49,7 @@ class PengurusController extends Controller
         $validatedData = $request->validate([
             'nama'          => 'required|min:3|max:50',
             'gender'        => 'required',
-            'hp'            => 'required',
+            'hp'            => 'required|unique:penguruses|unique:santris',
             'email'         => 'required|email:dns|unique:penguruses|unique:santris',
             'password'      => 'required||min:8|max:32',
         ]);
@@ -100,7 +94,7 @@ class PengurusController extends Controller
     {
         return view('dashboard.edit.pengurus', [
             'pengurus'  => Pengurus::find($id),
-            "title"     => Pengurus::find($id)->pengurus
+            "title"     => Pengurus::find($id)->nama
         ]);
     }
 
@@ -111,7 +105,7 @@ class PengurusController extends Controller
      * @param  \App\Models\Pengurus  $pengurus
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pengurus $pengurus)
+    public function update(Request $request, Pengurus $pengurus, User $user)
     {
         DB::table('penguruses')->where('id',$request->id)->update([
             'hp'            => $request->hp,
@@ -131,6 +125,7 @@ class PengurusController extends Controller
     public function destroy($id)
     {
         Pengurus::find($id)->delete();
+        User::where('id_pengurus', $id)->delete();
 
         return redirect('/pengurus-table')->with('delete','Pengurus Berhasil Dihapus!');
     }

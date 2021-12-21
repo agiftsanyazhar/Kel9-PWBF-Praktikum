@@ -12,6 +12,8 @@
         <link href="assets/css/style.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 
+        <script src="peran.js"></script>
+
         <!-- Favicons -->
         <link href="img/favicon.png" rel="icon">
         <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -76,7 +78,7 @@
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
                                             <a class="nav-link" href="{{ url('/buku-table') }}">Buku</a>
-                                            <a class="nav-link" href="{{ url('/kemajuan-table') }}">Kemajuan</a>
+                                            <a class="nav-link" href="{{ url('/kemajuan-table') }}">Kemajuan Santri</a>
                                             <a class="nav-link" href="{{ url('/pengurus-table') }}">Pengurus</a>
                                             @can('admin')
                                                 <a class="nav-link" href="{{ url('/peran-table') }}">Peran</a>

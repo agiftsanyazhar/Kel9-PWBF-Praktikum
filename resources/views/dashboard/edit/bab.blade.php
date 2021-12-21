@@ -35,6 +35,7 @@
                                 <div class="row mb-2">
                                     <div class="col-md-12">
                                         <select class="form-control @error('id_buku') is-invalid @enderror" name="id_buku" required>
+                                            <option value="" disabled selected hidden>Judul Buku</option>
                                             @foreach ($bukus as $buku)
                                                 @if (old('id_buku', $bab->id_buku) == $buku->id)
                                                     <option value={{ $buku->id }} selected>{{ $buku->buku }}</option>

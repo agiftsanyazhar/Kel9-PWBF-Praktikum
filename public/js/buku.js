@@ -11,7 +11,7 @@ $(document).ready(function() {
                {
                  if(data){
                     $('#id_bab').empty();
-                    $('#id_bab').append('<option hidden>---Pilih Bab---</option>'); 
+                    $('#id_bab').append('<option hidden>Bab</option>'); 
                     $.each(data, function(key, value){
                         $('select[name="id_bab"]').append('<option value="'+ value +'">' + value + '</option>');
                     });
