@@ -9,7 +9,7 @@
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
             @can('pengurus')
-                <a href="{{ url('/create') }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
+                <a href="{{ url('/form-create-detailkemajuan-') }}{{ $id }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
                 <br><br>
             @endcan
             @if (session()->has('success'))

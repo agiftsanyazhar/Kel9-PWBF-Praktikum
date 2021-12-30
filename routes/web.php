@@ -15,6 +15,7 @@ use App\Http\Controllers\PeranController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SantriController;
 use App\Models\Detail_Kemajuan;
+use App\Models\Kemajuan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -103,7 +104,8 @@ Route::get('/santri-table-kemajuan-{id}', [KemajuanController::class, 'index'])-
 Route::delete('/delete-kemajuan-{id}', [KemajuanController::class, 'destroy'])->middleware('auth');
 
 //Detail Kemajuan
-Route::get('/kemajuan-table-detail-kemajuan-{id}', [KemajuanController::class, 'showDetailIndex'])->middleware('auth');
+Route::get('/kemajuan-table-kemajuan-detail-{id}', [Detail_KemajuanController::class, 'index'])->middleware('auth');
+Route::get('/form-create-detailkemajuan-{id}', [Detail_KemajuanController::class, 'create'])->middleware('auth');
 
 //Detail Peran
 Route::get('/pengurus-table-peran-{id}', [Detail_PeranController::class, 'index'])->middleware('auth');

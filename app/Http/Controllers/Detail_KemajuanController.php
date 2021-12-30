@@ -34,7 +34,7 @@ class Detail_KemajuanController extends Controller
     public function create($id)
     {
         return view('dashboard.show.detail-kemajuan', [
-            'buku'  => Buku::all(),
+            'bab'  => Bab::all(),
             'title' => $id,
         ]);
     }

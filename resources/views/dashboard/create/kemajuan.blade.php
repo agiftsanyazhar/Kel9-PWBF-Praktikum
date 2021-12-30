@@ -14,7 +14,6 @@
                                 <div class="row mb-2">
                                     <div class="col-md-12">
                                         <select class="form-control @error('id_santri') is-invalid @enderror" name="id_santri" required>
-                                            <option value="" disabled selected hidden>Nama Santri</option>
                                                 <option value={{ $idsantri }}>{{ $title }}</option>
                                         </select>
                                         @error('id_santri')
@@ -27,7 +26,6 @@
                                 <div class="row mb-2">
                                       <div class="col-md-12">
                                             <select class="form-control @error('id_pengurus') is-invalid @enderror" name="id_pengurus" required>
-                                                <option value="" disabled selected hidden>Nama Pengurus</option>
                                                 <option value={{ auth()->user()->id_pengurus }}>{{ auth()->user()->nama }}</option>
                                             </select>
                                         @error('id_pengurus')
