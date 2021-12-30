@@ -103,7 +103,7 @@ Route::get('/santri-table-kemajuan-{id}', [KemajuanController::class, 'index'])-
 Route::delete('/delete-kemajuan-{id}', [KemajuanController::class, 'destroy'])->middleware('auth');
 
 //Detail Kemajuan
-Route::get('/kemajuan-table-detail-kemajuan-{id}', [Detail_KemajuanController::class, 'index'])->middleware('auth');
+Route::get('/kemajuan-table-detail-kemajuan-{id}', [KemajuanController::class, 'showDetailIndex'])->middleware('auth');
 
 //Detail Peran
 Route::get('/pengurus-table-peran-{id}', [Detail_PeranController::class, 'index'])->middleware('auth');

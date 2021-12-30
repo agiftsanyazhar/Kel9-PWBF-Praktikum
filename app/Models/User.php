@@ -42,4 +42,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function Santri()
+    {
+        return $this->hasOne(Santri::class,'id','id_santri');
+    }
+
 }

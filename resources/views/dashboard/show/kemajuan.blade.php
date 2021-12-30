@@ -43,7 +43,7 @@
                             @foreach ($kemajuan as $kemajuans)
                                 <tr>
                                     <td>{{ $counter++ }}</td>
-                                    <td>{{ $kemajuans -> pengurus }}</td>
+                                    <td>{{ $kemajuans -> pengurus -> nama }}</td>
                                     <td>{{ $kemajuans -> tanggal }}</td>
                                     <td>
                                         @if ($kemajuans -> status === "N")

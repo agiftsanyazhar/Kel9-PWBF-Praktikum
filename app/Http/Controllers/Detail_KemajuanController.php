@@ -18,7 +18,7 @@ class Detail_KemajuanController extends Controller
      */
     public function index($id)
     {
-        return view('dashboard.show.detail-kemajuan-table', [
+        return view('dashboard.show.detail-kemajuan', [
             'detail'            => Detail_Kemajuan::where('id_kemajuan', $id)->with('bab.buku')->get(),
             'santri'            => Kemajuan::find($id)->santri->nama,
             'idsantri'          => Kemajuan::find($id)->santri->id,

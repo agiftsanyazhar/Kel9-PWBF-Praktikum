@@ -45,23 +45,23 @@ class SantriController extends Controller
      */
     public function store(Request $request)
     {
-        // $validatedData = $request->validate([
-        //     'image'         => 'required|image|mimes:jpeg,png,jpg',
+        $validatedData = $request->validate([
+            'image'         => 'required|image|mimes:jpeg,png,jpg',
+        ]);
+
+        if($request->file('image')){
+            $validatedData['image']  = $request->file('image')->store('santri-images');
+        }
+
+        // DB::table('santris')->where('id',$request->id)->update([
+        //     'image'         => $request->image.'required|image|mimes:jpeg,png,jpg',
         // ]);
 
-        // if($request->file('image')){
-        //     $validatedData['image']  = $request->file('image')->store('santri-images');
-        // }
+        Santri::create($validatedData);
 
-        // // DB::table('santris')->where('id',$request->id)->update([
-        // //     'image'         => $request->image.'required|image|mimes:jpeg,png,jpg',
-        // // ]);
+        $request->session()->flash('success','Profil Berhasil Di-Update!');
 
-        // Santri::create($validatedData);
-
-        // $request->session()->flash('success','Profil Berhasil Di-Update!');
-
-        // return redirect('/login');
+        return redirect('/login');
     }
 
     /**

@@ -47,10 +47,6 @@
                   </li>
   
                   <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">Settings</button>
-                  </li>
-  
-                  <li class="nav-item">
                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
                   </li>
   
@@ -70,37 +66,38 @@
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Jenis Kelamin</div>
-                      <div class="col-lg-9 col-md-8">Laki-Laki</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->gender }}
+                      </div>
                     </div>
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Tempat/Tanggal Lahir</div>
-                      <div class="col-lg-9 col-md-8">Krian, 15 Desember 2021</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->kota_lhr }},{{ auth()->user()->Santri->tgl_lhr }}</div>
                     </div>
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Nama Orang Tua</div>
-                      <div class="col-lg-9 col-md-8">Azhar</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->nama_ortu }}</div>
                     </div>
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Alamat Orang Tua</div>
-                      <div class="col-lg-9 col-md-8">Krian</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->alamat_ortu }}</div>
                     </div>
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">HP</div>
-                      <div class="col-lg-9 col-md-8">0812345678</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->hp }}</div>
                     </div>
   
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Email</div>
-                      <div class="col-lg-9 col-md-8">agif@gmail.com</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->email }}</div>
                     </div>
 
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label">Tanggal Masuk</div>
-                      <div class="col-lg-9 col-md-8">15 Desember 2021</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->tgl_masuk }}</div>
                     </div>
   
                   </div>
@@ -129,13 +126,6 @@
                         <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nama Santri</label>
                         <div class="col-md-8 col-lg-9">
                           <input name="name" type="text" class="form-control" id="name" value="{{ auth()->user()->nama }}" disabled>
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
-                        <div class="col-md-8 col-lg-9">
-                          <textarea name="about" class="form-control" id="about" style="height: 100px">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</textarea>
                         </div>
                       </div>
   
@@ -213,48 +203,6 @@
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                       </div>
                     </form><!-- End Profile Edit Form -->
-  
-                  </div>
-  
-                  <div class="tab-pane fade pt-3" id="profile-settings">
-  
-                    <!-- Settings Form -->
-                    <form>
-  
-                      <div class="row mb-3">
-                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
-                        <div class="col-md-8 col-lg-9">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="changesMade" checked>
-                            <label class="form-check-label" for="changesMade">
-                              Changes made to your account
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="newProducts" checked>
-                            <label class="form-check-label" for="newProducts">
-                              Information on new products and services
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="proOffers">
-                            <label class="form-check-label" for="proOffers">
-                              Marketing and promo offers
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="securityNotify" checked disabled>
-                            <label class="form-check-label" for="securityNotify">
-                              Security alerts
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-  
-                      <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                      </div>
-                    </form><!-- End settings Form -->
   
                   </div>
   

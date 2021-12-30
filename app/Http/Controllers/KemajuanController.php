@@ -25,13 +25,23 @@ class KemajuanController extends Controller
         ]);
     }
 
-    public function showKemajuanIndex(Santri $santri, $id)
+    public function showKemajuanIndex($id)
     {
         return view('dashboard.show.kemajuan', [
             'kemajuan'  => Kemajuan::where('id_santri', $id)->orderby('tanggal', 'desc')->with('pengurus')->get(),
             'title'     => Santri::find($id)->nama,
             'idsantri'  => Santri::find($id)->id,
             'counter'   => 1
+        ]);
+    }
+
+    public function showDetailIndex($id)
+    {
+        return view('dashboard.show.detail-kemajuan', [
+            'detail'            => Detail_Kemajuan::where('id_kemajuan', $id)->with('bab.buku')->get(),
+            'santri'            => Kemajuan::find($id)->santri->nama,
+            'idsantri'          => Kemajuan::find($id)->santri->id,
+            'id'                => Kemajuan::find($id)->id,
         ]);
     }
 

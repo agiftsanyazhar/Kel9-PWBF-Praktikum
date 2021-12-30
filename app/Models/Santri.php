@@ -17,4 +17,9 @@ class Santri extends Model
         return $this->hasMany(Kemajuan::class,'id_santri','id');
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class,'id_santri','id');
+    }
+
 }
