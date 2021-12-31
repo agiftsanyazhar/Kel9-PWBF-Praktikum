@@ -37,11 +37,12 @@ class KemajuanController extends Controller
 
     public function showKemajuanIndex($id)
     {
+        $Santri=Santri::find($id);
         return view('dashboard.show.kemajuan', [
             'kemajuan'  => Kemajuan::where('id_santri', $id)->orderby('tanggal', 'desc')->with('pengurus')->get(),
             // 'title'     => Santri::find($id)->nama,
             // 'idsantri'  => Santri::find($id)->id,
-            'title'     => 'Santri',
+            'title'     => $Santri->nama,
             'idsantri'  => $id,
             'counter'   => 1
         ]);
@@ -119,7 +120,7 @@ class KemajuanController extends Controller
     public function update(Request $request, Kemajuan $kemajuan)
     {
         DB::table('kemajuans')->where('id',$request['id'])->update([
-            'tanggal'           => $request['tanggal'],
+            'tanggal'        => $request['tanggal'],
             'status'         => $request['status'],
         ]);
 

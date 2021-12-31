@@ -47,4 +47,9 @@ class User extends Authenticatable
         return $this->hasOne(Santri::class,'id','id_santri');
     }
 
+    public function Pengurus()
+    {
+        return $this->hasOne(Pengurus::class,'id','id_pengurus');
+    }
+
 }

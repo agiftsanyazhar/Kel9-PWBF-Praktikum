@@ -16,16 +16,15 @@
   
             <div class="card">
               <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-  
-                <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                <h2>Kevin Anderson</h2>
-                <h3>Web Designer</h3>
-                <div class="social-links mt-2">
-                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                <div class="">
+                  @if (auth()->user()->image)
+                    <img src="{{ asset('storage/'.auth()->user()->image) }}" alt="Profile">
+                  @else
+                    <img src="img/unnamed.jpg" alt="Profile">   
+                  @endif
                 </div>
+                <h2>{{ auth()->user()->nama }}</h2>
+                <h3>{{ auth()->user()->role }}</h3>
               </div>
             </div>
   
@@ -43,7 +42,7 @@
                   </li>
   
                   <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Photo Profile</button>
                   </li>
   
                   <li class="nav-item">
@@ -54,11 +53,9 @@
                 <div class="tab-content pt-2">
   
                   <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                    <h5 class="card-title">Tentang</h5>
-                    <p class="small fst-italic">Sunt est soluta temporibus accusantium neque nam maiores cumque temporibus. Tempora libero non est unde veniam est qui dolor. Ut sunt iure rerum quae quisquam autem eveniet perspiciatis odit. Fuga sequi sed ea saepe at unde.</p>
-  
+                    
                     <h5 class="card-title">Profile Details</h5>
-  
+                    @can('santri')
                     <div class="row">
                       <div class="col-lg-3 col-md-4 label ">Nama Santri</div>
                       <div class="col-lg-9 col-md-8">{{ auth()->user()->nama }}</div>
@@ -99,106 +96,64 @@
                       <div class="col-lg-3 col-md-4 label">Tanggal Masuk</div>
                       <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->tgl_masuk }}</div>
                     </div>
-  
+                    @endcan
+
+                    @can('pengurus')
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Nama Pengurus</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->nama }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Pengurus->email }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">HP</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Pengurus->hp }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Jenis Kelamin</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->Pengurus->gender }}
+                      </div>
+                    </div>
+                    @endcan
+                    @can('admin')
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label ">Nama User</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->nama }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->email }}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Role</div>
+                      <div class="col-lg-9 col-md-8">{{ auth()->user()->role }}
+                      </div>
+                    </div>
+                    @endcan
                   </div>
   
                   <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
   
                     <!-- Profile Edit Form -->
-                    <form action="/update-profile" method="post" enctype="multipart/form-data">
+                    <form action="/upload-photo-profil-{{ auth()->user()->id }}" method="post" enctype="multipart/form-data">
                       @csrf
+                      <input type="hidden" name="oldImage" id="oldImage" value="{{ auth()->user()->image }}">
                       <div class="row mb-3">
                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto Profil</label>
                         <div class="col-md-8 col-lg-9">
-                          <img src="assets/img/profile-img.jpg" alt="Profile">
                           <div class="pt-2">
                             <div class="mb-3">
-                              <label for="image" class="form-label">Upload Foto</label>
-                              <input class="form-control" type="file" id="image" name="image">
+                              <label for="image" class="form-label">Upload Foto</label><br/>
+                              <img class="img-preview img-fluid mb-3 col-sm-5">  
+                              <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
                             </div>
                             {{-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a> --}}
-                            <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                            {{-- <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a> --}}
                           </div>
                         </div>
                       </div>
-  
-                      <div class="row mb-3">
-                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nama Santri</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="name" type="text" class="form-control" id="name" value="{{ auth()->user()->nama }}" disabled>
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="company" class="col-md-4 col-lg-3 col-form-label">Jenis Kelamin</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="gender" type="text" class="form-control" id="gender" value="Laki-Laki" disabled>
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Job" class="col-md-4 col-lg-3 col-form-label">Tempat, Tanggal Lahir</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="job" type="text" class="form-control" id="Job" value="Web Designer">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="country" type="text" class="form-control" id="Country" value="USA">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="twitter" type="text" class="form-control" id="Twitter" value="https://twitter.com/#">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="facebook" type="text" class="form-control" id="Facebook" value="https://facebook.com/#">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="instagram" type="text" class="form-control" id="Instagram" value="https://instagram.com/#">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="linkedin" type="text" class="form-control" id="Linkedin" value="https://linkedin.com/#">
-                        </div>
-                      </div>
-  
                       <div class="text-center">
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                       </div>
@@ -247,5 +202,20 @@
         </div>
       </section>
     </div>
+    <script>
+      function previewImage () {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function (oFREvent) {
+          imgPreview.src = oFREvent.target.result;
+        }
+      }
+    </script>
   </main><!-- End #main -->
 @endsection

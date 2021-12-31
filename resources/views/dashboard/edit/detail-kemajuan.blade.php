@@ -7,9 +7,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Tambah Detail Kemajuan {{ $title }}</h3></div>
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Detail Kemajuan {{ $title }}</h3></div>
                         <div class="card-body">
-                            <form action="/create-detail-{{ $title }}" method="post">
+                            <form action="/edit-detail-{{ $title }}" method="post">
+                                @method('put')
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
@@ -19,9 +20,12 @@
                                 <div class="row mb-2">
                                     <div class="col-md-12">
                                         <select class="form-control @error('id_bab') is-invalid @enderror" name="id_bab" required>
-                                            <option value="" disabled selected hidden>Pilih Bab</option>
                                             @foreach ($bab as $babs)
-                                                <option value={{ $babs->id }}>{{ $babs->id }}-{{ $babs->bab }}</option>
+                                                @if (old('id_bab', $kemajuan->id_bab) == $babs->id)
+                                                    <option value={{ $babs->id }} selected>{{ $babs->bab }}</option>
+                                                @else
+                                                    <option value={{ $babs->id }}>{{ $babs->bab }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                         @error('id_bab')
@@ -33,7 +37,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12 row-lg-10">
-                                        <textarea rows="5" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan" required></textarea>
+                                        <textarea rows="5" class="form-control @error('keterangan') is-invalid @enderror" name="keterangan" placeholder="Keterangan" required>{{ old('keterangan', $kemajuan->keterangan) }}</textarea>
                                         @error('Keterangan')
                                         <div class="invalid-feedback">
                                         {{ $message }}
@@ -42,7 +46,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Tambah</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Edit</button></div>
                                 </div>
                             </form>
                         </div>

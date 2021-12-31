@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 //================================================================================
 Route::get('/', [IndexController::class, 'index']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::get('/forgot-password', [Forgot_PasswordController::class, 'index']);
 
 //================================================================================
@@ -55,6 +55,7 @@ Route::get('/santri-table', [SantriController::class, 'index'])->middleware('aut
 //================================================================================
 Route::post('/register', [RegisterController::class, 'store']);
 Route::delete('/delete-santri-{id}', [RegisterController::class, 'destroy']);
+Route::post('/upload-photo-profil-{id}', [RegisterController::class, 'update']);
 
 //================================================================================
 //===================================== Login & Logout ====================================
@@ -104,8 +105,12 @@ Route::get('/santri-table-kemajuan-{id}', [KemajuanController::class, 'index'])-
 Route::delete('/delete-kemajuan-{id}', [KemajuanController::class, 'destroy'])->middleware('auth');
 
 //Detail Kemajuan
-Route::get('/kemajuan-table-kemajuan-detail-{id}', [Detail_KemajuanController::class, 'index'])->middleware('auth');
-Route::get('/form-create-detailkemajuan-{id}', [Detail_KemajuanController::class, 'create'])->middleware('auth');
+Route::get('/detailkemajuan-table-{id}', [Detail_KemajuanController::class, 'index'])->middleware('auth');
+Route::get('/form-create-detail-{id}', [Detail_KemajuanController::class, 'create'])->middleware('auth');
+Route::post('/create-detail-{id}', [Detail_KemajuanController::class, 'store'])->middleware('auth');
+Route::get('/form-edit-detail-{id}', [Detail_KemajuanController::class, 'edit'])->middleware('auth');
+Route::put('/edit-detail-{id}', [Detail_KemajuanController::class, 'update'])->middleware('auth');
+Route::delete('/delete-detail-{id}', [Detail_KemajuanController::class, 'destroy'])->middleware('auth');
 
 //Detail Peran
 Route::get('/pengurus-table-peran-{id}', [Detail_PeranController::class, 'index'])->middleware('auth');
@@ -117,4 +122,3 @@ Route::get('/form-edit-detail-peran-{id}', [Detail_PeranController::class, 'edit
 //=================================== Profile ===================================
 //================================================================================
 Route::get('/profile', [SantriController::class, 'showProfileIndex'])->middleware('auth');
-Route::post('/update-profile', [SantriController::class, 'update'])->middleware('auth');

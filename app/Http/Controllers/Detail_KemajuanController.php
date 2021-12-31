@@ -23,6 +23,7 @@ class Detail_KemajuanController extends Controller
             'santri'            => Kemajuan::find($id)->santri->nama,
             'idsantri'          => Kemajuan::find($id)->santri->id,
             'id'                => Kemajuan::find($id)->id,
+            'counter'           => 1
         ]);
     }
 
@@ -33,8 +34,8 @@ class Detail_KemajuanController extends Controller
      */
     public function create($id)
     {
-        return view('dashboard.show.detail-kemajuan', [
-            'bab'  => Bab::all(),
+        return view('dashboard.create.detail-kemajuan', [
+            'bab'   => Bab::all(),
             'title' => $id,
         ]);
     }
@@ -84,9 +85,13 @@ class Detail_KemajuanController extends Controller
      * @param  \App\Models\Detail_Kemajuan  $detail_Kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function edit(Detail_Kemajuan $detail_Kemajuan)
+    public function edit($id)
     {
-        //
+        return view('dashboard.edit.detail-kemajuan', [
+            'kemajuan'  => Detail_Kemajuan::find($id),
+            'bab'       => Bab::all(),
+            'title'     => $id,
+        ]);
     }
 
     /**
@@ -98,7 +103,12 @@ class Detail_KemajuanController extends Controller
      */
     public function update(Request $request, Detail_Kemajuan $detail_Kemajuan)
     {
-        //
+        DB::table('detail__kemajuans')->where('id',$request['id'])->update([
+            'id_bab'         => $request['id_bab'],
+            'keterangan'     => $request['keterangan'],
+        ]);
+
+        return redirect('/kemajuan-table')->with('updatedetail','Data Detail Kemajuan Berhasil Di-Update!');
     }
 
     /**

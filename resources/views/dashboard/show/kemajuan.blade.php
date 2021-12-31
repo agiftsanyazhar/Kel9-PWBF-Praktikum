@@ -56,7 +56,7 @@
                                     </td>
                                     <td>
                                         <div class="d-inline">
-                                            <a href="{{ url('kemajuan-table-detail-kemajuan-') }}{{ $kemajuans->id }}">
+                                            <a href="{{ url('detailkemajuan-table-') }}{{ $kemajuans->id }}">
                                                 <button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button>
                                             </a>
                                             @can('pengurus')

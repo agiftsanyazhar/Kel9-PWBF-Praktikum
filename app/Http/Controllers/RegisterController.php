@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 
 class RegisterController extends Controller
@@ -103,7 +104,24 @@ class RegisterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'image' => 'image|file|max:5000'
+        ]);
+
+        if($request->file('image')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $path = $request->file('image')->store('photo-profile');
+        }
+
+        DB::table('users')->where('id',$id)->update([
+            'image'          => $path,
+        ]);
+
+        $request->session()->flash('success','Profil Berhasil Di-Update!');
+
+        return redirect('/profile');
     }
 
     /**

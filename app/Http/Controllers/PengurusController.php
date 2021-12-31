@@ -49,7 +49,7 @@ class PengurusController extends Controller
         $validatedData = $request->validate([
             'nama'          => 'required|min:3|max:50',
             'gender'        => 'required',
-            'hp'            => 'required|unique:penguruses|unique:santris',
+            'hp'            => 'required|unique:penguruses',
             'email'         => 'required|email:dns|unique:penguruses|unique:santris',
             'password'      => 'required||min:8|max:32',
         ]);

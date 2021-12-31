@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(1)->create();
         Santri::factory(60)->create();
-        Pengurus::factory(5)->create();
+        Pengurus::factory(20)->create();
         Buku::factory(10)->create();
         Bab::factory(20)->create();
         Peran::factory(20)->create();

@@ -6,60 +6,65 @@
             <h1 class="mt-4">Table</h1>
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
-                <li class="breadcrumb-item active">{{ $title }}</li>
+                <li class="breadcrumb-item"><a href="kemajuan-table">Daftar Santri</a></li>
+                <li class="breadcrumb-item"><a href="kemajuan-table">{{ $santri }}</a></li>
+                <li class="breadcrumb-item active">{{ $id }}</li>
             </ol>
-            @can('pengurus')
-                <a href="{{ url('/form-create-detailkemajuan-') }}{{ $id }}"><button class="btn btn-primary btn-block" type="submit">Tambah</button></a>
-                <br><br>
-            @endcan
-            @if (session()->has('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
+            <a href="{{ url('/kemajuan-table-') }}{{ $idsantri }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Kemajuan</button></a>
+            {{-- @can('pengurus') --}}
+                <a href="{{ url('/form-create-detail-') }}{{ $id }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
+            {{-- @endcan --}}
+            <br><br>
             <div class="card mb-4">
                 <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
-                    {{ $title }}
+                    Kemajuan - {{ $id }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>No.</th>
+                                <th>Buku</th>
+                                <th>Bab</th>
                                 <th>Keterangan</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
-                                <th>ID Kemajuan</th>
-                                <th>ID Bab</th>
-                                <th>Edit</th>
-                                <th>Hapus</th>
+                                @can('pengurus')
+                                <th>Aksi</th>
+                                @endcan
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
+                                <th>No.</th>
+                                <th>Buku</th>
+                                <th>Bab</th>
                                 <th>Keterangan</th>
-                                <th>Created at</th>
-                                <th>Updated at</th>
-                                <th>ID Kemajuan</th>
-                                <th>ID Bab</th>
-                                <th>Edit</th>
-                                <th>Hapus</th>
+                                @can('pengurus')
+                                <th>Aksi</th>
+                                @endcan
                             </tr>
                         </tfoot>
                         <tbody>
-                            @foreach ($detail_kemajuan as $data_detail_kemajuan)
+                            @foreach ($detail as $details)
                                 <tr>
-                                    <td>{{ $data_detail_kemajuan -> id }}</td>
-                                    <td>{{ $data_detail_kemajuan -> keterangan }}</td>
-                                    <td>{{ $data_detail_kemajuan -> created_at }}</td>
-                                    <td>{{ $data_detail_kemajuan -> updated_at }}</td>
-                                    <td>{{ $data_detail_kemajuan -> id_kemajuan }}</td>
-                                    <td>{{ $data_detail_kemajuan -> id_bab }}</td>
-                                    <td><button class="btn btn-warning btn-block" type="submit">Edit</button></td>
-                                    <td><button class="btn btn-danger btn-block" type="submit">Hapus</button></td>
+                                    <td>{{ $counter++ }}</td>
+                                    <td>{{ $details -> bab -> buku -> buku }}</td>
+                                    <td>{{ $details -> bab -> bab }}</td>
+                                    <td>{{ $details -> keterangan }}</td>
+                                    <td>
+                                        <div class="d-inline">
+                                            @can('pengurus')
+                                                <a href = "{{ url('/form-edit-detail-') }}{{ $details->id }}">
+                                                    <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
+                                                </a>
+                                                <form action="{{ url('/delete-detail-') }} {{ $details->id }}" method="POST" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
+                                                </form>
+                                            @endcan
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

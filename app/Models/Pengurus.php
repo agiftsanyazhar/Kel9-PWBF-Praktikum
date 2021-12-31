@@ -21,4 +21,9 @@ class Pengurus extends Model
         return $this->hasMany(Detail_Peran::class, 'id_pengurus', 'id');
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class,'id_pengurus','id');
+    }
+
 }
