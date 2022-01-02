@@ -9,28 +9,42 @@
                 <li class="breadcrumb-item active">Daftar Santri</li>
             </ol>
 
-            {{-- Buku --}}
-            @if (session()->has('success'))
+            {{-- Kemajuan --}}
+            @if (session()->has('successKemajuan'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('success') }}
+                    {{ session('successKemajuan') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            @if (session()->has('update'))
+            @if (session()->has('updateKemajuan'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    {{ session('update') }}
+                    {{ session('updateKemajuan') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            @if (session()->has('delete'))
+            @if (session()->has('deleteKemajuan'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    {{ session('delete') }}
+                    {{ session('deleteKemajuan') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            @if (session()->has('updatedetail'))
+            
+            {{-- Detail Kemajuan --}}
+            @if (session()->has('successDetailKemajuan'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    {{ session('updatedetail') }}
+                    {{ session('successDetailKemajuan') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session()->has('updateDetailKemajuan'))
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    {{ session('updateDetailKemajuan') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session()->has('deleteDetailKemajuan'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('deleteDetailKemajuan') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif

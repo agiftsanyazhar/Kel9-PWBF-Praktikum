@@ -41,14 +41,6 @@
                     <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
                   </li>
   
-                  <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Photo Profile</button>
-                  </li>
-  
-                  <li class="nav-item">
-                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Change Password</button>
-                  </li>
-  
                 </ul>
                 <div class="tab-content pt-2">
   
@@ -94,9 +86,9 @@
                       <div class="col-lg-3 col-md-4 label">Tanggal Masuk</div>
                       <div class="col-lg-9 col-md-8">{{ auth()->user()->Santri->tgl_masuk }}</div>
                     </div>
-                    <div class="text-center">
-                      <a href="{{ url('/download-user-') }}{{ auth()->user()->nama }}" target="_blank"><button type="submit" class="btn btn-primary"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
-                    </div>
+                    <script type="text/javascript">
+                      window.print();
+                    </script>
                     @endcan
 
                     @can('pengurus')
@@ -122,9 +114,9 @@
                         @endif    
                       </div>
                     </div>
-                    <div class="text-center">
-                      <a href="{{ url('/download-user-') }}{{ auth()->user()->nama }}" target="_blank"><button type="submit" class="btn btn-primary"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
-                    </div>
+                    <script type="text/javascript">
+                      window.print();
+                    </script>
                     @endcan
 
                     @can('admin')
@@ -140,68 +132,10 @@
                       <div class="col-lg-3 col-md-4 label">Role</div>
                       <div class="col-lg-9 col-md-8">{{ auth()->user()->role }}</div>
                     </div>
-                    <div class="text-center">
-                      <a href="{{ url('/download-user-') }}{{ auth()->user()->nama }}" target="_blank"><button type="submit" class="btn btn-primary"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
-                    </div>
+                      <script type="text/javascript">
+                        window.print();
+                      </script>
                     @endcan
-                    
-                  </div>
-  
-                  <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
-  
-                    <!-- Profile Edit Form -->
-                    <form action="/upload-photo-profil-{{ auth()->user()->id }}" method="post" enctype="multipart/form-data">
-                      @csrf
-                      <input type="hidden" name="oldImage" id="oldImage" value="{{ auth()->user()->image }}">
-                      <div class="row mb-3">
-                        <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Foto Profil</label>
-                        <div class="col-md-8 col-lg-9">
-                          <div class="pt-2">
-                            <div class="mb-3">
-                              <label for="image" class="form-label">Upload Foto</label><br/>
-                              <img class="img-preview img-fluid mb-3 col-sm-5">  
-                              <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Save Changes</button>
-                      </div>
-                    </form><!-- End Profile Edit Form -->
-  
-                  </div>
-  
-                  <div class="tab-pane fade pt-3" id="profile-change-password">
-                    <!-- Change Password Form -->
-                    <form>
-  
-                      <div class="row mb-3">
-                        <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="password" type="password" class="form-control" id="currentPassword">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="newpassword" type="password" class="form-control" id="newPassword">
-                        </div>
-                      </div>
-  
-                      <div class="row mb-3">
-                        <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input name="renewpassword" type="password" class="form-control" id="renewPassword">
-                        </div>
-                      </div>
-  
-                      <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Change Password</button>
-                      </div>
-                    </form><!-- End Change Password Form -->
-  
                   </div>
   
                 </div><!-- End Bordered Tabs -->

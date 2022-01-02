@@ -54,7 +54,7 @@ class BabController extends Controller
 
         Bab::create($validatedData);
 
-        $request->session()->flash('successBab','Bab Berhasil Ditambahkan!');
+        $request->session()->flash('successBab','Bab Berhasil Ditambah!');
 
         return redirect('/buku-table');
     }
@@ -117,5 +117,14 @@ class BabController extends Controller
         $request->session()->flash('deleteBab','Bab Berhasil Dihapus!');
 
         return redirect('/buku-table');
+    }
+
+    public function print(Buku $id){
+        return view('dashboard.print.bab', [
+            'bab'   => Bab::where('id_buku', $id->id)->get(),
+            'buku'  => $id,
+            "title" => "Buku",
+            "counter" => 1,
+        ]);
     }
 }

@@ -7,9 +7,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Detail Kemajuan {{ $title }}</h3></div>
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Edit Detail Kemajuan</h3></div>
                         <div class="card-body">
-                            <form action="/edit-detail-{{ $title }}" method="post">
+                            <form action="/edit-detail-kemajuan-{{ $title }}" method="post">
                                 @method('put')
                                 @csrf
                                 <div class="row mb-2">
@@ -22,9 +22,9 @@
                                         <select class="form-control @error('id_bab') is-invalid @enderror" name="id_bab" required>
                                             @foreach ($bab as $babs)
                                                 @if (old('id_bab', $kemajuan->id_bab) == $babs->id)
-                                                    <option value={{ $babs->id }} selected>{{ $babs->bab }}</option>
+                                                    <option value={{ $babs->id }} selected>{{ $babs->id }} - {{ $babs->bab }}</option>
                                                 @else
-                                                    <option value={{ $babs->id }}>{{ $babs->bab }}</option>
+                                                    <option value={{ $babs->id }}>{{ $babs->id }} - {{ $babs->bab }}</option>
                                                 @endif
                                             @endforeach
                                         </select>
@@ -46,7 +46,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-4 mb-0">
-                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Edit</button></div>
+                                    <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Perbarui</button></div>
                                 </div>
                             </form>
                         </div>

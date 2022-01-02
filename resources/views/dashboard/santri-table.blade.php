@@ -8,6 +8,10 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
+
+            <a href="{{ url('/download-santri') }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
+            <br><br>
+
             @if (session()->has('update'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     {{ session('update') }}
@@ -35,7 +39,6 @@
                                 <th>Gender</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Kota Lahir</th>
-                                <th>Foto</th>
                                 <th>Nama Ortu</th>
                                 <th>Alamat Ortu</th>
                                 <th>HP</th>
@@ -53,7 +56,6 @@
                                 <th>Gender</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Kota Lahir</th>
-                                <th>Foto</th>
                                 <th>Nama Ortu</th>
                                 <th>Alamat Ortu</th>
                                 <th>HP</th>
@@ -78,7 +80,6 @@
                                     </td>
                                     <td>{{ $data_santri -> tgl_lhr }}</td>
                                     <td>{{ $data_santri -> kota_lhr }}</td>
-                                    <td>{{ $data_santri -> image }}</td>
                                     <td>{{ $data_santri -> nama_ortu }}</td>
                                     <td>{{ $data_santri -> alamat_ortu }}</td>
                                     <td>{{ $data_santri -> hp }}</td>

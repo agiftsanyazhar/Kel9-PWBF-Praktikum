@@ -49,7 +49,7 @@ class BukuController extends Controller
 
         Buku::create($validatedData);
 
-        $request->session()->flash('successBuku','Buku Berhasil Ditambahkan!');
+        $request->session()->flash('successBuku','Buku Berhasil Ditambah!');
 
         return redirect('/buku-table');
     }
@@ -107,5 +107,13 @@ class BukuController extends Controller
         Buku::find($id)->delete();
 
         return redirect('/buku-table')->with('deleteBuku','Buku Berhasil Dihapus!');
+    }
+
+    public function print(){
+        return view('dashboard.print.buku-table', [
+            'bukus' => Buku::all(),
+            "title" => "Buku",
+            'counter' => 1,
+        ]);
     }
 }

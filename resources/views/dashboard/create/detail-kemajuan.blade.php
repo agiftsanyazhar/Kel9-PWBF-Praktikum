@@ -7,9 +7,9 @@
             <div class="row justify-content-center">
                 <div class="col-lg-7">
                     <div class="card shadow-lg border-0 rounded-lg mt-5">
-                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Tambah Detail Kemajuan {{ $title }}</h3></div>
+                        <div class="card-header"><h3 class="text-center font-weight-light my-4">Tambah Detail Kemajuan - {{ $santri }}</h3></div>
                         <div class="card-body">
-                            <form action="/create-detail-{{ $title }}" method="post">
+                            <form action="/create-detail-kemajuan-{{ $title }}" method="post">
                                 @csrf
                                 <div class="row mb-2">
                                     <div class="col-md-6">
@@ -21,7 +21,7 @@
                                         <select class="form-control @error('id_bab') is-invalid @enderror" name="id_bab" required>
                                             <option value="" disabled selected hidden>Pilih Bab</option>
                                             @foreach ($bab as $babs)
-                                                <option value={{ $babs->id }}>{{ $babs->id }}-{{ $babs->bab }}</option>
+                                                <option value={{ $babs->id }}>{{ $babs->id }} - {{ $babs->bab }}</option>
                                             @endforeach
                                         </select>
                                         @error('id_bab')

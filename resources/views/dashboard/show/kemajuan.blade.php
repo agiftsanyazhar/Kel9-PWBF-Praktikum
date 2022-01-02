@@ -10,9 +10,10 @@
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
             <a href="{{ url('/kemajuan-table') }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Santri</button></a>
-            {{-- @can('pengurus') --}}
+            @can('pengurus')
                 <a href="{{ url('/form-create-kemajuan-') }}{{ $idsantri }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
-            {{-- @endcan --}}
+            @endcan
+            <a href="{{ url('/download-kemajuan-') }}{{ $idsantri }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
             <br><br>
             <div class="card mb-4">
                 <div class="card-header mb-3">
@@ -56,7 +57,7 @@
                                     </td>
                                     <td>
                                         <div class="d-inline">
-                                            <a href="{{ url('detailkemajuan-table-') }}{{ $kemajuans->id }}">
+                                            <a href="{{ url('detail-kemajuan-table-') }}{{ $kemajuans->id }}">
                                                 <button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button>
                                             </a>
                                             @can('pengurus')

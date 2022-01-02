@@ -8,17 +8,18 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="kemajuan-table">Daftar Santri</a></li>
                 <li class="breadcrumb-item"><a href="kemajuan-table">{{ $santri }}</a></li>
-                <li class="breadcrumb-item active">{{ $id }}</li>
+                <li class="breadcrumb-item active">{{ $santri }}</li>
             </ol>
             <a href="{{ url('/kemajuan-table-') }}{{ $idsantri }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Kemajuan</button></a>
-            {{-- @can('pengurus') --}}
-                <a href="{{ url('/form-create-detail-') }}{{ $id }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
-            {{-- @endcan --}}
+            @can('pengurus')
+                <a href="{{ url('/form-create-detail-kemajuan-') }}{{ $id }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
+            @endcan
+            <a href="{{ url('/download-detail-kemajuan-') }}{{ $id }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
             <br><br>
             <div class="card mb-4">
                 <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>
-                    Kemajuan - {{ $id }}
+                    Detail Kemajuan - {{ $santri }}
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -51,20 +52,20 @@
                                     <td>{{ $details -> bab -> buku -> buku }}</td>
                                     <td>{{ $details -> bab -> bab }}</td>
                                     <td>{{ $details -> keterangan }}</td>
-                                    <td>
-                                        <div class="d-inline">
-                                            @can('pengurus')
-                                                <a href = "{{ url('/form-edit-detail-') }}{{ $details->id }}">
+                                     @can('pengurus')
+                                        <td>
+                                            <div class="d-inline">
+                                                <a href = "{{ url('/form-edit-detail-kemajuan-') }}{{ $details->id }}">
                                                     <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
                                                 </a>
-                                                <form action="{{ url('/delete-detail-') }} {{ $details->id }}" method="POST" class="d-inline">
+                                                <form action="{{ url('/delete-detail-kemajuan-') }} {{ $details->id }}" method="POST" class="d-inline">
                                                     @method('delete')
                                                     @csrf
                                                     <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
                                                 </form>
-                                            @endcan
-                                        </div>
-                                    </td>
+                                            </div>
+                                        </td>
+                                    @endcan
                                 </tr>
                             @endforeach
                         </tbody>

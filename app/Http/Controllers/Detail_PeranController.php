@@ -60,7 +60,7 @@ class Detail_PeranController extends Controller
 
         Detail_Peran::create($validatedData);
 
-        $request->session()->flash('successDetailPeran','Data Peran Berhasil Ditambahkan!');
+        $request->session()->flash('successDetailPeran','Detail Peran Berhasil Ditambah!');
 
         return redirect('/pengurus-table');
     }
@@ -85,13 +85,9 @@ class Detail_PeranController extends Controller
     public function edit(Detail_Peran $detail_Peran, $id)
     {
         return view('dashboard.edit.detail-peran', [
-            // 'bab'   => Bab::find($id),
-            // 'bukus' => Buku::all(),
-            // "title" => Bab::find($id)->bab
-
-            'pengurus' => Pengurus::find($id),
-            "title"    => Pengurus::find($id),
-            'peran'    => Peran::find($id)
+            'pengurus' => Detail_Peran::find($id),
+            "title"    => $id,
+            'peran'    => Peran::all()
         ]);
     }
 
@@ -104,7 +100,11 @@ class Detail_PeranController extends Controller
      */
     public function update(Request $request, Detail_Peran $detail_Peran)
     {
-        //
+        DB::table('detail__perans')->where('id',$request['id'])->update([
+            'id_peran'          => $request['id_peran'],
+        ]);
+
+        return redirect('/pengurus-table')->with('updateDetailPeran','Data Detail Kemajuan Berhasil Di-Update!');
     }
 
     /**
@@ -113,8 +113,21 @@ class Detail_PeranController extends Controller
      * @param  \App\Models\Detail_Peran  $detail_Peran
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Detail_Peran $detail_Peran)
+    public function destroy(Detail_Peran $detail_Peran, Request $request, $id)
     {
-        //
+        Detail_Peran::find($id)->delete();
+
+        $request->session()->flash('deleteDetailPeran','Detail Peran Berhasil Dihapus!');
+
+        return redirect('/pengurus-table');
+    }
+
+    public function print($id){
+        return view('dashboard.print.detail-peran', [
+            'peran'         => Detail_Peran::where('id_pengurus', $id)->with('peran')->get(),
+            "title"         => Pengurus::find($id)->nama,
+            'idpengurus'    => Pengurus::find($id)->id,
+            'counter'       => 1
+        ]);
     }
 }

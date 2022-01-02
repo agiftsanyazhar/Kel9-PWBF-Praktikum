@@ -9,6 +9,7 @@
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
             <a href="{{ url('/form-create-peran') }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
+            <a href="{{ url('/download-peran') }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
             <br><br>
             @if (session()->has('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">

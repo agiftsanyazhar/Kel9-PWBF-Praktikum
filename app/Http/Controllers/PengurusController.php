@@ -68,7 +68,7 @@ class PengurusController extends Controller
             'role'          => 'Pengurus',
         ]);
 
-        $request->session()->flash('success','Data Pengurus Berhasil Ditambahkan!');
+        $request->session()->flash('successPengurus','Pengurus Berhasil Ditambahkan!');
 
         return redirect('/pengurus-table');
     }
@@ -113,7 +113,7 @@ class PengurusController extends Controller
             'password'      => Hash::make($request->newPassword)
         ]);
 
-        return redirect('/pengurus-table')->with('update','Data Pengurus Berhasil Di-Update!');
+        return redirect('/pengurus-table')->with('updatePengurus','Data Pengurus Berhasil Di-Update!');
     }
 
     /**
@@ -127,6 +127,14 @@ class PengurusController extends Controller
         Pengurus::find($id)->delete();
         User::where('id_pengurus', $id)->delete();
 
-        return redirect('/pengurus-table')->with('delete','Pengurus Berhasil Dihapus!');
+        return redirect('/pengurus-table')->with('deletePengurus','Pengurus Berhasil Dihapus!');
+    }
+
+    public function print(){
+        return view('dashboard.print.pengurus-table', [
+            'pengurus'  => Pengurus::all(),
+            "title"     => "Pengurus",
+            'counter'   => 1
+        ]);
     }
 }

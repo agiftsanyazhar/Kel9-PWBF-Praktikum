@@ -95,17 +95,7 @@ class SantriController extends Controller
      */
     public function update(Request $request, Santri $santri)
     {
-        DB::table('santris')->where('id',$request->id)->update([
-            'image'         => $request->image,
-        ]);
-
-        if($request->file('image')){
-            $request->file('image')->store('santri-images');
-        }
-
-        $request->session()->flash('success','Profil Berhasil Di-Update!');
-
-        return redirect('/dashboard-index');
+        
     }
 
     /**
@@ -117,5 +107,13 @@ class SantriController extends Controller
     public function destroy($id)
     {
         
+    }
+
+    public function print(){
+        return view('dashboard.print.santri-table', [
+            'santris'   => Santri::all(),
+            "title"     => "Santri",
+            'counter'   => 1
+        ]);
     }
 }

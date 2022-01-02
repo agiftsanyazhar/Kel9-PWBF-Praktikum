@@ -79,7 +79,7 @@ class KemajuanController extends Controller
 
         Kemajuan::create($validatedData);
 
-        $request->session()->flash('success','Kemajuan Berhasil Ditambahkan!');
+        $request->session()->flash('successKemajuan','Kemajuan Berhasil Ditambah!');
 
         return redirect('/kemajuan-table');
     }
@@ -124,7 +124,7 @@ class KemajuanController extends Controller
             'status'         => $request['status'],
         ]);
 
-        return redirect('/kemajuan-table')->with('update','Data Kemajuan Berhasil Di-Update!');
+        return redirect('/kemajuan-table')->with('updateKemajuan','Data Kemajuan Berhasil Di-Update!');
     }
 
     /**
@@ -137,8 +137,20 @@ class KemajuanController extends Controller
     {
         Kemajuan::find($id)->delete();
 
-        $request->session()->flash('delete','Kemajuan Berhasil Dihapus!');
+        $request->session()->flash('deleteKemajuan','Kemajuan Berhasil Dihapus!');
 
         return redirect('/kemajuan-table');
+    }
+
+    public function print($id){
+        $Santri=Santri::find($id);
+        return view('dashboard.print.kemajuan', [
+            'kemajuan'  => Kemajuan::where('id_santri', $id)->orderby('tanggal', 'desc')->with('pengurus')->get(),
+            // 'title'     => Santri::find($id)->nama,
+            // 'idsantri'  => Santri::find($id)->id,
+            'title'     => $Santri->nama,
+            'idsantri'  => $id,
+            'counter'   => 1
+        ]);
     }
 }

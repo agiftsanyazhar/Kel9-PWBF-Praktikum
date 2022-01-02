@@ -10,8 +10,9 @@
             </ol>
             @can('adminpengurus')
                 <a href="{{ url('/form-create-buku') }}"><button class="btn btn-primary btn-block" type="submit"><i class="bi bi-plus-lg"></i>&nbsp;&nbsp;Tambah</button></a>
-                <br><br>
             @endcan
+            <a href="{{ url('/download-buku') }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
+            <br><br>
             {{-- Buku --}}
             @if (session()->has('successBuku'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -64,9 +65,7 @@
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                @can('adminpengurus')
-                                    <th>Aksi</th>
-                                @endcan
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -75,9 +74,7 @@
                                 <th>ID</th>
                                 <th>Buku</th>
                                 <th>Keterangan</th>
-                                @can('adminpengurus')
-                                    <th>Aksi</th>
-                                @endcan
+                                <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>

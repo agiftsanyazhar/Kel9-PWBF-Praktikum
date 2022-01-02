@@ -19,7 +19,6 @@ class CreateSantrisTable extends Migration
             $table->char('gender',1);
             $table->date('tgl_lhr');
             $table->string('kota_lhr',40);
-            $table->string('image')->nullable();
             $table->string('nama_ortu',50);
             $table->string('alamat_ortu',100);
             $table->string('hp',15);

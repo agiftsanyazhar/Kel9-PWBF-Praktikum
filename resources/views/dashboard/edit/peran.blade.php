@@ -22,6 +22,15 @@
                                         @enderror
                                     </div>
                                 </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-12">
+                                        <select class="form-control @error('aktif') is-invalid @enderror" name="aktif" required>
+                                            <option value="" disabled selected hidden>Status</option>
+                                                <option value="0">Tidak Aktif</option>
+                                                <option value="1">Aktif</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="mt-4 mb-0">
                                     <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Perbarui</button></div>
                                 </div>

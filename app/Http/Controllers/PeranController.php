@@ -50,7 +50,7 @@ class PeranController extends Controller
 
         Peran::create($validatedData);
 
-        $request->session()->flash('success','Peran Berhasil Ditambahkan!');
+        $request->session()->flash('success','Peran Berhasil Ditambah!');
 
         return redirect('/peran-table');
     }
@@ -91,6 +91,7 @@ class PeranController extends Controller
     {
         DB::table('perans')->where('id',$request->id)->update([
             'peran'     => $request->peran,
+            'aktif'     => $request->aktif,
         ]);
 
         return redirect('/peran-table')->with('update','Data Peran Berhasil Di-Update!');
@@ -107,5 +108,13 @@ class PeranController extends Controller
         Peran::find($id)->delete();
 
         return redirect('/peran-table')->with('delete','Peran Berhasil Dihapus!');
+    }
+
+    public function print(){
+        return view('dashboard.print.peran-table', [
+            'peran' => Peran::all(),
+            "title" => "Peran",
+            'counter'   => 1
+        ]);
     }
 }

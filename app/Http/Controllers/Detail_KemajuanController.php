@@ -35,8 +35,9 @@ class Detail_KemajuanController extends Controller
     public function create($id)
     {
         return view('dashboard.create.detail-kemajuan', [
-            'bab'   => Bab::all(),
-            'title' => $id,
+            'bab'       => Bab::all(),
+            'title'     => $id,
+            'santri'    => Kemajuan::find($id)->santri->nama,
         ]);
     }
 
@@ -63,7 +64,7 @@ class Detail_KemajuanController extends Controller
 
         Detail_Kemajuan::create($validatedData);
 
-        $request->session()->flash('success','Data Kemajuan Berhasil Ditambahkan!');
+        $request->session()->flash('successDetailKemajuan','Detail Kemajuan Berhasil Ditambah!');
 
         return redirect('/kemajuan-table');
     }
@@ -108,7 +109,7 @@ class Detail_KemajuanController extends Controller
             'keterangan'     => $request['keterangan'],
         ]);
 
-        return redirect('/kemajuan-table')->with('updatedetail','Data Detail Kemajuan Berhasil Di-Update!');
+        return redirect('/kemajuan-table')->with('updateDetailKemajuan','Data Detail Kemajuan Berhasil Di-Update!');
     }
 
     /**
@@ -117,8 +118,22 @@ class Detail_KemajuanController extends Controller
      * @param  \App\Models\Detail_Kemajuan  $detail_Kemajuan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Detail_Kemajuan $detail_Kemajuan)
+    public function destroy(Request $request, $id)
     {
-        //
+        Detail_Kemajuan::find($id)->delete();
+
+        $request->session()->flash('deleteDetailKemajuan','Detail kemajuan Berhasil Dihapus!');
+
+        return redirect('/kemajuan-table');
+    }
+
+    public function print($id){
+        return view('dashboard.print.detail-kemajuan', [
+            'detail'            => Detail_Kemajuan::where('id_kemajuan', $id)->with('bab.buku')->get(),
+            'santri'            => Kemajuan::find($id)->santri->nama,
+            'idsantri'          => Kemajuan::find($id)->santri->id,
+            'id'                => Kemajuan::find($id)->id,
+            'counter'           => 1
+        ]);
     }
 }
