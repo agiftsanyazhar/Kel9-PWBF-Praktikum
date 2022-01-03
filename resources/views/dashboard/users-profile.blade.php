@@ -10,6 +10,12 @@
                 <li class="breadcrumb-item active">Profil</li>
             </ol>
   
+      @if (session()->has('update'))
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              {{ session('update') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+      @endif
       <section class="section profile">
         <div class="row">
           <div class="col-xl-4">
@@ -160,7 +166,7 @@
                             <div class="mb-3">
                               <label for="image" class="form-label">Upload Foto</label><br/>
                               <img class="img-preview img-fluid mb-3 col-sm-5">  
-                              <input class="form-control" type="file" id="image" name="image" onchange="previewImage()">
+                              <input class="form-control" type="file" id="image" name="image" onchange="previewImage()" required>
                             </div>
                           </div>
                         </div>

@@ -120,7 +120,7 @@ class RegisterController extends Controller
             'image'          => basename($_FILES["image"]["name"]),
         ]);
 
-        $request->session()->flash('success','Profil Berhasil Di-Update!');
+        $request->session()->flash('update','Profil Berhasil Di-Update!');
 
         return redirect('/profile');
     }
