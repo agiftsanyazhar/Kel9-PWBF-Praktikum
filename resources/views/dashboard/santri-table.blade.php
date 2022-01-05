@@ -45,7 +45,7 @@
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
-                                <th>Hapus</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -62,7 +62,7 @@
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
                                 <th>Status</th>
-                                <th>Hapus</th>
+                                <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>
@@ -93,7 +93,6 @@
                                         @endif
                                     <td>
                                         <div class="d-inline">
-                                            <a href="{{ url('santri-table-kemajuan-') }}{{ $data_santri->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
                                             <form action="/delete-santri-{{ $data_santri->id }}" method="POST">
                                                 @method('delete')
                                                 @csrf

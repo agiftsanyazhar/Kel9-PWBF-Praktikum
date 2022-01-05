@@ -63,7 +63,7 @@
                                 <th>Nama Santri</th>
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
-                                <th>Kemajuan</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -73,7 +73,7 @@
                                 <th>Nama Santri</th>
                                 <th>Email</th>
                                 <th>Tanggal Masuk</th>
-                                <th>Kemajuan</th>
+                                <th>Aksi</th>
                             </tr>
                         </tfoot>
                         <tbody>

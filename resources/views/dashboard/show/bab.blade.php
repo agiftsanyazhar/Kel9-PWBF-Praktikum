@@ -7,7 +7,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="buku-table">{{ $title }}</a></li>
-                <li class="breadcrumb-item active">{{ $buku->buku }}</li>
+                <li class="breadcrumb-item active">Bab</li>
             </ol>
             <a href="{{ url('/buku-table') }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Buku</button></a>
             @can('adminpengurus')

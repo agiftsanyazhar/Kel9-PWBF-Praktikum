@@ -39,12 +39,7 @@
                                 </div>
                                 <div class="row mb-2">
                                     <div class="col-md-12">
-                                        <input class="form-control @error('password') is-invalid @enderror" id="inputPassword" type="password" minlength="8" maxlength="32" name="password" placeholder="Password" required/>
-                                        @error('email')
-                                            <div class="invalid-feedback">
-                                            {{ $message }}
-                                        </div>
-                                        @enderror
+                                        <input class="form-control" id="inputPassword" type="password" minlength="8" maxlength="32" name="password" placeholder="Password" required/>
                                     </div>
                                 </div>
                                 <div class="form-check mb-3">

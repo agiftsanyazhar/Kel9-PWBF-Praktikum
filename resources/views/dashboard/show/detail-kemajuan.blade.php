@@ -7,8 +7,8 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="kemajuan-table">Daftar Santri</a></li>
-                <li class="breadcrumb-item"><a href="kemajuan-table">{{ $santri }}</a></li>
-                <li class="breadcrumb-item active">{{ $santri }}</li>
+                <li class="breadcrumb-item"><a href="{{ url('/kemajuan-table-') }}{{ $idsantri }}">Kemajuan</a></li>
+                <li class="breadcrumb-item active">Detail Kemajuan</li>
             </ol>
             <a href="{{ url('/kemajuan-table-') }}{{ $idsantri }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Kemajuan</button></a>
             @can('pengurus')

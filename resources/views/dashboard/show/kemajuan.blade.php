@@ -7,7 +7,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="kemajuan-table">Daftar Santri</a></li>
-                <li class="breadcrumb-item active">{{ $title }}</li>
+                <li class="breadcrumb-item active">Kemajuan</li>
             </ol>
             <a href="{{ url('/kemajuan-table') }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Daftar Santri</button></a>
             @can('pengurus')

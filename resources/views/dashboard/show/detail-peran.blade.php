@@ -7,7 +7,7 @@
             <ol class="breadcrumb mb-4">
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="pengurus-table">Pengurus</a></li>
-                <li class="breadcrumb-item active">{{ $title }}</li>
+                <li class="breadcrumb-item active">Detail Peran</li>
             </ol>
             <a href="{{ url('/pengurus-table') }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-arrow-left"></i>&nbsp;&nbsp;Pengurus</button></a>
             @can('admin')

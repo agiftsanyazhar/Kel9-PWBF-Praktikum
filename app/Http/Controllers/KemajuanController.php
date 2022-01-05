@@ -40,8 +40,6 @@ class KemajuanController extends Controller
         $Santri=Santri::find($id);
         return view('dashboard.show.kemajuan', [
             'kemajuan'  => Kemajuan::where('id_santri', $id)->orderby('tanggal', 'desc')->with('pengurus')->get(),
-            // 'title'     => Santri::find($id)->nama,
-            // 'idsantri'  => Santri::find($id)->id,
             'title'     => $Santri->nama,
             'idsantri'  => $id,
             'counter'   => 1
