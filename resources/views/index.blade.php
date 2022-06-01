@@ -316,10 +316,7 @@
                 <p>Universitas Airlangga</p>
                 <p>D3-Sistem Informasi | 152011513009</p>
                 <div class="social">
-                  <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
-                  <a href="https://www.facebook.com" target="_blank"><i class="ri-facebook-fill"></i></a>
                   <a href="https://www.instagram.com/_faisalmputra_" target="_blank"><i class="ri-instagram-fill"></i></a>
-                  <a href="https://www.linkedin.com" target="_blank"><i class="ri-linkedin-box-fill"></i> </a>
                 </div>
               </div>
             </div>
@@ -335,7 +332,6 @@
                 <p>D3-Sistem Informasi | 152011513020</p>
                 <div class="social">
                   <a href="https://www.twitter.com" target="_blank"><i class="ri-twitter-fill"></i></a>
-                  <a href="https://www.facebook.com/agiftsany" target="_blank"><i class="ri-facebook-fill"></i></a>
                   <a href="https://www.instagram.com/agiftsanyazhar" target="_blank"><i class="ri-instagram-fill"></i></a>
                   <a href="https://www.linkedin.com/in/agiftsany-azhar-25418821a" target="_blank"><i class="ri-linkedin-box-fill"></i> </a>
                 </div>
@@ -587,7 +583,14 @@
 
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>TPQ Al-Hikmah</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Arsha</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->
