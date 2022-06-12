@@ -13,7 +13,6 @@
             @endcan
             <a href="{{ url('/download-pengurus') }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
             <br><br>
-
             {{-- Pengurus --}}
             @if (session()->has('successPengurus'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -33,7 +32,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-
             {{-- Detail Peran --}}
             @if (session()->has('successDetailPeran'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -106,21 +104,21 @@
                                             Tidak Aktif
                                         @endif
                                     </td>
-                                        <td>
-                                            <div class="d-inline">
-                                                <a href="{{ url('pengurus-table-detail-peran-') }}{{ $data_pengurus->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
-                                                 @can('admin')
-                                                    <a href = "{{ url('/form-edit-pengurus-') }}{{ $data_pengurus->id }}">
-                                                        <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
-                                                    </a>
-                                                    <form action="{{ url('/delete-pengurus-') }} {{ $data_pengurus->id }}" method="POST" class="d-inline">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
-                                                    </form>
-                                                @endcan
-                                            </div>
-                                        </td>
+                                    <td>
+                                        <div class="d-inline">
+                                            <a href="{{ url('pengurus-table-detail-peran-') }}{{ $data_pengurus->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
+                                                @can('admin')
+                                                <a href = "{{ url('/form-edit-pengurus-') }}{{ $data_pengurus->id }}">
+                                                    <button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button>
+                                                </a>
+                                                <form action="{{ url('/delete-pengurus-') }} {{ $data_pengurus->id }}" method="POST" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
+                                                </form>
+                                            @endcan
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

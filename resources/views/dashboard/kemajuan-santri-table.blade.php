@@ -8,7 +8,6 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">Daftar Santri</li>
             </ol>
-
             {{-- Kemajuan --}}
             @if (session()->has('successKemajuan'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -28,7 +27,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-            
             {{-- Detail Kemajuan --}}
             @if (session()->has('successDetailKemajuan'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -48,7 +46,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-
             <div class="card mb-4" >
                 <div class="card-header mb-3">
                     <i class="fas fa-table me-1"></i>

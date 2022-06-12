@@ -8,10 +8,8 @@
                 <li class="breadcrumb-item"><a href="dashboard-index">Dashboard</a></li>
                 <li class="breadcrumb-item active">{{ $title }}</li>
             </ol>
-
             <a href="{{ url('/download-santri') }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
             <br><br>
-
             @if (session()->has('update'))
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     {{ session('update') }}

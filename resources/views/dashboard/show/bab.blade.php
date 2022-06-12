@@ -15,7 +15,6 @@
             @endcan
             <a href="{{ url('/download-bab-') }}{{ $buku->id }}" target="_blank"><button class="btn btn-success btn-block" type="submit"><i class="bi bi-download"></i>&nbsp;&nbsp;Download</button></a>
             <br><br>
-            
             <div class="card mb-4">
                 <div class="card-header mb-3 mb-3">
                     <i class="fas fa-table me-1"></i>

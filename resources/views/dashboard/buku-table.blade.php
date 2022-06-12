@@ -32,7 +32,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
-
             {{-- Bab --}}
             @if (session()->has('successBab'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -84,19 +83,19 @@
                                     <td>{{ $data_buku -> id }}</td>
                                     <td>{{ $data_buku -> buku }}</td>
                                     <td>{{ $data_buku -> keterangan }}</td>
-                                        <td>
-                                            <div class="d-inline">
-                                                <a href="{{ url('buku-table-bab-') }}{{ $data_buku->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
-                                                @can('adminpengurus')
-                                                    <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button></a>
-                                                    <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST" class="d-inline">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
-                                                    </form>
-                                                @endcan
-                                            </div>
-                                        </td>
+                                    <td>
+                                        <div class="d-inline">
+                                            <a href="{{ url('buku-table-bab-') }}{{ $data_buku->id }}"><button class="btn btn-info btn-block" type="submit"><i class="bi bi-eye"></i></button></a>
+                                            @can('adminpengurus')
+                                                <a href = "{{ url('/form-edit-buku-') }}{{ $data_buku->id }}"><button class="btn btn-warning btn-block" type="submit"><i class="bi bi-pencil"></i></button></a>
+                                                <form action="{{ url('/delete-buku-') }} {{ $data_buku->id }}" method="POST" class="d-inline">
+                                                    @method('delete')
+                                                    @csrf
+                                                    <button class="btn btn-danger btn-block" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')" type="submit"><i class="bi bi-trash"></i></button>
+                                                </form>
+                                            @endcan
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>

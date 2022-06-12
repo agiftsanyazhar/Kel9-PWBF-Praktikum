@@ -30,7 +30,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Cari..." aria-label="Search" aria-describedby="btnNavbarSearch" />
+                    <input class="form-control" type="text" placeholder="Cari" aria-label="Search" aria-describedby="btnNavbarSearch" />
                     <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
             </form>
@@ -124,7 +124,6 @@
         ======================================================== -->
         <!-- Vendor JS Files -->
         <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-        {{-- <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
         <script src="assets/vendor/chart.js/chart.min.js"></script>
         <script src="assets/vendor/echarts/echarts.min.js"></script>
         <script src="assets/vendor/quill/quill.min.js"></script>

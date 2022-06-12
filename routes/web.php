@@ -14,8 +14,6 @@ use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PeranController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SantriController;
-use App\Models\Detail_Kemajuan;
-use App\Models\Kemajuan;
 use Illuminate\Support\Facades\Route;
 
 /*

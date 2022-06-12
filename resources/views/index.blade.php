@@ -54,9 +54,9 @@
           <li><a class="nav-link scrollto" href="#team">Tim</a></li>
           <li><a class="nav-link scrollto" href="#contact">Hubungi Kami</a></li>
           @auth
-            <li class="dropdown"><a href="#" style="pointer-events: none"><span>Hai, {{ auth()->user()->nama }}</span> <i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>Halo, {{ auth()->user()->nama }}</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
-                <li><a href="register">Dashboard</a></li>
+                <li><a href="/dashboard-index">Dashboard</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
                   <form id="form1" action="/logout" method="post">
@@ -67,8 +67,8 @@
                 </li>
               </ul>
             </li>
-            @else
-              <li class="dropdown"><a href="#" style="pointer-events: none"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
+          @else
+            <li class="dropdown"><a href="#"><span>Bergabung</span> <i class="bi bi-chevron-down"></i></a>
               <ul>
                 <li><a href="register">Daftar</a></li>
                 <li><a href="login">Login</a></li>
@@ -286,11 +286,11 @@
 
         <div class="row">
           <div class="col-lg-12 text-center text-lg-start">
-            <h3 align="center">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</h3>
+            <h3 class="text-center">خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ</h3>
             <br>
-            <h3 align="center">"Sebaik-baik kalian adalah orang yang belajar Al-Quran dan mengajarkannya."</h3>
+            <h3 class="text-center">"Sebaik-baik kalian adalah orang yang belajar Al-Quran dan mengajarkannya."</h3>
             <br><br>
-            <h3  align="center"><strong>- HR. Bukhori -</strong></h3>
+            <h3  class="text-center"><strong>- HR. Bukhori -</strong></h3>
           </div>
         </div>
 
